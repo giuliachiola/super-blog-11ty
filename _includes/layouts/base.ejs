@@ -6,10 +6,17 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-
-    <main>
+    <div class="l-wrapper">
+      <!-- header -->
+      <%- include('partials/header.ejs') %>
+      <!-- hero -->
+      <div class="l-spacing-m">
+        <%- include('partials/hero.ejs') %>
+      </div>
+      <!-- content -->
       <%- content %>
-    </main>
-
+      <!-- footer -->
+      <%- include('partials/footer.ejs') %>
+    </div>
   </body>
 </html>

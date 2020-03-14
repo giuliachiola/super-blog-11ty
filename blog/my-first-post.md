@@ -1,7 +1,15 @@
 ---
 title: 'My first post'
-# imageUrl: 'https://source.unsplash.com/1600x900/?nature,water'
+img: 'https://source.unsplash.com/1600x900/?nature,water'
 layout: layouts/post.ejs
+tags:
+  - post
+mainTag: git
+categories:
+    - git
+    - shel
+abstract: 'Lorem ipsum'
+date: '2020-01-23'
 ---
 
 ### Headings

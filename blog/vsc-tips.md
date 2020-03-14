@@ -1,9 +1,15 @@
 ---
 title: 'Visual Studio Code tips'
-# abstract: 'Few shortcuts I discovered around the web that I consider very helpful'
-# imageUrl: 'https://source.unsplash.com/s4wGZw3UuLk/1600x900'
-# imageUrl: 'https://source.unsplash.com/1600x900/?nature,water'
+abstract: 'Few shortcuts I discovered around the web that I consider very helpful'
+img: 'https://source.unsplash.com/1600x900/?nature,water'
 layout: layouts/post.ejs
+tags:
+  - post
+mainTag: javascript
+categories:
+    - js
+    - vsc
+date: '2020-02-01'
 ---
 
 Some useful shortcuts

@@ -1,12 +1,29 @@
-<!doctype html>
-<html>
+---
+layout: layouts/base.ejs
+title: Blog
+img: 'https://source.unsplash.com/1600x900/?nature,water'
+---
 
-<head>
-  <title>Page title</title>
-</head>
-
-<body>
-  <p>Hi</p>
-</body>
-
-</html>
+<!-- content -->
+<main class="l-main">
+  <!-- filters -->
+  <div class="l-spacing-m">
+    <%- include('_includes/layouts/partials/filters.ejs'); %>
+  </div>
+  <div class="l-spacing-l">
+    <div class="o-cards-grid">
+      <% collections.post.forEach(function(post, i){ %>
+        <%
+          let card = {}
+          card = post.data
+          card.modifiers = ['squared-image']
+          card.hasImg = true
+        %>
+        <%- include('_includes/layouts/partials/card.ejs', { card: card }); %>
+      <% }) %>
+    </div>
+  </div>
+  <div class="o-distributed o-distributed--center l-spacing-l">
+    <a class="c-button" href="#">Load more post...</a>
+  </div>
+</main>
