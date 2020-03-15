@@ -6,7 +6,8 @@ mainTag: 'javascript'
 categories: js
 date: '2020-02-01'
 tags:
-  - new-tag
+  - vsc
+  - git
 ---
 
 Some useful shortcuts
