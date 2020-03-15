@@ -1,9 +1,9 @@
 ---
-layout: layouts/base.ejs
+layout: layouts/base.njk
 ---
 <main class="l-main">
   <div class="l-spacing-l">
-    <%- content %>
+    {{ content | safe }}
   </div>
 </main>
 

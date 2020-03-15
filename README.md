@@ -1,7 +1,12 @@
 ---
-layout: layouts/post.ejs
-title: About Me
+layout: layouts/post.njk
+title: README
 img: 'https://source.unsplash.com/1600x900/?nature,water'
 ---
 
-# Page header
+
+## How to run this project
+
+```
+npm run dev
+```

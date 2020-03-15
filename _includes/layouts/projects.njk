@@ -1,0 +1,27 @@
+---
+layout: layouts/base.njk
+---
+
+{% block content %}
+
+{# content #}
+<main class="l-main">
+  {# filters #}
+  <div class="l-spacing-m">
+    {%- include "_includes/layouts/partials/filters.njk" %}
+  </div>
+  <div class="l-spacing-l">
+    <div class="o-cards-grid">
+      {%- for entry in collections.projects %}
+        {% set card = { data: entry.data } %}
+        {% include '_includes/layouts/partials/card.njk' %}
+      {%- endfor %}
+    </div>
+  </div>
+  <div class="o-distributed o-distributed--center l-spacing-l">
+    <a class="c-button" href="#">Load more post...</a>
+  </div>
+</main>
+
+{% endblock %}
+

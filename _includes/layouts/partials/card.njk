@@ -1,0 +1,40 @@
+{% set mainTag = '' %}
+{% if card.data.mainTag %}
+  {% set mainTag = 'c-card--' + card.data.mainTag %}
+{% endif %}
+
+
+{% set modifiers = '' %}
+{% if card.modifiers %}
+  {% for mod in card.modifiers %}
+    {% set modifiers = modifiers + 'c-card--'+mod %}
+  {% endfor %}
+{% endif %}
+
+
+<article class="c-card {{ modifiers }} {{ mainTag }}">
+  {% if card.hasImg and card.data.mainTag %}
+    <div class="c-card__img-wrapper">
+     {% include '../../../svg/' + card.data.mainTag + '.svg' %}
+    </div>
+  {% endif %}
+  <div class="c-card__content">
+    <a class="c-card__title" href="{{ entry.url | url }}">
+      <h2 class="c-card__title-heading">{{ card.data.title }}</h2>
+    </a>
+    <p class="c-card__abstract">{{ card.data.abstract }}</p>
+    {% if card.table %}
+      {# <%- include('../table/table.ejs'); %> #}
+    {% endif %}
+    <div class="c-card__bottom">
+      {% if card.data.date %}
+      <time class="c-card__date" time="{{ card.data.date }}">{{ card.data.date }}</time>
+      {% endif %}
+      <div class="c-card__tags">
+        {# <% card.categories.forEach(function(category){ %>
+          <a class="c-label" href="#">{{ category }}</a>
+        <% }) %> #}
+      </div>
+    </div>
+  </div>
+</article>

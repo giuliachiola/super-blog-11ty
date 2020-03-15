@@ -1,16 +1,18 @@
 ---
 title: 'My first post'
 img: 'https://source.unsplash.com/1600x900/?nature,water'
-layout: layouts/post.ejs
-tags:
-  - post
 mainTag: git
 categories:
     - git
-    - shel
+    - shell
 abstract: 'Lorem ipsum'
 date: '2020-01-23'
+tags:
+  - second-tag
 ---
+
+# {{ title }} --> ok funziona con markdownTemplateEngine
+```
 
 ### Headings
 

@@ -1,0 +1,12 @@
+<fieldset class="c-filter">
+  <legend class="c-filter__legend">Filter by:</legend>
+  {%- for label in collections.tags %}
+  <div class="c-filter__item"><input class="c-filter__input" type="checkbox" id="{{ label }}" name="interest" value="{{ label }}"><label class="c-label" for="{{ label }}">{{ label | dump }}</label></div>
+  {%- endfor %}
+</fieldset>
+
+{# {% for tag in collections.tags %}
+  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+  <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+{% endfor %}
+ #}

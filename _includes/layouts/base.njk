@@ -7,16 +7,16 @@
   </head>
   <body>
     <div class="l-wrapper">
-      <!-- header -->
-      <%- include('partials/header.ejs') %>
-      <!-- hero -->
+      {# header #}
+      {% include 'layouts/partials/header.njk' %}
+      {# hero #}
       <div class="l-spacing-m">
-        <%- include('partials/hero.ejs') %>
+        {% include 'layouts/partials/hero.njk' %}
       </div>
-      <!-- content -->
-      <%- content %>
-      <!-- footer -->
-      <%- include('partials/footer.ejs') %>
+      {# content #}
+      {{ content | safe }}
+      {# footer #}
+      {% include 'layouts/partials/footer.njk' %}
     </div>
   </body>
 </html>
