@@ -13,7 +13,7 @@ layout: layouts/base.njk
   <div class="l-spacing-l">
     <div class="o-cards-grid">
       {%- for entry in collections.blog %}
-        {% set card = { data: entry.data } %}
+        {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
         {% include '_includes/layouts/partials/card.njk' %}
       {%- endfor %}
     </div>

@@ -15,7 +15,7 @@
 <article class="c-card {{ modifiers }} {{ mainTag }}">
   {% if card.hasImg and card.data.mainTag %}
     <div class="c-card__img-wrapper">
-     {% include '../../../svg/' + card.data.mainTag + '.svg' %}
+    {% include '../../../svg/' + card.data.mainTag + '.svg' %}
     </div>
   {% endif %}
   <div class="c-card__content">
@@ -31,9 +31,9 @@
       <time class="c-card__date" time="{{ card.data.date }}">{{ card.data.date }}</time>
       {% endif %}
       <div class="c-card__tags">
-        {# <% card.categories.forEach(function(category){ %>
-          <a class="c-label" href="#">{{ category }}</a>
-        <% }) %> #}
+        {% for tag in card.data.tags %}
+          <a class="c-label" href="#">{{ tag }}</a>
+        {% endfor %}
       </div>
     </div>
   </div>

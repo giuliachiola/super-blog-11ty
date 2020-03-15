@@ -10,9 +10,11 @@
       {# header #}
       {% include 'layouts/partials/header.njk' %}
       {# hero #}
+      {% if hasHero %}
       <div class="l-spacing-m">
         {% include 'layouts/partials/hero.njk' %}
       </div>
+      {% endif %}
       {# content #}
       {{ content | safe }}
       {# footer #}

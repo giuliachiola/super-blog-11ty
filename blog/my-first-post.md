@@ -2,13 +2,11 @@
 title: 'My first post'
 img: 'https://source.unsplash.com/1600x900/?nature,water'
 mainTag: git
-categories:
-    - git
-    - shell
 abstract: 'Lorem ipsum'
 date: '2020-01-23'
 tags:
-  - second-tag
+  - git
+  - shell
 ---
 
 # {{ title }} --> ok funziona con markdownTemplateEngine
