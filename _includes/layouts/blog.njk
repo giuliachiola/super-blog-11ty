@@ -4,41 +4,8 @@ layout: layouts/base.njk
 
 {% block content %}
 
-{# content #}
-<main class="l-main">
-  {# filters #}
-  <div class="l-spacing-m">
-    {%- include "_includes/layouts/partials/filters.njk" %}
-  </div>
-  <div class="l-spacing-l">
-    <div class="o-cards-grid">
-      {%- for entry in pagination.items %}
-        {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
-        {% include '_includes/layouts/partials/card.njk' %}
-      {%- endfor %}
-    </div>
-  </div>
-  {# <div class="o-distributed o-distributed--center l-spacing-l">
-    <a class="c-button" href="#">Load more post...</a>
-  </div> #}
-
-  {# pagination #}
-  <nav aria-labelledby="my-pagination">
-  <h2 id="my-pagination">This is my Pagination</h2>
-  <ol>
-{%- for pageEntry in pagination.pages %}
-    <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
-{%- endfor %}
-  </ol>
-</nav>
-
- {#  {% if pagination.hrefs.previous %}<a href="{{ pagination.hrefs.previous }}">Previous</a>{% endif %}
-      {%- for pageEntry in pagination.pages %}
-  <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a>
-      {%- endfor %}
-  {% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% endif %} #}
-
-</main>
+{% set list = collections.blog %}
+{% include '_includes/layouts/partials/cards-grid.njk' %}
 
 {% endblock %}
 
