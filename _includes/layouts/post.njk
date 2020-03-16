@@ -3,8 +3,24 @@ layout: layouts/base.njk
 hasHero: true
 ---
 <main class="l-main">
-  <div class="l-spacing-l">
+  <article class="c-article-section">
+    <h1>{{ title }}</h1>
+    <time class="c-article-section__date" datetime="{{ date }}">{{ date }}</time>
+
+    {# tags #}
+    {%- for tag in tags %}
+    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+      <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+    {%- endfor %}
+
+    {# content #}
     {{ content | safe }}
+  </article>
+
+  <div class="o-distributed o-distributed--between l-spacing-l">
+    <a class="c-button c-button--border" href="#">prev</a>
+    <a class="c-button c-button--border" href="#">next</a>
   </div>
 </main>
+
 

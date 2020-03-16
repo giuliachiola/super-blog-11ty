@@ -7,10 +7,9 @@
 {% set modifiers = '' %}
 {% if card.modifiers %}
   {% for mod in card.modifiers %}
-    {% set modifiers = modifiers + 'c-card--'+mod %}
+    {% set modifiers = modifiers + ' c-card--'+mod %}
   {% endfor %}
 {% endif %}
-
 
 <article class="c-card {{ modifiers }} {{ mainTag }}">
   {% if card.hasImg and card.data.mainTag %}
