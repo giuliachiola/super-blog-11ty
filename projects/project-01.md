@@ -1,7 +1,7 @@
 ---
 title: 'Project 01'
 date: '2020-01-23'
-categories:
+tags:
   - git
   - vsc
   - shell
