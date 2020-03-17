@@ -8,4 +8,5 @@ eleventyNavigation:
   key: projects
   order: 3
 permalink: /projects/
+categoryFilter: projects
 ---

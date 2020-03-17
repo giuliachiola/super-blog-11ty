@@ -11,9 +11,11 @@ layout: layouts/base.njk
     {%- include "_includes/layouts/partials/filters.njk" %}
   </div>
   <div class="l-spacing-l">
-    {%- for entry in collections.projects %}
-      {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
-      {% include '_includes/layouts/partials/card.njk' %}
+    {%- for entry in collections.categories %}
+      {% if entry.data.category == categoryFilter %}
+        {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
+        {% include '_includes/layouts/partials/card.njk' %}
+      {% endif %}
     {%- endfor %}
     </div>
 </main>

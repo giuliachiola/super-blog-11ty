@@ -1,8 +1,8 @@
 <fieldset class="c-filter">
   <legend class="c-filter__legend">Filter by:</legend>
-  {%- for tag in collections.tagList %}
-  {# <div class="c-filter__item"><input class="c-filter__input" type="checkbox" id="{{ label }}" name="interest" value="{{ label }}"><label class="c-label" for="{{ label }}">{{ label }}</label></div> #}
-  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
-  {%- endfor %}
+  {% for tag in collections.tagsArr %}
+    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+    <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+  {% endfor %}
 </fieldset>
+

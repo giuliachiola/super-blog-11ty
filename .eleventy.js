@@ -18,6 +18,25 @@ module.exports = function(eleventyConfig) {
         tags = item.data.tags;
       }
     })
+
     return tags.filter(item => item !== 'blog'); // FIXME: !valuesToRemove.includes(item) non funziona con multipli valori!
   });
+
+  eleventyConfig.addCollection("categories", function(collection) {
+    const categ = collection.getAll().filter(entry => entry.data.category)
+    return categ // tutte le entries con categorie
+  })
+
+  // function uniqueArray(arr) {
+  //   return [...new Set(arr)]
+  // }
+
+  eleventyConfig.addCollection("tagsArr", function(collection) {
+    const entriesWithTags = collection.getAll().filter(entry => entry.data.tags)
+    const tags = entriesWithTags.reduce((tags, entry) => [...tags, ...entry.data.tags], [])
+    // console.log(tags)
+    return [...new Set(tags)]
+  })
+
+  // eleventyConfig.addNunjucksFilter("uniqueArray", (arr) => { console.log(arr); return [...new Set(arr)]});
 };

@@ -30,7 +30,7 @@
       <time class="c-card__date" time="{{ card.data.date }}">{{ card.data.date }}</time>
       {% endif %}
       <div class="c-card__tags">
-        {% for tag in card.data.tags %}
+        {% for tag in card.data.categories %}
           <a class="c-label" href="#">{{ tag }}</a>
         {% endfor %}
       </div>
