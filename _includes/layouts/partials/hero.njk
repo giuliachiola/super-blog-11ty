@@ -2,5 +2,8 @@
   <img class="c-hero__img" src="{{ img }}" alt="">
     <div class="l-main">
       <h1>{{ title }}</h1>
+      {% if subtitle %}
+      <h2 class="c-hero__subtitle">{{ subtitle }}</h2>
+      {% endif %}
     </div>
 </section>

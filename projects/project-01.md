@@ -5,8 +5,9 @@ tags:
   - git
   - vsc
   - shell
+mainTag: git
 ---
 
-# Project 01
+# Project 01 - git project
 
 lorem ipsum

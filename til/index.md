@@ -1,11 +1,10 @@
 ---
 layout: layouts/projects.njk
-title: Projects
-subtitle: 'Side projects I built during the last years'
+title: today I learned
 hasHero: true
 img: 'https://source.unsplash.com/1600x900/?nature,water'
 eleventyNavigation:
-  key: projects
+  key: til
   order: 3
-permalink: /projects/
+permalink: /til/
 ---
