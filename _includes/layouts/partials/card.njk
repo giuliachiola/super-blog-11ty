@@ -18,13 +18,15 @@
     </div>
   {% endif %}
   <div class="c-card__content">
-    <a class="c-card__title" href="{{ entry.url | url }}">
+    <a class="c-card__title" href="{% if card.data.category == 'projects'%}{{ card.data.externalUrl }}{% else %}{{ entry.url | url }}{% endif %}">
       <h2 class="c-card__title-heading">{{ card.data.title }}</h2>
     </a>
     <p class="c-card__abstract">{{ card.data.abstract }}</p>
-    {% if card.table %}
-      {# <%- include('../table/table.ejs'); %> #}
+
+    {% if card.data.category == 'projects'%}
+      {{ entry.templateContent | safe }}
     {% endif %}
+
     <div class="c-card__bottom">
       {% if card.data.date %}
       <time class="c-card__date" time="{{ card.data.date }}">{{ card.data.date }}</time>

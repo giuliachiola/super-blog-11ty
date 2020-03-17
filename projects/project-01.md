@@ -6,8 +6,30 @@ tags:
   - vsc
   - shell
 mainTag: git
+externalUrl: www.google.com
 ---
 
-# Project 01 - git project
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, expedita aut ab sapiente aliquam provident quae ullam! Nulla, eligendi reiciendis. Sint, adipisci velit architecto magni laudantium repellat commodi totam unde?
 
-lorem ipsum
+<table class="c-table">
+  <thead>
+      <tr>
+        <th>Use</th>
+        <th>Tech stack</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Template engine</td>
+          <td>EJS</td>
+      </tr>
+      <tr>
+          <td>Content</td>
+          <td>Markdown</td>
+      </tr>
+      <tr>
+        <td>Repository</td>
+        <td>Open source on <a href="#">GitHub</a></td>
+      </tr>
+  </tbody>
+</table>
