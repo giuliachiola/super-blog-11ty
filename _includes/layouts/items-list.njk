@@ -4,6 +4,8 @@ layout: layouts/base.njk
 
 {% block content %}
 
+{% set list = collections.categories %}
+
 <main class="l-main">
   {# filters #}
   <div class="l-spacing-m">
@@ -13,7 +15,7 @@ layout: layouts/base.njk
   <div class="l-spacing-l">
     <div {% if categoryFilter == 'blog' %}class="o-cards-grid"{% endif%}>
 
-      {%- for entry in collections.categories %}
+      {%- for entry in list %}
         {% if entry.data.category == categoryFilter %}
 
           {# card settings #}

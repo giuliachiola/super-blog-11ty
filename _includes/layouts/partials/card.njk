@@ -33,7 +33,8 @@
       {% endif %}
       <div class="c-card__tags">
         {% for tag in card.data.tags %}
-          <a class="c-label" href="#">{{ tag }}</a>
+          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
         {% endfor %}
       </div>
     </div>
