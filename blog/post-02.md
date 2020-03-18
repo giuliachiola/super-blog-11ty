@@ -1,5 +1,5 @@
 ---
-title: 'Post 02'
+title: 'BL Post 02'
 img: 'https://source.unsplash.com/1600x900/?nature,water'
 mainTag: git
 abstract: 'Lorem ipsum'
