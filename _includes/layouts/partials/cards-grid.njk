@@ -3,15 +3,28 @@
   <div class="l-spacing-m">
     {%- include "_includes/layouts/partials/filters.njk" %}
   </div>
+  {# items #}
   <div class="l-spacing-l">
-    <div class="o-cards-grid">
+    <div {% if categoryFilter == 'blog' or mainLayout === 'grid' %}class="o-cards-grid"{% endif%}>
+
       {%- for entry in list %}
-        {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
-        {% include '_includes/layouts/partials/card.njk' %}
+
+        {# categories #}
+        {% if entry.data.category == categoryFilter or isPageTag %}
+          {# card settings #}
+          {% if categoryFilter == 'blog' or isPageTag %}
+            {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
+          {% elif categoryFilter == 'projects' %}
+            {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
+          {% elif categoryFilter == 'til' %}
+            {% set card = { data: entry.data, modifiers: ['highlight-top'] } %}
+          {% elif categoryFilter == 'usefulresources' %}
+            {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
+          {% endif %}
+          {# card #}
+          {% include '_includes/layouts/partials/card.njk' %}
+        {% endif %}
       {%- endfor %}
     </div>
-  </div>
-  <div class="o-distributed o-distributed--center l-spacing-l">
-    <a class="c-button" href="#">Load more post...</a>
   </div>
 </main>

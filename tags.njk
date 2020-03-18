@@ -1,17 +1,18 @@
 ---
-title: Tagged {{ tag }}
-img: 'https://source.unsplash.com/1600x900/?nature,water'
-layout: layouts/base.njk
-renderData:
-  title: Tagged “{{ tag }}”
+title: Tag {{ tag }}
+pagination:
+  data: collections
+  size: 1
+  alias: tag
 permalink: /tags/{{ tag }}/
+layout: layouts/base.njk
 ---
-
 
 {% block content %}
 
-{% set list = collections[tag] %}
+{% set list = collections[ tag ] %}
+{% set mainLayout = 'grid' %}
+{% set isPageTag = true %}
 {% include '_includes/layouts/partials/cards-grid.njk' %}
 
 {% endblock %}
-
