@@ -9,14 +9,15 @@
     <div class="l-wrapper">
       {# header #}
       {% include 'layouts/partials/header.njk' %}
-      {# hero #}
-      {% if hasHero %}
-      <div class="l-spacing-m">
-        {% include 'layouts/partials/hero.njk' %}
-      </div>
+
+      {% if hasHomeContent %}
+        {# home content #}
+        {% include './home-content.njk' %}
+      {% else %}
+        {# base content #}
+        {% include './base-content.njk' %}
       {% endif %}
-      {# content #}
-      {{ content | safe }}
+
       {# footer #}
       {% include 'layouts/partials/footer.njk' %}
     </div>

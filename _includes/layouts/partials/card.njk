@@ -23,7 +23,7 @@
     </a>
     <p class="c-card__abstract">{{ card.data.abstract }}</p>
 
-    {% if card.data.category == 'projects'%}
+    {% if card.hasContent %}
       {{ entry.templateContent | safe }}
     {% endif %}
 

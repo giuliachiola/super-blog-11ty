@@ -15,7 +15,7 @@
           {% if categoryFilter == 'blog' or isPageTag %}
             {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
           {% elif categoryFilter == 'projects' %}
-            {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
+            {% set card = { data: entry.data, modifiers: ['highlight-left'], hasContent: true } %}
           {% elif categoryFilter == 'til' %}
             {% set card = { data: entry.data, modifiers: ['highlight-top'] } %}
           {% elif categoryFilter == 'usefulresources' %}

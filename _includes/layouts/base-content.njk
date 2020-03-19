@@ -1,0 +1,8 @@
+{# hero #}
+{% if hasHero %}
+<div class="l-spacing-m">
+  {% include 'layouts/partials/hero.njk' %}
+</div>
+{% endif %}
+{# content #}
+{{ content | safe }}
