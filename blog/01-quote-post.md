@@ -1,6 +1,10 @@
 ---
-title: 'BL My first post'
-img: 'https://source.unsplash.com/1600x900/?nature,water'
+title: 'Quote post'
+quote: 'With the new day comes new strength and new thoughts.'
+quoteAuthor: 'Eleanor Roosevelt'
+img: 'https://source.unsplash.com/KPaSCpklCZw'
+imgCredits: 'Giulia Chiola'
+modifiers: ['bottom-text']
 mainTag: git
 abstract: 'Lorem ipsum'
 date: '2020-01-23'
@@ -9,7 +13,8 @@ tags:
   - shell
 ---
 
-# {{ title }} --> ok funziona con markdownTemplateEngine
+{{ title }} --> ok funziona con markdownTemplateEngine
+
 ```
 
 ### Headings

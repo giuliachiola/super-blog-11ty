@@ -1,8 +1,9 @@
 {# hero #}
-{% if hasHero %}
+
 <div class="l-spacing-m">
+  {# {% set hero = { data: entry.data } %} #}
   {% include 'layouts/partials/hero.njk' %}
 </div>
-{% endif %}
+
 {# content #}
 {{ content | safe }}

@@ -1,9 +1,15 @@
-<section class="c-hero">
+{% set modifiers = '' %}
+{% if modifiers %}
+  {% for mod in modifiers %}
+    {% set modifiers = modifiers + ' c-hero--'+mod %}
+  {% endfor %}
+{% endif %}
+
+<section class="c-hero {{ modifiers }} ">
   <img class="c-hero__img" src="{{ img }}" alt="">
     <div class="l-main">
-      <h1>{{ title }}</h1>
-      {% if subtitle %}
-      <h2 class="c-hero__subtitle">{{ subtitle }}</h2>
-      {% endif %}
+      <h1>{{ quote | safe }}</h1>
+      <h2 class="c-hero__subtitle">{{ quoteAuthor }}</h2>
     </div>
+    <a href="{{ imgCreditsUrl }}" class="c-hero__credits">photo by {{ imgCredits }} on Unsplash</a>
 </section>
