@@ -21,8 +21,15 @@
           {% elif categoryFilter == 'usefulresources' %}
             {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
           {% endif %}
+
           {# card #}
+          {% if categoryFilter !== 'blog' and mainLayout !== 'grid' %}
+            <div class="l-spacing-m">
+          {% endif %}
           {% include '_includes/layouts/partials/card.njk' %}
+          {% if categoryFilter !== 'blog' and mainLayout !== 'grid' %}
+            </div>
+          {% endif %}
         {% endif %}
       {%- endfor %}
     </div>
