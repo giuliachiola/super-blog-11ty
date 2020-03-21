@@ -1,11 +1,16 @@
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const eleventyNavigation = require("@11ty/eleventy-navigation");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = {
-  markdownTemplateEngine: 'njk',
+  // markdownTemplateEngine: 'njk',
 }
 
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  // plugins
+  eleventyConfig.addPlugin(eleventyNavigation);
+  eleventyConfig.addPlugin(syntaxHighlight);
+
+  // configs
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.setDataDeepMerge(true); // used to merge 'blog.11tydata.js' tags with .md tags

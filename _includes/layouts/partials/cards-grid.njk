@@ -17,12 +17,19 @@
           {% elif categoryFilter == 'projects' %}
             {% set card = { data: entry.data, modifiers: ['highlight-left'], hasContent: true } %}
           {% elif categoryFilter == 'til' %}
-            {% set card = { data: entry.data, modifiers: ['highlight-top'] } %}
+            {% set card = { data: entry.data, modifiers: ['highlight-top'], hasContent: true, number: '2' } %}
           {% elif categoryFilter == 'usefulresources' %}
             {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
           {% endif %}
+
           {# card #}
+          {% if categoryFilter !== 'blog' and mainLayout !== 'grid' %}
+            <div class="l-spacing-m">
+          {% endif %}
           {% include '_includes/layouts/partials/card.njk' %}
+          {% if categoryFilter !== 'blog' and mainLayout !== 'grid' %}
+            </div>
+          {% endif %}
         {% endif %}
       {%- endfor %}
     </div>

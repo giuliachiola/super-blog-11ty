@@ -1,5 +1,7 @@
 {# hero #}
 <div class="l-spacing-m">
+  {% set hero = { data: entry.data } %}
+
   {% set title = 'blog' %}
   {% include 'layouts/partials/hero.njk' %}
 
