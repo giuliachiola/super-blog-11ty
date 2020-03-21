@@ -10,7 +10,6 @@ mainTag: vsc
 date: 2020-02-01
 tags:
   - vsc
-  - editors
 ---
 
 Some useful shortcuts

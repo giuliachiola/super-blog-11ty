@@ -9,8 +9,7 @@ imgAuthorProfile: 'https://unsplash.com/---'
 date: 2020-01-23
 mainTag: css
 tags:
-  - styleguide
-  - design-system
+  - design system
   - css
   - node
 ---
