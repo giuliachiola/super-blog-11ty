@@ -4,12 +4,13 @@ abstract: 'Few shortcuts I discovered around the web that I consider very helpfu
 quote: 'With the new day comes new strength and new thoughts.'
 quoteAuthor: 'Eleanor Roosevelt'
 img: 'https://source.unsplash.com/KPaSCpklCZw'
-imgCredits: 'Giulia Chiola'
+imgAuthorName: 'Giulia Chiola'
 modifiers: ['bottom-text']
 mainTag: vsc
-date: '2020-02-01'
+date: 2020-02-01
 tags:
   - vsc
+  - editors
 ---
 
 Some useful shortcuts

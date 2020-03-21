@@ -7,7 +7,7 @@
   <div class="l-spacing-l">
     <div {% if categoryFilter == 'blog' or mainLayout === 'grid' %}class="o-cards-grid"{% endif%}>
 
-      {%- for entry in list %}
+      {%- for entry in list | reverse %}
 
         {# categories #}
         {% if entry.data.category == categoryFilter or isPageTag %}
@@ -17,7 +17,7 @@
           {% elif categoryFilter == 'projects' %}
             {% set card = { data: entry.data, modifiers: ['highlight-left'], hasContent: true } %}
           {% elif categoryFilter == 'til' %}
-            {% set card = { data: entry.data, modifiers: ['highlight-top'], hasContent: true, number: '2' } %}
+            {% set card = { data: entry.data, modifiers: ['highlight-top'], hasContent: true, number: loop.revindex } %}
           {% elif categoryFilter == 'usefulresources' %}
             {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
           {% endif %}

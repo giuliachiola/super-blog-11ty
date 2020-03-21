@@ -24,7 +24,9 @@
     <p class="c-card__abstract">{{ card.data.abstract }}</p>
 
     {% if card.hasContent %}
-      {{ entry.templateContent | safe }}
+      <div class="c-card__raw-content">
+        {{ entry.templateContent | safe }}
+      </div>
     {% endif %}
 
     <div class="c-card__bottom">

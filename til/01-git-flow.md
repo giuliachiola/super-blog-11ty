@@ -4,12 +4,13 @@ abstract: 'How to fast initialize git flow'
 quote: 'Tidying your physical space allows you to tend to your psychological space.'
 quoteAuthor: 'Marie Kondo'
 img: 'https://source.unsplash.com/KPaSCpklCZw'
-imgCredits: 'Giulia Chiola'
+imgAuthorName: 'Giulia Chiola'
 modifiers: ['bottom-text']
-date: '2020-02-01'
+date: 2020-02-01
 mainTag: git
 tags:
   - git
+  - shell
 ---
 
 To inizialize _git flow_ with default branches configuration, run
