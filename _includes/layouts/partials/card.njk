@@ -21,15 +21,19 @@
     <a class="c-card__title" href="{% if card.data.category == 'projects'%}{{ card.data.externalUrl }}{% else %}{{ entry.url | url }}{% endif %}">
       <h2 class="c-card__title-heading">{{ card.data.title }}</h2>
     </a>
-    <p class="c-card__abstract">{{ card.data.abstract }}</p>
+    {% if not card.isExpanded %}
+      <p class="c-card__abstract">{{ card.data.abstract }}</p>
+    {% endif %}
 
     {% if card.hasContent %}
-      {{ entry.templateContent | safe }}
+      <div class="c-card__raw-content">
+        {{ entry.templateContent | safe }}
+      </div>
     {% endif %}
 
     <div class="c-card__bottom">
       {% if card.data.date %}
-      <time class="c-card__date" time="{{ card.data.date }}">{{ card.data.date }}</time>
+      <time class="c-card__date" time="{{ card.data.date }}">{{ card.data.date.toDateString() }}</time>
       {% endif %}
       <div class="c-card__tags">
         {% for tag in card.data.tags %}

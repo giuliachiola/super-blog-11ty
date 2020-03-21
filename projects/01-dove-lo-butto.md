@@ -1,6 +1,6 @@
 ---
-title: 'PR 01'
-date: '2020-01-23'
+title: 'Trash'
+date: 2020-01-23
 tags:
   - git
   - vsc
