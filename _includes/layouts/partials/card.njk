@@ -38,5 +38,9 @@
         {% endfor %}
       </div>
     </div>
+
+    {% if card.number %}
+    <span class="c-card__number">#{{ card.number }}</span>
+    {% endif %}
   </div>
 </article>
