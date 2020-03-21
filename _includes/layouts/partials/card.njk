@@ -21,7 +21,9 @@
     <a class="c-card__title" href="{% if card.data.category == 'projects'%}{{ card.data.externalUrl }}{% else %}{{ entry.url | url }}{% endif %}">
       <h2 class="c-card__title-heading">{{ card.data.title }}</h2>
     </a>
-    <p class="c-card__abstract">{{ card.data.abstract }}</p>
+    {% if not card.isExpanded %}
+      <p class="c-card__abstract">{{ card.data.abstract }}</p>
+    {% endif %}
 
     {% if card.hasContent %}
       <div class="c-card__raw-content">

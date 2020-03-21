@@ -29,3 +29,20 @@ date: 2020-02-01
 tags:
   - vsc
 ```
+
+empty example
+```md
+---
+title: How to delete git branch
+abstract: ---
+quote: ---
+quoteAuthor: ---
+img: 'https://source.unsplash.com/---'
+imgAuthorName: '---'
+imgAuthorProfile: 'https://unsplash.com/---'
+date: 2020-01-23
+mainTag: ---
+tags:
+  - ---
+---
+```

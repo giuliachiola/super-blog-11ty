@@ -15,9 +15,9 @@
           {% if categoryFilter == 'blog' or isPageTag %}
             {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
           {% elif categoryFilter == 'projects' %}
-            {% set card = { data: entry.data, modifiers: ['highlight-left'], hasContent: true } %}
+            {% set card = { data: entry.data, modifiers: ['highlight-left'], hasContent: true, isExpanded: true } %}
           {% elif categoryFilter == 'til' %}
-            {% set card = { data: entry.data, modifiers: ['highlight-top'], hasContent: true, number: loop.revindex } %}
+            {% set card = { data: entry.data, modifiers: ['highlight-top'], hasContent: true, isExpanded: true, number: loop.revindex } %}
           {% elif categoryFilter == 'usefulresources' %}
             {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
           {% endif %}

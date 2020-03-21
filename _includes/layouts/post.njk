@@ -16,18 +16,17 @@ hasHero: true
     {%- endfor %}
 
     {# content #}
-    {{ content | safe }}
+    <div class="c-article-section__content">
+      {{ content | safe }}
+    </div>
   </article>
 
   {% if eleventyNavigation.key !== 'about' %}
-    ***
-    {# {% for entry in collections.randomTil %}
-      ****
-      {{ entry }}
-    {% endfor %} #}
-    <div class="o-distributed o-distributed--center l-spacing-l">
-      {# <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a> #}
-    </div>
+    {% for randomTil in collections.randomTilArr %}
+      <div class="o-distributed o-distributed--center l-spacing-l">
+        <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a>
+      </div>
+    {% endfor %}
   {% endif %}
 </main>
 

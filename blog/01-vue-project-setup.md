@@ -1,11 +1,11 @@
 ---
-title: 'Vue JS: Setup di un progetto per i nuovi arrivati'
+title: 'Vue JS: basic project setup'
+abstract: 'How to setup a Vue JS project step by step from scratch.'
 quote: Ability is what you're capable of doing. Motivation determines what you do. Attitude determines how well you do it.
 quoteAuthor: Lou Holtz
 img: 'https://source.unsplash.com/RPMcxbm2zi4'
 imgAuthorName: '@pawel_czerwinski'
 imgAuthorProfile: 'https://unsplash.com/@pawel_czerwinski'
-abstract: 'Lorem ipsum'
 date: 2020-01-23
 mainTag: vuejs
 tags:
@@ -294,5 +294,3 @@ A questo punto aggiungete un componente di prova `<input type="button" class="bt
 ![HelloVue_bootstrap](01-vuejs-project-setup-images/HelloVue_bootstrap.png)
 
 
-
-# THE END

@@ -1,5 +1,5 @@
 ---
-title: 'PR 01'
+title: 'Trash'
 date: 2020-01-23
 tags:
   - git

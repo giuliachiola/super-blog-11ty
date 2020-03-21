@@ -1,6 +1,6 @@
 ---
-title: 'How to replace all links in JavaScript'
-abstract: 'Replace all links occurrencies concatenating two replace functions.'
+title: 'How to remove all links in JavaScript'
+abstract: 'Remove all links occurrencies concatenating two replace functions.'
 quote: 'Whenever you give up something, you must replace it with something.'
 quoteAuthor: 'Lou Holtz'
 img: 'https://source.unsplash.com/KPaSCpklCZw'
@@ -13,7 +13,7 @@ tags:
 mainTag: js
 ---
 
-If you need to replace all links occurrencies in a webpage:
+If you need to remove all links occurrencies in a webpage:
 
 - get the page content
 
