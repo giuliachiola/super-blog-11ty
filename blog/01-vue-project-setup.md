@@ -12,8 +12,6 @@ tags:
   - vuejs
 ---
 
-# Vue JS: Setup di un progetto per i nuovi arrivati
-
 Di recente ci siamo avvicinati al mondo di Vue JS e al suo fedele compare webpack. Ecco alcune chicche semplici semplici per iniziare un progetto al meglio.
 
 Divido la guida in 5 installazioni indipendenti:

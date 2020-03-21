@@ -5,7 +5,9 @@ hasHero: true
 <main class="l-main">
   <article class="c-article-section l-spacing-l">
     <h1>{{ title }}</h1>
-    <time class="c-article-section__date" datetime="{{ date }}">{{ date }}</time>
+    {% if date %}
+      <time class="c-article-section__date" datetime="{{ date }}">{{ date.toDateString() }}</time>
+    {% endif %}
 
     {# tags #}
     {%- for tag in tags %}
@@ -18,9 +20,14 @@ hasHero: true
   </article>
 
   {% if eleventyNavigation.key !== 'about' %}
-  <div class="o-distributed o-distributed--center l-spacing-l">
-    <a class="c-button" href="#">Take me to another post!</a>
-  </div>
+    ***
+    {# {% for entry in collections.randomTil %}
+      ****
+      {{ entry }}
+    {% endfor %} #}
+    <div class="o-distributed o-distributed--center l-spacing-l">
+      {# <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a> #}
+    </div>
   {% endif %}
 </main>
 
