@@ -381,41 +381,41 @@ amp-img {
 /* ==========================================================================
   ARTICLE SECTION
 ========================================================================== */
-.c-article-section img {
-  display: block;
-  margin: 0 auto;
-}
-
-.c-article-section p,
-.c-article-section li,
-.c-article-section a {
-  font-size: 1.25rem;
-  line-height: 1.4;
-}
-
-.c-article-section table {
-  border-collapse: collapse;
-  text-align: left;
-}
-
-.c-article-section table tr {
-  border-bottom: 0.0625rem solid #e8e8e8;
-}
-
-.c-article-section table th,
-.c-article-section table td {
-  padding: 0.625rem;
-}
-
-.c-article-section__img--small {
-  max-width: 50%;
-}
-
 .c-article-section__date {
   color: #acb3c2;
   display: block;
   font-size: 0.75rem;
   margin-bottom: 0.3125rem;
+}
+
+.c-article-section__content img {
+  display: block;
+  margin: 0 auto;
+}
+
+.c-article-section__content p,
+.c-article-section__content li,
+.c-article-section__content a {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.c-article-section__content table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.c-article-section__content table tr {
+  border-bottom: 0.0625rem solid #e8e8e8;
+}
+
+.c-article-section__content table th,
+.c-article-section__content table td {
+  padding: 0.625rem;
+}
+
+.c-article-section__img--small {
+  max-width: 50%;
 }
 
 /* ==========================================================================
@@ -486,14 +486,17 @@ amp-img {
   position: absolute;
   top: 0;
   width: 100%;
+  /* --------------
+      Colors by category, output example:
+
+      .c-card--nodejs & {
+        @include card-gradient(to right, 'nodejs');
+      }
+    -------------- */
 }
 
 .c-card--git .c-card__img-wrapper::before {
   background: linear-gradient(to right, #eb3349, #f45c43);
-}
-
-.c-card--vsc .c-card__img-wrapper::before {
-  background: linear-gradient(to right, #1a2980, #26d0ce);
 }
 
 .c-card--vuejs .c-card__img-wrapper::before {
@@ -504,6 +507,22 @@ amp-img {
   background: linear-gradient(to right, #f2994a, #f2c94c);
 }
 
+.c-card--vsc .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #1a2980, #26d0ce);
+}
+
+.c-card--css .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #e84393, #fd79a8);
+}
+
+.c-card--nodejs .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #009432, #c4e538);
+}
+
+.c-card--design-system .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #ee0979, #ff6a00);
+}
+
 .c-card__img-wrapper .icon {
   bottom: 1.25rem;
   color: #fff;
@@ -512,6 +531,14 @@ amp-img {
   position: absolute;
   right: 1.25rem;
   width: 6.25rem;
+}
+
+.c-card__img-wrapper .icon-nodejs {
+  width: 8.75rem;
+}
+
+.c-card__img-wrapper .icon-design-system {
+  width: 8.75rem;
 }
 
 .c-card--squared-image .c-card__img-wrapper {
@@ -529,6 +556,17 @@ amp-img {
 
 .c-card__content {
   padding: 1.25rem 1.25rem 3.75rem 1.25rem;
+  /* --------------
+    Colors by category, output example:
+
+    .c-card--highlight-left.c-card--git &::before {
+      @include card-gradient(to bottom, 'git');
+    }
+
+    .c-card--highlight-top.c-card--git &::before {
+      @include card-gradient(to right, 'git');
+    }
+  -------------- */
 }
 
 .c-card--highlight-left .c-card__content {
@@ -561,32 +599,56 @@ amp-img {
   background: linear-gradient(to bottom, #eb3349, #f45c43);
 }
 
-.c-card--highlight-top.c-card--git .c-card__content::before {
+.c-card--highlight-top.c-card--tag .c-card__content::before {
   background: linear-gradient(to right, #eb3349, #f45c43);
-}
-
-.c-card--highlight-left.c-card--vsc .c-card__content::before {
-  background: linear-gradient(to bottom, #1a2980, #26d0ce);
-}
-
-.c-card--highlight-top.c-card--vsc .c-card__content::before {
-  background: linear-gradient(to right, #1a2980, #26d0ce);
-}
-
-.c-card--highlight-left.c-card--js .c-card__content::before {
-  background: linear-gradient(to bottom, #f2994a, #f2c94c);
-}
-
-.c-card--highlight-top.c-card--js .c-card__content::before {
-  background: linear-gradient(to right, #f2994a, #f2c94c);
 }
 
 .c-card--highlight-left.c-card--vuejs .c-card__content::before {
   background: linear-gradient(to bottom, #11998e, #38ef7d);
 }
 
-.c-card--highlight-top.c-card--vuejs .c-card__content::before {
+.c-card--highlight-top.c-card--tag .c-card__content::before {
   background: linear-gradient(to right, #11998e, #38ef7d);
+}
+
+.c-card--highlight-left.c-card--js .c-card__content::before {
+  background: linear-gradient(to bottom, #f2994a, #f2c94c);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #f2994a, #f2c94c);
+}
+
+.c-card--highlight-left.c-card--vsc .c-card__content::before {
+  background: linear-gradient(to bottom, #1a2980, #26d0ce);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #1a2980, #26d0ce);
+}
+
+.c-card--highlight-left.c-card--css .c-card__content::before {
+  background: linear-gradient(to bottom, #e84393, #fd79a8);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #e84393, #fd79a8);
+}
+
+.c-card--highlight-left.c-card--nodejs .c-card__content::before {
+  background: linear-gradient(to bottom, #009432, #c4e538);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #009432, #c4e538);
+}
+
+.c-card--highlight-left.c-card--design-system .c-card__content::before {
+  background: linear-gradient(to bottom, #ee0979, #ff6a00);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #ee0979, #ff6a00);
 }
 
 .c-card__title-heading {
@@ -636,6 +698,11 @@ amp-img {
   position: absolute;
   right: 20px;
   top: 30px;
+}
+
+.c-card__tags .c-label {
+  display: inline-block;
+  margin-top: 0.3125rem;
 }
 
 /* ==========================================================================
@@ -696,9 +763,13 @@ amp-img {
   margin-left: 1.25rem;
 }
 
-.c-header__item[data-state='active'] {
+.c-header__link[data-state='active'] {
   border-bottom: 0.25rem solid #008bf8;
   padding-bottom: 0.25rem;
+}
+
+.c-header__link[data-state='active']:hover {
+  text-decoration: none;
 }
 
 /* ==========================================================================
@@ -805,6 +876,11 @@ amp-img {
 ========================================================================== */
 .c-filter__legend {
   margin-bottom: 0.625rem;
+}
+
+.c-filter__legend .c-label {
+  display: inline-block;
+  margin-top: 0.3125rem;
 }
 
 .c-filter__list {
@@ -841,41 +917,41 @@ amp-img {
 /* ==========================================================================
   ARTICLE SECTION
 ========================================================================== */
-.c-article-section img {
-  display: block;
-  margin: 0 auto;
-}
-
-.c-article-section p,
-.c-article-section li,
-.c-article-section a {
-  font-size: 1.25rem;
-  line-height: 1.4;
-}
-
-.c-article-section table {
-  border-collapse: collapse;
-  text-align: left;
-}
-
-.c-article-section table tr {
-  border-bottom: 0.0625rem solid #e8e8e8;
-}
-
-.c-article-section table th,
-.c-article-section table td {
-  padding: 0.625rem;
-}
-
-.c-article-section__img--small {
-  max-width: 50%;
-}
-
 .c-article-section__date {
   color: #acb3c2;
   display: block;
   font-size: 0.75rem;
   margin-bottom: 0.3125rem;
+}
+
+.c-article-section__content img {
+  display: block;
+  margin: 0 auto;
+}
+
+.c-article-section__content p,
+.c-article-section__content li,
+.c-article-section__content a {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.c-article-section__content table {
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.c-article-section__content table tr {
+  border-bottom: 0.0625rem solid #e8e8e8;
+}
+
+.c-article-section__content table th,
+.c-article-section__content table td {
+  padding: 0.625rem;
+}
+
+.c-article-section__img--small {
+  max-width: 50%;
 }
 
 /* ==========================================================================
@@ -946,14 +1022,17 @@ amp-img {
   position: absolute;
   top: 0;
   width: 100%;
+  /* --------------
+      Colors by category, output example:
+
+      .c-card--nodejs & {
+        @include card-gradient(to right, 'nodejs');
+      }
+    -------------- */
 }
 
 .c-card--git .c-card__img-wrapper::before {
   background: linear-gradient(to right, #eb3349, #f45c43);
-}
-
-.c-card--vsc .c-card__img-wrapper::before {
-  background: linear-gradient(to right, #1a2980, #26d0ce);
 }
 
 .c-card--vuejs .c-card__img-wrapper::before {
@@ -964,6 +1043,22 @@ amp-img {
   background: linear-gradient(to right, #f2994a, #f2c94c);
 }
 
+.c-card--vsc .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #1a2980, #26d0ce);
+}
+
+.c-card--css .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #e84393, #fd79a8);
+}
+
+.c-card--nodejs .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #009432, #c4e538);
+}
+
+.c-card--design-system .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #ee0979, #ff6a00);
+}
+
 .c-card__img-wrapper .icon {
   bottom: 1.25rem;
   color: #fff;
@@ -972,6 +1067,14 @@ amp-img {
   position: absolute;
   right: 1.25rem;
   width: 6.25rem;
+}
+
+.c-card__img-wrapper .icon-nodejs {
+  width: 8.75rem;
+}
+
+.c-card__img-wrapper .icon-design-system {
+  width: 8.75rem;
 }
 
 .c-card--squared-image .c-card__img-wrapper {
@@ -989,6 +1092,17 @@ amp-img {
 
 .c-card__content {
   padding: 1.25rem 1.25rem 3.75rem 1.25rem;
+  /* --------------
+    Colors by category, output example:
+
+    .c-card--highlight-left.c-card--git &::before {
+      @include card-gradient(to bottom, 'git');
+    }
+
+    .c-card--highlight-top.c-card--git &::before {
+      @include card-gradient(to right, 'git');
+    }
+  -------------- */
 }
 
 .c-card--highlight-left .c-card__content {
@@ -1021,32 +1135,56 @@ amp-img {
   background: linear-gradient(to bottom, #eb3349, #f45c43);
 }
 
-.c-card--highlight-top.c-card--git .c-card__content::before {
+.c-card--highlight-top.c-card--tag .c-card__content::before {
   background: linear-gradient(to right, #eb3349, #f45c43);
-}
-
-.c-card--highlight-left.c-card--vsc .c-card__content::before {
-  background: linear-gradient(to bottom, #1a2980, #26d0ce);
-}
-
-.c-card--highlight-top.c-card--vsc .c-card__content::before {
-  background: linear-gradient(to right, #1a2980, #26d0ce);
-}
-
-.c-card--highlight-left.c-card--js .c-card__content::before {
-  background: linear-gradient(to bottom, #f2994a, #f2c94c);
-}
-
-.c-card--highlight-top.c-card--js .c-card__content::before {
-  background: linear-gradient(to right, #f2994a, #f2c94c);
 }
 
 .c-card--highlight-left.c-card--vuejs .c-card__content::before {
   background: linear-gradient(to bottom, #11998e, #38ef7d);
 }
 
-.c-card--highlight-top.c-card--vuejs .c-card__content::before {
+.c-card--highlight-top.c-card--tag .c-card__content::before {
   background: linear-gradient(to right, #11998e, #38ef7d);
+}
+
+.c-card--highlight-left.c-card--js .c-card__content::before {
+  background: linear-gradient(to bottom, #f2994a, #f2c94c);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #f2994a, #f2c94c);
+}
+
+.c-card--highlight-left.c-card--vsc .c-card__content::before {
+  background: linear-gradient(to bottom, #1a2980, #26d0ce);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #1a2980, #26d0ce);
+}
+
+.c-card--highlight-left.c-card--css .c-card__content::before {
+  background: linear-gradient(to bottom, #e84393, #fd79a8);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #e84393, #fd79a8);
+}
+
+.c-card--highlight-left.c-card--nodejs .c-card__content::before {
+  background: linear-gradient(to bottom, #009432, #c4e538);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #009432, #c4e538);
+}
+
+.c-card--highlight-left.c-card--design-system .c-card__content::before {
+  background: linear-gradient(to bottom, #ee0979, #ff6a00);
+}
+
+.c-card--highlight-top.c-card--tag .c-card__content::before {
+  background: linear-gradient(to right, #ee0979, #ff6a00);
 }
 
 .c-card__title-heading {
@@ -1096,6 +1234,11 @@ amp-img {
   position: absolute;
   right: 20px;
   top: 30px;
+}
+
+.c-card__tags .c-label {
+  display: inline-block;
+  margin-top: 0.3125rem;
 }
 
 /* ==========================================================================
@@ -1156,9 +1299,13 @@ amp-img {
   margin-left: 1.25rem;
 }
 
-.c-header__item[data-state='active'] {
+.c-header__link[data-state='active'] {
   border-bottom: 0.25rem solid #008bf8;
   padding-bottom: 0.25rem;
+}
+
+.c-header__link[data-state='active']:hover {
+  text-decoration: none;
 }
 
 /* ==========================================================================
@@ -1265,6 +1412,11 @@ amp-img {
 ========================================================================== */
 .c-filter__legend {
   margin-bottom: 0.625rem;
+}
+
+.c-filter__legend .c-label {
+  display: inline-block;
+  margin-top: 0.3125rem;
 }
 
 .c-filter__list {

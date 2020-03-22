@@ -10,7 +10,7 @@ date: 2020-01-23
 mainTag: git
 tags:
   - json
-  - node
+  - nodejs
 ---
 
 Spoiler: I lied.

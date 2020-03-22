@@ -7,11 +7,11 @@ img: 'https://source.unsplash.com/---'
 imgAuthorName: '---'
 imgAuthorProfile: 'https://unsplash.com/---'
 date: 2020-01-23
-mainTag: css
+mainTag: design-system
 tags:
-  - design system
+  - design-system
   - css
-  - node
+  - nodejs
 ---
 
 ## Styles
