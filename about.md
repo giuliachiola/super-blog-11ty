@@ -15,7 +15,7 @@ eleventyNavigation:
 I am Giulia,<br>
 a **front-end developer** from Italy.
 
-I love writing documentation, motivational quotes and cats 🐱
+I love writing documentation, read motivational quotes and cats 🐱
 
 For these reasons, in this site you can find
 - useful short tips about what I discover daily 📕[go to today i learned](/til)

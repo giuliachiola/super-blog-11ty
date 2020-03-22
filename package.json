@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx @11ty/eleventy --serve"
+    "dev": "rm -rf _site && npx @11ty/eleventy --serve"
   },
   "keywords": [],
   "author": "",
