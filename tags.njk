@@ -1,12 +1,19 @@
 ---
 title: Tag {{ tag }}
 layout: layouts/base.njk
+img: 'https://source.unsplash.com/-4uJ_qPU0_E'
+imgAuthorProfile: 'https://unsplash.com/@landscapeplaces'
+imgAuthorName: '@landscapeplaces'
+permalink: /tags/{{ tag }}/
 pagination:
   data: collections
   size: 1
   alias: tag
-permalink: /tags/{{ tag }}/
+renderData:
+  title: 'Tagged posts<br><span class="u-ty-uppercase u-ty-italic">{{ tag }}</span>'
 ---
+
+{# FIXME: temporary use renderData.title --> https://github.com/11ty/eleventy-base-blog/issues/15 #}
 
 {% block content %}
 
