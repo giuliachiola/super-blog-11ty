@@ -9,8 +9,6 @@ mainTag: git
 externalUrl: www.google.com
 ---
 
-P 01
-
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, expedita aut ab sapiente aliquam provident quae ullam! Nulla, eligendi reiciendis. Sint, adipisci velit architecto magni laudantium repellat commodi totam unde?
 
 <table class="c-table">

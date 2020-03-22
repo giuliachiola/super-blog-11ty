@@ -18,19 +18,29 @@
     </div>
   {% endif %}
   <div class="c-card__content">
-    <a class="c-card__title" href="{% if card.data.category == 'projects'%}{{ card.data.externalUrl }}{% else %}{{ entry.url | url }}{% endif %}">
+    {# title and link #}
+    {% if card.data.externalUrl %}
+      {% set cardUrl = card.data.externalUrl %}
+    {% else %}
+      {% set cardUrl = entry.url | url %}
+    {% endif %}
+    <a class="c-card__title" href="{{ cardUrl }}" {% if card.data.externalUrl %}target="_blank"{% endif %}>
       <h2 class="c-card__title-heading">{{ card.data.title }}</h2>
     </a>
+
+    {# abstract #}
     {% if not card.isExpanded %}
       <p class="c-card__abstract">{{ card.data.abstract }}</p>
     {% endif %}
 
-    {% if card.hasContent %}
+    {# content #}
+    {% if card.isExpanded %}
       <div class="c-card__raw-content">
         {{ entry.templateContent | safe }}
       </div>
     {% endif %}
 
+    {# bottom info #}
     <div class="c-card__bottom">
       {% if card.data.date %}
       <time class="c-card__date" time="{{ card.data.date }}">{{ card.data.date.toDateString() }}</time>
