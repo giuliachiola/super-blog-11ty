@@ -14,7 +14,10 @@
 <article class="c-card {{ modifiers }} {{ mainTag }}">
   {% if card.hasImg and card.data.mainTag %}
     <div class="c-card__img-wrapper">
-    {% include '../../../svg/' + card.data.mainTag + '.svg' %}
+      {# check if SVG exists, otherwise 11ty build explodes! #}
+      {% if card.data.mainTag in ['git', 'vuejs', 'js', 'vsc', 'css', 'nodejs', 'design-system', 'static-site-generator', 'markdown'] %}
+        {% include '../../../svg/' + card.data.mainTag + '.svg' %}
+      {% endif %}
     </div>
   {% endif %}
   <div class="c-card__content">

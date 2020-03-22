@@ -14,14 +14,14 @@ tags:
 
 | Command   | Description                                      |
 |-----------|:-------------------------------------------------|
+| --------- | -------                                          |
 | `gba`     | `git branch -a`                                  |
+| `gcam`    | `git commit -am`                                 |
+| `gcme`    | `git commit -m`                                  |
 | `gco`     | `git checkout`                                   |
 | `gd`      | `git fetch --all --prune`                        |
 | `gl`      | `git pull`                                       |
 | `gp`      | `git push`                                       |
-| `gst`     | `git status`                                     |
-| `gcam`    | `git commit -am`                                 |
 | `gpsup`   | `git push --set-upstream origin [currentbranch]` |
-| --------- | -------                                          |
-| `gcme`    | `git commit -m`                                  |
+| `gst`     | `git status`                                     |
 | `taac`    | `git commit -m`                                  |

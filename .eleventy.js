@@ -11,6 +11,10 @@ function getRandomItem(arr) {
   return arr[getRandomInt(0, arr.length - 1)]
 }
 
+function uniqueArray(arr) {
+  return [...new Set(arr)]
+}
+
 module.exports = {
   // markdownTemplateEngine: 'njk',
 }
@@ -36,13 +40,21 @@ module.exports = function(eleventyConfig) {
     return [getRandomItem(tilEntries)] // collection must be an array
   })
 
-  // function uniqueArray(arr) {
-  //   return [...new Set(arr)]
-  // }
-
   eleventyConfig.addCollection("tagsArr", function(collection) {
     const entriesWithTags = collection.getAll().filter(entry => entry.data.tags)
     const tags = entriesWithTags.reduce((tags, entry) => [...tags, ...entry.data.tags], [])
-    return [...new Set(tags)]
+    return uniqueArray(tags)
   })
-};
+
+  // Markdown options
+
+  const markdownIt = require("markdown-it")
+  const markdownItAttrs = require('markdown-it-attrs')
+  const options = {
+    html: true,
+    breaks: true,
+    linkify: true
+  }
+  const markdownLib = markdownIt(options).use(markdownItAttrs)
+  eleventyConfig.setLibrary("md", markdownLib)
+}
