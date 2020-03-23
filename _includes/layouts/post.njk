@@ -3,14 +3,6 @@ layout: layouts/base.njk
 ---
 <main class="l-main">
   {% include 'layouts/partials/article-section.njk' %}
-
-  {% if eleventyNavigation.key !== 'about' %}
-    {% for randomTil in collections.randomTilArr %}
-      <div class="o-distributed o-distributed--center l-spacing-l">
-        <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a>
-      </div>
-    {% endfor %}
-  {% endif %}
 </main>
 
 

@@ -236,6 +236,39 @@ amp-img {
   vertical-align: middle;
 }
 
+/* ------------------
+  <hr>
+------------------ */
+hr {
+  background-color: #e8e8e8;
+  border: none;
+  color: #e8e8e8;
+  height: 0.0625rem;
+}
+
+/* ------------------
+  Footer at the bottom trick
+------------------ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+@media (min-width: 64em) {
+  .l-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+@media (min-width: 64em) {
+  .c-footer {
+    margin-top: auto;
+  }
+}
+
 /* ==========================================================================
   SPACING
 ========================================================================== */
@@ -279,6 +312,9 @@ amp-img {
   background: #f3f3f3;
 }
 
+/* ==========================================================================
+  MAIN BORDER
+========================================================================== */
 /* ==========================================================================
   04 - OBJECTS
 ========================================================================== */
@@ -419,11 +455,24 @@ amp-img {
 }
 
 .c-article-section__top {
-  align-items: flex-end;
   border-bottom: 0.0625rem solid #e8e8e8;
+  padding-bottom: 1.25rem;
+  align-items: flex-end;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 1.25rem;
+}
+
+.c-article-section--custom .c-article-section__top {
+  margin-bottom: 2.5rem;
+  padding-bottom: 0;
+}
+
+.c-article-section__share {
+  height: 1.25rem;
+}
+
+.c-article-section__share .btn {
+  background-color: #50596c;
 }
 
 .c-article-section__img--medium {
@@ -434,6 +483,12 @@ amp-img {
 .c-article-section__img--small {
   margin: 0 auto;
   max-width: 50%;
+}
+
+.c-article-section__bottom {
+  border-top: 0.0625rem solid #e8e8e8;
+  padding-top: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 /* ==========================================================================
@@ -964,6 +1019,7 @@ amp-img {
 .c-hero .l-main {
   position: relative;
   text-shadow: #000 0px 0px 10px;
+  width: 100%;
 }
 
 .c-hero::before {
@@ -984,6 +1040,42 @@ amp-img {
 .c-hero--top-text {
   align-items: flex-start;
   padding-top: 1.875rem;
+}
+
+.c-hero__title-custom {
+  border-bottom: 0.0625rem dashed #fff;
+  text-transform: uppercase;
+  /* stylelint-disable */
+  font-size: 1.4375rem;
+  font-weight: 500;
+  font-weight: 600;
+  /* stylelint-enable */
+}
+
+@media (min-width: 48em) {
+  .c-hero__title-custom {
+    font-size: 1.5625rem;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 64em) {
+  .c-hero__title-custom {
+    font-size: 1.75rem;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 48em) {
+  .c-hero__title-custom {
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 64em) {
+  .c-hero__title-custom {
+    font-weight: 600;
+  }
 }
 
 .c-hero__img {
@@ -1048,6 +1140,11 @@ amp-img {
   margin-left: 0.3125rem;
 }
 
+.c-label[data-state='active'] {
+  background: rgba(80, 89, 108, 0.7);
+  color: #fff;
+}
+
 /* ==========================================================================
   FILTER
 ========================================================================== */
@@ -1099,6 +1196,7 @@ amp-img {
   .c-photogrid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    max-height: calc(100vh - 113px);
     z-index: 0;
   }
 }
@@ -1142,6 +1240,12 @@ amp-img {
   .c-photogrid__title {
     z-index: 2;
   }
+}
+
+.c-photogrid__img {
+  max-width: none;
+  object-fit: cover;
+  width: 100%;
 }
 
 /* ==========================================================================

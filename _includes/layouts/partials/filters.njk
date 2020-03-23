@@ -1,8 +1,12 @@
 <fieldset class="c-filter">
   <legend class="c-filter__legend">Filter by:</legend>
+  {# tag in url #}
+  {% set _tag = tag %}
+
+  {# tag in collections array#}
   {% for tag in collections.tagsArr %}
     {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-    <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+    <a href="{{ tagUrl | url }}" class="c-label" {% if tag == _tag %}data-state="active"{% endif %}>{{ tag }}</a>
   {% endfor %}
 </fieldset>
 
