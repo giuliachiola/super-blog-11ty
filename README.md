@@ -24,8 +24,8 @@ img: 'https://source.unsplash.com/KPaSCpklCZw'
 imgAuthorName: '@itfeelslikefilm'
 imgAuthorProfile: 'https://unsplash.com/@itfeelslikefilm'
 modifiers: ['bottom-text']
-mainTag: vsc
 date: 2020-02-01
+mainTag: vsc
 tags:
   - vsc
 ```
@@ -40,8 +40,8 @@ quoteAuthor: ---
 img: 'https://source.unsplash.com/---'
 imgAuthorName: '---'
 imgAuthorProfile: 'https://unsplash.com/---'
-date: 2020-01-23
 mainTag: ---
+date: 2020-01-23
 tags:
   - ---
 ---

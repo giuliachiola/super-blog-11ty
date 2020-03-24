@@ -3,10 +3,14 @@
   {# tag in url #}
   {% set _tag = tag %}
 
-  {# tag in collections array#}
-  {% for tag in collections.tagsArr %}
-    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-    <a href="{{ tagUrl | url }}" class="c-label" {% if tag == _tag %}data-state="active"{% endif %}>{{ tag }}</a>
-  {% endfor %}
+  {# tag in collections array #}
+  <ul class="c-filter__list">
+    {% for tag in collections.tagsArr %}
+      <li class="c-filter__item">
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <a href="{{ tagUrl | url }}" class="c-label" {% if tag == _tag %}data-state="active"{% endif %}>{{ tag }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </fieldset>
 

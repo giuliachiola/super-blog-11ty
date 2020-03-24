@@ -36,11 +36,17 @@
     {%- endfor %}
 
     {% if not isCustomPost %}
-      {% for randomTil in collections.randomTilArr %}
-        <div class="o-distributed o-distributed--center l-spacing-l">
-          <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a>
-        </div>
+      {% set tilPosts = [] %}
+      {% for entriesAllCategories in collections.categories %}
+        {% if (entriesAllCategories.data.category === 'til') or (entriesAllCategories.data.category === 'blog') %}
+          {% set tilPosts = (tilPosts.push(entriesAllCategories), tilPosts) %}
+        {% endif %}
       {% endfor %}
+
+      {% set randomTil = tilPosts | random %}
+      <div class="o-distributed o-distributed--center l-spacing-l">
+        <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a>
+      </div>
     {% endif %}
   </div>
 </article>
