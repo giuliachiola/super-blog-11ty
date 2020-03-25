@@ -28,14 +28,14 @@
   </div>
 
   {# bottom #}
-  <div class="c-article-section__bottom">
-    {# tags #}
-    {%- for tag in tags %}
-    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
-    {%- endfor %}
+  {% if not isCustomPost %}
+    <div class="c-article-section__bottom">
+      {# tags #}
+      {%- for tag in tags %}
+      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+      {%- endfor %}
 
-    {% if not isCustomPost %}
       {% set tilPosts = [] %}
       {% for entriesAllCategories in collections.categories %}
         {% if (entriesAllCategories.data.category === 'til') or (entriesAllCategories.data.category === 'blog') %}
@@ -47,6 +47,6 @@
       <div class="o-distributed o-distributed--center l-spacing-l">
         <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a>
       </div>
-    {% endif %}
-  </div>
+    </div>
+  {% endif %}
 </article>

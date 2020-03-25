@@ -247,6 +247,15 @@ hr {
 }
 
 /* ------------------
+  blockquote
+------------------ */
+blockquote {
+  border-left: 0.1875rem solid #e8e8e8;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+/* ------------------
   Footer at the bottom trick
 ------------------ */
 html,
@@ -454,12 +463,6 @@ body {
   text-decoration: underline;
 }
 
-.c-article-section__content blockquote {
-  border-left: 0.1875rem solid #e8e8e8;
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
 .c-article-section__top {
   border-bottom: 0.0625rem solid #e8e8e8;
   padding-bottom: 1.25rem;
@@ -610,6 +613,14 @@ body {
   background: linear-gradient(to right, #6b34ff, #339ff7);
 }
 
+.c-card--template-engine .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #fc4a1a, #f7b733);
+}
+
+.c-card--svg .c-card__img-wrapper::before {
+  background: linear-gradient(to right, #f0c, #339);
+}
+
 .c-card__img-wrapper .icon {
   bottom: 1.25rem;
   color: #fff;
@@ -754,6 +765,22 @@ body {
   background: linear-gradient(to right, #6b34ff, #339ff7);
 }
 
+.c-card--highlight-left.c-card--template-engine .c-card__content::before {
+  background: linear-gradient(to bottom, #fc4a1a, #f7b733);
+}
+
+.c-card--highlight-top.c-card--template-engine .c-card__content::before {
+  background: linear-gradient(to right, #fc4a1a, #f7b733);
+}
+
+.c-card--highlight-left.c-card--svg .c-card__content::before {
+  background: linear-gradient(to bottom, #f0c, #339);
+}
+
+.c-card--highlight-top.c-card--svg .c-card__content::before {
+  background: linear-gradient(to right, #f0c, #339);
+}
+
 .c-card__title-heading {
   font-size: 1.4375rem;
   font-weight: 500;
@@ -856,6 +883,14 @@ body {
 
 .c-card--markdown .c-card__number {
   background: linear-gradient(to right, #6b34ff, #339ff7);
+}
+
+.c-card--template-engine .c-card__number {
+  background: linear-gradient(to right, #fc4a1a, #f7b733);
+}
+
+.c-card--svg .c-card__number {
+  background: linear-gradient(to right, #f0c, #339);
 }
 
 .c-card__tags .c-label {
@@ -1220,7 +1255,8 @@ body {
   left: 50%;
   margin: 0;
   position: absolute;
-  text-shadow: #000 0px 0px 10px;
+  text-align: center;
+  text-shadow: #000 0 0 0.625rem;
   top: 50%;
   transform: translate(-50%, -50%);
 }

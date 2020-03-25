@@ -10,4 +10,5 @@ eleventyNavigation:
   key: blog
   order: 2
 categoryFilter: blog
+mainLayout: grid
 ---
