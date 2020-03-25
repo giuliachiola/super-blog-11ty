@@ -49,6 +49,6 @@ Final array:
 arr = ['cat 🐱', 'dog 🐶']
 ```
 
-🧨 **!important**
-
-If you use {% raw %}`{% set .... %}`{% endraw %} inside a for-loop block, pay attention to have defined it **outside** before entering the loop.
+> 🧨 **!important**
+>
+> If you use {% raw %}`{% set .... %}`{% endraw %} inside a for-loop block, pay attention to have defined it **outside** before entering the loop.

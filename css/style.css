@@ -454,6 +454,12 @@ body {
   text-decoration: underline;
 }
 
+.c-article-section__content blockquote {
+  border-left: 0.1875rem solid #e8e8e8;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
 .c-article-section__top {
   border-bottom: 0.0625rem solid #e8e8e8;
   padding-bottom: 1.25rem;
