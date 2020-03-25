@@ -43,7 +43,8 @@ Project name projectname
 ? Setup e2e tests with Nightwatch? No
 ? Should we run `npm install` for you after the project has been created? (recommended) npm
 ``` -->
-![shell_01](https://gitlab.com/modo/modowiki/-/wikis/articoli/01-vuejs-project-setup-images/shell_01.png)
+
+![shell_01](https://res.cloudinary.com/kifo17/image/upload/v1585162768/super-blog/blog/shell_01_wn5plp.jpg)
 
 Benissimo, abbiamo appena creato lo scaffolding del progetto.  
 Se vogliamo vedere cosa abbiamo ottenuto fino adesso facciamo quello che dice la console: entriamo nella cartella e facciamo girare il server in development mode
@@ -53,11 +54,11 @@ cd projectname
 npm run dev
 ```
 
-![shell_02](01-vuejs-project-setup-images/shell_02.png)
+![shell_02](https://res.cloudinary.com/kifo17/image/upload/v1585162774/super-blog/blog/shell_02_oqupox.jpg)
 
 Sul browser a http://localhost:8080 troviamo il nostro bellissimo Hello Vue!
 
-![HelloVue](01-vuejs-project-setup-images/HelloVue.png)
+![HelloVue](https://res.cloudinary.com/kifo17/image/upload/v1585162775/super-blog/blog/HelloVue_mkrgsd.jpg)
 
 Vediamo un secondo cosa c'è di importante nella cartella del progetto:
 
@@ -107,7 +108,7 @@ A questo punto da ogni componente in _components_ possiamo includerne altri prec
 Es. HelloVue è dentro elements quindi:  
 `import HelloWorld from '@elements/HelloWorld.vue'`
 
-![webpack_resolve_02](01-vuejs-project-setup-images/webpack_resolve_02.png)  
+![webpack_resolve_02](https://res.cloudinary.com/kifo17/image/upload/v1585162774/super-blog/blog/webpack_resolve_02_mqwiiu.jpg)  
 ^ Lascio commentata la vecchia sintassi, dove pescava il componente da 'components' e non dalla sottocartella 'elements'
 
 In questa prima fase di scaffolding chiamo il componente di test `HelloVue.vue` da _main.js_ e controllo che tutto funzioni, **ma** una best-practice sarebbe di _non_ includere componenti dentro main.js, se non l'istanza Vue vera e propria. I componenti li includiamo nei templates, e i templates li chiameremo dal router. Ma questa è un'altra (lunga) storia e la vediamo un'altra volta.
@@ -167,7 +168,7 @@ new Vue({
   store: store,
 })
 ```
-![vuex_mainjs](01-vuejs-project-setup-images/vuex_mainjs.png)
+![vuex_mainjs](https://res.cloudinary.com/kifo17/image/upload/v1585162770/super-blog/blog/vuex_mainjs_ogofdk.jpg)
 
 [Guida dettagliata](https://css-tricks.com/intro-to-vue-4-vuex/)
 
@@ -180,7 +181,7 @@ Perfetto, Vuex pronto. Quando servirà potremo usarlo subito.
 Andiamo su Git Lab, click su **New Project**  
 <!-- https://gitlab.com/projects/new -->
 
-![gitlab_newproject](01-vuejs-project-setup-images/gitlab_newproject.png)
+![gitlab_newproject](https://res.cloudinary.com/kifo17/image/upload/v1585162773/super-blog/blog/gitlab_newproject_degurn.jpg)
 
 e poi **Create project**
 
@@ -204,7 +205,7 @@ Gitflow è semplicemente un'idea astratta di un flusso di lavoro Git. Con Gitflo
 Per iniziare a lavorare con Gitflow:  
 `git flow init` e diamo Ok a tutto quello che ci chiede (trust the computer, the computer is your friend!)
 
-![gitflow_init](01-vuejs-project-setup-images/gitflow_init.png)
+![gitflow_init](https://res.cloudinary.com/kifo17/image/upload/v1585162763/super-blog/blog/gitflow_init_twkyzo.jpg)
 
 _Gitflow in super-breve:_  
 Ci sono due grossi branch: `master` e `develop`.  
@@ -214,23 +215,23 @@ Situazione: siamo con un nuovo progetto, come in questo tutorial, su quale branc
 
 Da qui creiamo un nuovo branch, ma non con il solito modo _git checkout -b branchname_; Gitflow ha una sua (più furba) sintassi: `git flow feature start branchname`. 
 
-![gitflow_feature_start](01-vuejs-project-setup-images/gitflow_feature_start.png)
+![gitflow_feature_start](https://res.cloudinary.com/kifo17/image/upload/v1585162755/super-blog/blog/gitflow_feature_start_ajnwvk.jpg)
 
 Viene creato un branch a partire da develop, lavoriamo su questo nuovo branch e quando la feature è conclusa diamo `git flow feature finish branchname` 
 
-![gitflow_feature_end](01-vuejs-project-setup-images/gitflow_feature_end.png)
+![gitflow_feature_end](https://res.cloudinary.com/kifo17/image/upload/v1585162756/super-blog/blog/gitflow_feature_end_rxaj8t.jpg)
 
 e automaticamente branchname viene mergiato su develop e cancellato dal repo (Niente più branch morti in giro! Evviva!).
 
 Idem con patate per `master`. Su master non abbiamo lo sviluppo, ma i rilasci. Quindi non faremo le features, ma solo bugfixes al volo. Da master `git flow hotfix start branchname`, fixo e concludo con `git flow hotfix finish branchname`  
 
-![gitflow_hotfix_start](01-vuejs-project-setup-images/gitflow_hotfix_start.png)
-![gitflow_hotfix_start](01-vuejs-project-setup-images/gitflow_hotfix_end_01.png)
-![gitflow_hotfix_end](01-vuejs-project-setup-images/gitflow_hotfix_end_02.png)
+![gitflow_hotfix_start](https://res.cloudinary.com/kifo17/image/upload/v1585162765/super-blog/blog/gitflow_hotfix_start_jhabzd.jpg)
+![gitflow_hotfix_start](https://res.cloudinary.com/kifo17/image/upload/v1585162757/super-blog/blog/gitflow_hotfix_end_01_qr5bej.jpg)
+![gitflow_hotfix_end](https://res.cloudinary.com/kifo17/image/upload/v1585162759/super-blog/blog/gitflow_hotfix_end_02_i1c9sy.jpg)
 
 Nota: tra le cose interessanti che offre Gitflow, ti impedisce (o meglio ti sconsiglia vivamente, perché si può comunque aggirare) di _non_ aprire un nuovo branch di hotfix se non hai chiuso il precedente. E ha senso in effetti, non bisognerebbe correggere più di un bug alla volta.
 
-![gitflow_hotfix_2branches](01-vuejs-project-setup-images/gitflow_hotfix_2branches.png)
+![gitflow_hotfix_2branches](https://res.cloudinary.com/kifo17/image/upload/v1585162762/super-blog/blog/gitflow_hotfix_2branches_sdpxsf.jpg)
 
 
 ## 4. SASS
@@ -258,7 +259,7 @@ Nella configurazione di webpack aggiungiamo dentro a _module > rules_
 }
 ```
 
-![webpack_sass](01-vuejs-project-setup-images/webpack_sass.png)
+![webpack_sass](https://res.cloudinary.com/kifo17/image/upload/v1585162775/super-blog/blog/webpack_sass_qvwvrn.jpg)
 
 A questo punto nei componenti Vue possiamo scrivere in SASS
 ```
@@ -287,10 +288,10 @@ Per utilizzare Bootstrap ci serve un _require_ dei file nel main.js, e io voglio
 
 `require('bootstrap/dist/css/bootstrap.min.css')`
 
-![bootstrap_mainjs](01-vuejs-project-setup-images/bootstrap_mainjs.png)
+![bootstrap_mainjs](https://res.cloudinary.com/kifo17/image/upload/v1585162753/super-blog/blog/bootstrap_mainjs_mt5z5n.jpg)
 
 A questo punto aggiungete un componente di prova `<input type="button" class="btn btn-primary" value="I'm a Bootstrap button">` e se tutto funziona lo vedrete apparire bello come il sole:
 
-![HelloVue_bootstrap](01-vuejs-project-setup-images/HelloVue_bootstrap.png)
+![HelloVue_bootstrap](https://res.cloudinary.com/kifo17/image/upload/v1585162774/super-blog/blog/HelloVue_bootstrap_z8ppen.jpg)
 
 
