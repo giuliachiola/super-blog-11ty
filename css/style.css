@@ -497,7 +497,13 @@ body {
 .c-article-section__bottom {
   border-top: 0.0625rem solid #e8e8e8;
   padding-top: 1.25rem;
-  margin-top: 1.25rem;
+  margin-top: 3.75rem;
+}
+
+@media (max-width: 47.99em) {
+  .c-article-section__bottom .c-button {
+    margin-top: 1.25rem;
+  }
 }
 
 /* ==========================================================================
@@ -1059,12 +1065,12 @@ body {
 
 .c-hero .l-main {
   position: relative;
-  text-shadow: #000 0px 0px 10px;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 0 0.625rem;
   width: 100%;
 }
 
 .c-hero::before {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 50%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 50%), linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5) 50%, transparent);
   content: '';
   height: 100%;
   left: 0;

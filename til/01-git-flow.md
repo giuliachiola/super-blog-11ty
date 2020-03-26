@@ -1,12 +1,11 @@
 ---
 title: 'Git flow initialize'
-abstract: 'How to fast initialize git flow'
+abstract: 'How to fast initialize git flow with one simple command.'
 quote: 'Tidying your physical space allows you to tend to your psychological space.'
 quoteAuthor: 'Marie Kondo'
-img: 'https://source.unsplash.com/KPaSCpklCZw'
+img: 'https://source.unsplash.com/4k8xEFW4_3Q'
 imgAuthorName: 'Giulia Chiola'
-modifiers: ['bottom-text']
-date: 2020-02-01
+date: 2020-03-22
 mainTag: git
 tags:
   - git
@@ -39,4 +38,8 @@ Version tag prefix? []
 Hooks and filters directory? [/Users/giulia/Sites/giulia/test/.git/hooks]
 ```
 
-[Read more about git flow]()
+> 📚 More info about git flow
+>
+> [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+> [Git-flow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/)
+> [A collection of Git-flow extensions](https://github.com/nvie/gitflow)
