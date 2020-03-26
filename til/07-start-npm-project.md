@@ -1,12 +1,12 @@
 ---
 title: Start an npm project
 abstract: ---
-quote: ---
-quoteAuthor: ---
-img: 'https://source.unsplash.com/---'
-imgAuthorName: '---'
-imgAuthorProfile: 'https://unsplash.com/---'
-date: 2020-01-23
+quote: Simplicity is the ultimate sophistication.
+quoteAuthor: Leonardo da Vinci
+img: 'https://source.unsplash.com/fguTr9u8vfk'
+imgAuthorName: '@picoftasty'
+imgAuthorProfile: 'https://unsplash.com/@picoftasty'
+date: 2020-03-25
 mainTag: nodejs
 tags:
   - nodejs

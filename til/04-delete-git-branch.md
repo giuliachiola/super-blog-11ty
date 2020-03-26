@@ -1,12 +1,12 @@
 ---
-title: How to delete git branch
-abstract: ---
-quote: ---
-quoteAuthor: ---
-img: 'https://source.unsplash.com/---'
-imgAuthorName: '---'
-imgAuthorProfile: 'https://unsplash.com/---'
-date: 2020-01-23
+title: How to rename git branch
+abstract: Few commands to rename git branch locally and remotely
+quote: Feel the fear and do it anyway.
+quoteAuthor: Susan Jeffers
+img: 'https://source.unsplash.com/pIVg7DPzNX0'
+imgAuthorName: '@sadnos'
+imgAuthorProfile: 'https://unsplash.com/@sadnos'
+date: 2020-03-23
 mainTag: git
 tags:
   - git
