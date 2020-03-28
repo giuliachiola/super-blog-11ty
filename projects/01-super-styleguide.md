@@ -9,6 +9,8 @@ tags:
 externalUrl: '#'
 ---
 
+// REVIEW:
+
 This is my little design system to build this blog.
 The DS has few components and less variants as possible, I developed just what I needed to build a simple blog like this! KISS (a.k.a. Keep It Simple Stupid!) 😇
 

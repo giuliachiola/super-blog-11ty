@@ -1,6 +1,6 @@
 ---
 title: Start an npm project
-abstract: ---
+abstract: One command for a fresh and fast start of your project.
 quote: Simplicity is the ultimate sophistication.
 quoteAuthor: Leonardo da Vinci
 img: 'https://source.unsplash.com/fguTr9u8vfk'
