@@ -36,14 +36,15 @@
         <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
       {%- endfor %}
 
-      {% set tilPosts = [] %}
-      {% for entriesAllCategories in collections.categories %}
-        {% if (entriesAllCategories.data.category === 'til') or (entriesAllCategories.data.category === 'blog') %}
-          {% set tilPosts = (tilPosts.push(entriesAllCategories), tilPosts) %}
+      {% set tutorials = [] %}
+      {% for entry in collections.categories %}
+        {# get 'til' and 'blog' posts, excluding this current post #}
+        {% if ((entry.data.category === 'til') or (entry.data.category === 'blog')) and (entry.data.title !== title) %}
+          {% set tutorials = (tutorials.push(entry), tutorials) %}
         {% endif %}
       {% endfor %}
 
-      {% set randomTil = tilPosts | random %}
+      {% set randomTil = tutorials | random %}
       <div class="o-distributed o-distributed--center l-spacing-l">
         <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a>
       </div>
