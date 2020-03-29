@@ -34,5 +34,14 @@
       {# footer #}
       {% include 'layouts/partials/footer.njk' %}
     </div>
+
+    {# script #}
+    <script>
+      // Get the checkbox
+      const checkbox = document.querySelector(".c-header__toggle");
+      checkbox.addEventListener('change', function() {
+        document.body.classList.toggle("is-menu-open");
+      });
+    </script>
   </body>
 </html>
