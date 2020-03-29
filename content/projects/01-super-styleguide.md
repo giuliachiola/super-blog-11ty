@@ -1,6 +1,6 @@
 ---
 title: 'Super styleguide'
-date: 2020-01-23
+date: 2020-03-23
 mainTag: design-system
 tags:
   - design-system
@@ -9,9 +9,7 @@ tags:
 externalUrl: '#'
 ---
 
-// REVIEW:
-
-This is my little design system to build this blog.
+The little design system to build this blog.
 The DS has few components and less variants as possible, I developed just what I needed to build a simple blog like this! KISS (a.k.a. Keep It Simple Stupid!) 😇
 
 
