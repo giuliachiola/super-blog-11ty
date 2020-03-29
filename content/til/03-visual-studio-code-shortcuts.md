@@ -21,5 +21,6 @@ Some useful shortcuts I use in Visual Studio Code:
 | `cmd+ shitf + v`    | preview markdown                                                 |
 | `opt + up/down`     | move row up/down                                                 |
 | `opt + z`           | toggle text wrap                                                 |
+| `^ + w`             | switch workspace                                                 |
 
 <iframe src="https://giphy.com/embed/5gXYzsVBmjIsw" width="480" height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/embed/5gXYzsVBmjIsw">via GIPHY</a>
