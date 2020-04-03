@@ -9,16 +9,16 @@ imgAuthorName: '@landscapeplaces'
 {% block content %}
 
 <main class="l-main">
-  <form>
-    <input type="text" value="">
-    <input type="button" value="Search">
+  <form class="c-form j-form o-distributed o-distributed--center l-spacing-m">
+    <input class="c-form__input j-search__input" type="search" value="">
+    <button class="c-button j-search__button" type="button">Search</button>
   </form>
 
-  <ul>
+  <ul class="s-search-list">
     {% for entry in collections.all %}
       {% if entry.data.category == 'blog' or entry.data.category == 'til' %}
-        <li class="c-card c-card--condensed l-spacing-m">
-          {% set card = { data: entry.data, modifiers: ['highlight-left'] } %}
+        <li class="j-search__item l-spacing-m">
+          {% set card = { data: entry.data, modifiers: ['highlight-left', 'condensed'] } %}
           {# <a href="{{ entry.url | url }}">{{ entry.data.title }}</a> #}
           {% include '_includes/layouts/partials/card.njk' %}
         </li>
