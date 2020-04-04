@@ -289,19 +289,23 @@ body {
   SPACING
 ========================================================================== */
 .l-spacing-xs {
-  margin-bottom: 0.3125rem;
+  margin-bottom: 0.3125rem !important;
 }
 
 .l-spacing-s {
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.625rem !important;
 }
 
 .l-spacing-m {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem !important;
 }
 
 .l-spacing-l {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem !important;
+}
+
+.l-spacing-top-m {
+  margin-top: 1.25rem !important;
 }
 
 /* ==========================================================================
@@ -1501,13 +1505,14 @@ body {
   border: 0.0625rem solid #e8e8e8;
   border-radius: 0.1875rem;
   color: #50596c;
+  font-size: 1rem;
   margin-right: 1.25rem;
   padding: 0.625rem;
   width: 50%;
 }
 
 .c-form__input:focus {
-  border: 0.0625rem solid #50596c;
+  border: 0.0625rem solid #acb3c2;
   outline: none;
 }
 
@@ -1553,4 +1558,33 @@ body {
   color: #acb3c2;
   display: block;
   font-size: 0.625rem;
+}
+
+/* ==========================================================================
+  HIDDEN
+========================================================================== */
+.u-hidden {
+  display: none !important;
+}
+
+.u-visible {
+  display: block !important;
+}
+
+@media (max-width: 47.99em) {
+  .u-hidden-m {
+    display: none !important;
+  }
+}
+
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .u-hidden-t {
+    display: none !important;
+  }
+}
+
+@media (min-width: 64em) {
+  .u-hidden-d {
+    display: none !important;
+  }
 }
