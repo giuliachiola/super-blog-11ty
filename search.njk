@@ -22,7 +22,7 @@ eleventyNavigation:
     {% for entry in collections.all %}
       {% if entry.data.category == 'blog' or entry.data.category == 'til' %}
         <li class="j-search__item l-spacing-m">
-          {% set card = { data: entry.data, modifiers: ['highlight-left', 'condensed'] } %}
+          {% set card = { data: entry.data, modifiers: ['squared-image', 'horizontal'], hasImg: true } %}
           {# <a href="{{ entry.url | url }}">{{ entry.data.title }}</a> #}
           {% include '_includes/layouts/partials/card.njk' %}
         </li>
