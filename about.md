@@ -13,7 +13,9 @@ eleventyNavigation:
   order: 5
 ---
 
-I am Giulia,<br>
+<img class="s-profile-picture" src="https://pbs.twimg.com/profile_images/884692782476136448/3r10FqKi_400x400.jpg" alt="Giulia Chiola profile picture">
+
+I am Giulia,
 a **front-end developer** from Italy.
 
 I love writing documentation, read motivational quotes and cats 🐱
