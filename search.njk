@@ -1,15 +1,19 @@
 ---
 title: Search page
 layout: layouts/base.njk
-img: 'https://source.unsplash.com/-4uJ_qPU0_E'
-imgAuthorProfile: 'https://unsplash.com/@landscapeplaces'
-imgAuthorName: '@landscapeplaces'
+img: 'https://source.unsplash.com/023T4jyCRqA'
+imgAuthorProfile: 'https://unsplash.com/@mroz'
+imgAuthorName: '@mroz'
+
+eleventyNavigation:
+  key: search
+  order: 4
 ---
 
 {% block content %}
 
-<main class="l-main">
-  <form class="c-form j-form o-distributed o-distributed--center l-spacing-m">
+<main class="l-main l-spacing-l">
+  <form class="c-form j-form o-distributed o-distributed--center l-spacing-l l-spacing-top-m">
     <input class="c-form__input j-search__input" type="search" value="">
     <button class="c-button j-search__button" type="button">Search</button>
   </form>
@@ -25,6 +29,8 @@ imgAuthorName: '@landscapeplaces'
       {% endif %}
     {% endfor %}
   </ul>
+
+  <h2 class="j-search__no-results u-hidden">Oh no! There are not awesome posts with this keyword!</h2>
 </main>
 
 {% endblock %}
