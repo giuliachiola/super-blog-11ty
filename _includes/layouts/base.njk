@@ -37,35 +37,6 @@
     </div>
 
     {# script #}
-    <script>
-      // Get the checkbox
-      const checkbox = document.querySelector(".c-header__toggle");
-      checkbox.addEventListener('change', function() {
-        document.body.classList.toggle("is-menu-open");
-      });
-      // Search post
-      const form = document.querySelector('.j-form')
-      const searchButton = form.querySelector('.j-search__button');
-
-      searchButton.addEventListener('click', function() {
-        const search = form.querySelector('.j-search__input');
-        const searchValue = search.value.toLocaleLowerCase()
-        console.log('search.value >>>>', searchValue)
-
-        const posts = document.querySelectorAll('.c-card')
-        for (const post of posts) {
-          const title = post.querySelector('.c-card__title-heading')
-          const abstract = post.querySelector('.c-card__abstract')
-
-          if (title.textContent.toLocaleLowerCase().includes(searchValue) || abstract.textContent.toLocaleLowerCase().includes(searchValue)) {
-            // show the post
-            title.closest('.j-search__item').style.display = 'block';
-          } else {
-            // hide the post
-            title.closest('.j-search__item').style.display = 'none';
-          }
-        }
-      });
-    </script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
