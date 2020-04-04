@@ -23,4 +23,4 @@ Some useful shortcuts I use in Visual Studio Code:
 | `opt + z`           | toggle text wrap                                                 |
 | `^ + w`             | switch workspace                                                 |
 
-<iframe src="https://giphy.com/embed/5gXYzsVBmjIsw" width="480" height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/embed/5gXYzsVBmjIsw">via GIPHY</a>
+<iframe src="https://giphy.com/embed/5gXYzsVBmjIsw" width="480" height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a class="u-giphy__caption" href="https://giphy.com/embed/5gXYzsVBmjIsw">via GIPHY</a>

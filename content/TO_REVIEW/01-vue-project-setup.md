@@ -6,7 +6,7 @@ quoteAuthor: Lou Holtz
 img: 'https://source.unsplash.com/RPMcxbm2zi4'
 imgAuthorName: '@pawel_czerwinski'
 imgAuthorProfile: 'https://unsplash.com/@pawel_czerwinski'
-date: 2020-01-23
+date: 2020-04-04
 mainTag: vuejs
 tags:
   - vuejs
