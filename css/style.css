@@ -1499,6 +1499,7 @@ body {
 ========================================================================== */
 .c-form {
   align-items: stretch;
+  position: relative;
 }
 
 .c-form__input {
@@ -1514,6 +1515,17 @@ body {
 .c-form__input:focus {
   border: 0.0625rem solid #acb3c2;
   outline: none;
+}
+
+.c-form__input::placeholder {
+  color: #acb3c2;
+}
+
+.c-form__label {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
 }
 
 /* ==========================================================================

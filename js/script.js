@@ -10,11 +10,10 @@ checkbox.addEventListener('change', function() {
   Search post
 ---------------------------- */
 const form = document.querySelector('.j-form')
-const searchButton = form.querySelector('.j-search__button');
+const searchInput = form.querySelector('.j-search__input');
 
 function searchPost () {
-  const search = form.querySelector('.j-search__input');
-  const searchValue = search.value.toLocaleLowerCase()
+  const searchValue = searchInput.value.toLocaleLowerCase()
   const noResultText = document.querySelector('.j-search__no-results')
   let hasResults = false
 
@@ -40,15 +39,7 @@ function searchPost () {
   }
 }
 
-// search button
-searchButton.addEventListener('click', function() {
+// trigger search post at search input change
+searchInput.oninput = function() {
   searchPost();
-});
-
-// or enter key
-form.addEventListener('keypress', function (e) {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    searchPost();
-  }
-});
+};
