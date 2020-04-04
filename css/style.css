@@ -173,6 +173,9 @@ body:not(:-moz-handler-blocked) fieldset {
   <li> @include list-item-reset;
 ------------------ */
 /* ==========================================================================
+  02 - GENERIC (import)
+========================================================================== */
+/* ==========================================================================
   03 - ELEMENTS
 ========================================================================== */
 /* ==========================================================================
@@ -286,19 +289,23 @@ body {
   SPACING
 ========================================================================== */
 .l-spacing-xs {
-  margin-bottom: 0.3125rem;
+  margin-bottom: 0.3125rem !important;
 }
 
 .l-spacing-s {
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.625rem !important;
 }
 
 .l-spacing-m {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem !important;
 }
 
 .l-spacing-l {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.5rem !important;
+}
+
+.l-spacing-top-m {
+  margin-top: 1.25rem !important;
 }
 
 /* ==========================================================================
@@ -573,6 +580,10 @@ body {
   position: relative;
 }
 
+.c-card--horizontal {
+  display: flex;
+}
+
 .c-card__img-wrapper {
   position: relative;
 }
@@ -593,7 +604,7 @@ body {
 }
 
 .c-card--git .c-card__img-wrapper::before {
-  background: linear-gradient(to right, #eb3349, #f45c43);
+  background: linear-gradient(to right, #960f0f, #f70000);
 }
 
 .c-card--vuejs .c-card__img-wrapper::before {
@@ -671,6 +682,18 @@ body {
   }
 }
 
+.c-card--squared-image.c-card--horizontal .c-card__img-wrapper {
+  min-height: 12.5rem;
+  padding-top: 0;
+}
+
+@media (min-width: 64em) {
+  .c-card--squared-image.c-card--horizontal .c-card__img-wrapper {
+    flex-basis: 18.75rem;
+    flex-shrink: 0;
+  }
+}
+
 .c-card__content {
   padding: 1.25rem 1.25rem 4.625rem 1.25rem;
   /* --------------
@@ -712,15 +735,31 @@ body {
   width: 100%;
 }
 
-.c-card--highlight-left.c-card--git .c-card__content::before {
-  background: linear-gradient(to bottom, #eb3349, #f45c43);
+@media (max-width: 63.99em) {
+  .c-card--squared-image.c-card--horizontal .c-card__content {
+    padding-left: 1.875rem;
+  }
+  .c-card--squared-image.c-card--horizontal .c-card__content::before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0.625rem;
+  }
+}
+
+.c-card--highlight-left.c-card--git .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--git .c-card__content::before {
+  background: linear-gradient(to bottom, #960f0f, #f70000);
 }
 
 .c-card--highlight-top.c-card--git .c-card__content::before {
-  background: linear-gradient(to right, #eb3349, #f45c43);
+  background: linear-gradient(to right, #960f0f, #f70000);
 }
 
-.c-card--highlight-left.c-card--vuejs .c-card__content::before {
+.c-card--highlight-left.c-card--vuejs .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--vuejs .c-card__content::before {
   background: linear-gradient(to bottom, #11998e, #38ef7d);
 }
 
@@ -728,7 +767,8 @@ body {
   background: linear-gradient(to right, #11998e, #38ef7d);
 }
 
-.c-card--highlight-left.c-card--js .c-card__content::before {
+.c-card--highlight-left.c-card--js .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--js .c-card__content::before {
   background: linear-gradient(to bottom, #f2994a, #f2c94c);
 }
 
@@ -736,7 +776,8 @@ body {
   background: linear-gradient(to right, #f2994a, #f2c94c);
 }
 
-.c-card--highlight-left.c-card--vsc .c-card__content::before {
+.c-card--highlight-left.c-card--vsc .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--vsc .c-card__content::before {
   background: linear-gradient(to bottom, #1a2980, #26d0ce);
 }
 
@@ -744,7 +785,8 @@ body {
   background: linear-gradient(to right, #1a2980, #26d0ce);
 }
 
-.c-card--highlight-left.c-card--css .c-card__content::before {
+.c-card--highlight-left.c-card--css .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--css .c-card__content::before {
   background: linear-gradient(to bottom, #e84393, #fd79a8);
 }
 
@@ -752,7 +794,8 @@ body {
   background: linear-gradient(to right, #e84393, #fd79a8);
 }
 
-.c-card--highlight-left.c-card--nodejs .c-card__content::before {
+.c-card--highlight-left.c-card--nodejs .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--nodejs .c-card__content::before {
   background: linear-gradient(to bottom, #009432, #c4e538);
 }
 
@@ -760,7 +803,8 @@ body {
   background: linear-gradient(to right, #009432, #c4e538);
 }
 
-.c-card--highlight-left.c-card--design-system .c-card__content::before {
+.c-card--highlight-left.c-card--design-system .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--design-system .c-card__content::before {
   background: linear-gradient(to bottom, #ee0979, #ff6a00);
 }
 
@@ -768,7 +812,8 @@ body {
   background: linear-gradient(to right, #ee0979, #ff6a00);
 }
 
-.c-card--highlight-left.c-card--static-site-generator .c-card__content::before {
+.c-card--highlight-left.c-card--static-site-generator .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--static-site-generator .c-card__content::before {
   background: linear-gradient(to bottom, #00353e, #387c88);
 }
 
@@ -776,7 +821,8 @@ body {
   background: linear-gradient(to right, #00353e, #387c88);
 }
 
-.c-card--highlight-left.c-card--markdown .c-card__content::before {
+.c-card--highlight-left.c-card--markdown .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--markdown .c-card__content::before {
   background: linear-gradient(to bottom, #6b34ff, #339ff7);
 }
 
@@ -784,7 +830,8 @@ body {
   background: linear-gradient(to right, #6b34ff, #339ff7);
 }
 
-.c-card--highlight-left.c-card--template-engine .c-card__content::before {
+.c-card--highlight-left.c-card--template-engine .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--template-engine .c-card__content::before {
   background: linear-gradient(to bottom, #fc4a1a, #f7b733);
 }
 
@@ -792,7 +839,8 @@ body {
   background: linear-gradient(to right, #fc4a1a, #f7b733);
 }
 
-.c-card--highlight-left.c-card--svg .c-card__content::before {
+.c-card--highlight-left.c-card--svg .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--svg .c-card__content::before {
   background: linear-gradient(to bottom, #f0c, #339);
 }
 
@@ -800,7 +848,8 @@ body {
   background: linear-gradient(to right, #f0c, #339);
 }
 
-.c-card--highlight-left.c-card--macos .c-card__content::before {
+.c-card--highlight-left.c-card--macos .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--macos .c-card__content::before {
   background: linear-gradient(to bottom, #485563, #29323c);
 }
 
@@ -877,7 +926,7 @@ body {
 }
 
 .c-card--git .c-card__number {
-  background: linear-gradient(to right, #eb3349, #f45c43);
+  background: linear-gradient(to right, #960f0f, #f70000);
 }
 
 .c-card--vuejs .c-card__number {
@@ -1488,7 +1537,72 @@ body {
 }
 
 /* ==========================================================================
-  07 - UTILITY
+  FORM
+========================================================================== */
+.c-form {
+  align-items: stretch;
+  position: relative;
+}
+
+.c-form__input {
+  border: 0.0625rem solid #e8e8e8;
+  border-radius: 0.1875rem;
+  color: #50596c;
+  font-size: 1rem;
+  margin-right: 1.25rem;
+  padding: 0.625rem;
+  width: 50%;
+}
+
+.c-form__input:focus {
+  border: 0.0625rem solid #acb3c2;
+  outline: none;
+}
+
+.c-form__input::placeholder {
+  color: #acb3c2;
+}
+
+.c-form__label {
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+
+/* ==========================================================================
+  07 - SCOPES
+========================================================================== */
+/* ==========================================================================
+  SEARCH LIST
+========================================================================== */
+.s-search-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.s-search-list li {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+/* ==========================================================================
+  PROFILE PICTURE
+========================================================================== */
+.s-profile-picture {
+  border-radius: 0.1875rem;
+  width: 12.5rem;
+}
+
+@media (min-width: 64em) {
+  .s-profile-picture {
+    float: right;
+  }
+}
+
+/* ==========================================================================
+  08 - UTILITY
 ========================================================================== */
 /* ==========================================================================
   UTILITY TYPOGRAPHY
@@ -1512,4 +1626,33 @@ body {
   color: #acb3c2;
   display: block;
   font-size: 0.625rem;
+}
+
+/* ==========================================================================
+  HIDDEN
+========================================================================== */
+.u-hidden {
+  display: none !important;
+}
+
+.u-visible {
+  display: block !important;
+}
+
+@media (max-width: 47.99em) {
+  .u-hidden-m {
+    display: none !important;
+  }
+}
+
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .u-hidden-t {
+    display: none !important;
+  }
+}
+
+@media (min-width: 64em) {
+  .u-hidden-d {
+    display: none !important;
+  }
 }

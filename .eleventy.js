@@ -27,6 +27,7 @@ module.exports = function(eleventyConfig) {
   // configs
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.setDataDeepMerge(true); // used to merge 'blog.11tydata.js' tags with .md tags
 
   eleventyConfig.addCollection("categories", function(collection) {

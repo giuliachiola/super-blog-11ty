@@ -1,0 +1,36 @@
+---
+title: Search post
+layout: layouts/base.njk
+img: 'https://source.unsplash.com/023T4jyCRqA'
+imgAuthorProfile: 'https://unsplash.com/@mroz'
+imgAuthorName: '@mroz'
+
+eleventyNavigation:
+  key: search
+  order: 4
+---
+
+{% block content %}
+
+<main class="l-main l-spacing-l">
+  <form class="c-form j-form o-distributed o-distributed--center l-spacing-l l-spacing-top-m">
+    <label class="c-form__label" for="search_id">Search...</label>
+    <input class="c-form__input j-search__input" type="search" value="" id="search_id" placeholder="Search...">
+  </form>
+
+  <ul class="s-search-list">
+    {% for entry in collections.all %}
+      {% if entry.data.category == 'blog' or entry.data.category == 'til' %}
+        <li class="j-search__item l-spacing-m">
+          {% set card = { data: entry.data, modifiers: ['squared-image', 'horizontal'], hasImg: true } %}
+          {# <a href="{{ entry.url | url }}">{{ entry.data.title }}</a> #}
+          {% include '_includes/layouts/partials/card.njk' %}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <h2 class="j-search__no-results u-hidden">Oh no!<br>There are not awesome posts with this keyword 💔</h2>
+</main>
+
+{% endblock %}
