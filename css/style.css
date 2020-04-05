@@ -446,6 +446,12 @@ body {
   margin-bottom: 0.3125rem;
 }
 
+.c-article-section__reading-time {
+  font-size: 0.75rem;
+  font-style: italic;
+  margin: 0.3125rem 0;
+}
+
 .c-article-section__content img {
   display: block;
   margin: 0 auto;

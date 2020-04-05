@@ -7,6 +7,10 @@
       {% if date %}
         <time class="c-article-section__date" datetime="{{ date }}">{{ date.toDateString() }}</time>
       {% endif %}
+      {# date #}
+      {% if readingTime %}
+        <p class="c-article-section__reading-time">{{ readingTime }} read</p>
+      {% endif %}
 
       {# tags #}
       {%- for tag in tags %}
