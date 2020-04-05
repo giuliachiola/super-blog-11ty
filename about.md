@@ -6,7 +6,7 @@ quoteAuthor: Chantal Sutherland
 img: 'https://source.unsplash.com/lpgAlv8I7V8'
 imgAuthorName: '@enka80'
 imgAuthorProfile: 'https://unsplash.com/@enka80'
-isCustomPost: true,
+isCustomPost: true
 
 eleventyNavigation:
   key: about
