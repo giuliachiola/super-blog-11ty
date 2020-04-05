@@ -1,3 +1,6 @@
 [submodule "super-blog-content"]
 	path = super-blog-content
 	url = git@gitlab.com:giuliach/super-blog-content.git
+[submodule "super-styleguide"]
+	path = super-styleguide
+	url = git@gitlab.com:giuliach/super-styleguide.git
