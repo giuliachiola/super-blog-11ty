@@ -653,7 +653,7 @@ body {
   background: linear-gradient(to right, #f0c, #339);
 }
 
-.c-card--macos .c-card__img-wrapper::before {
+.c-card--mac-os .c-card__img-wrapper::before {
   background: linear-gradient(to right, #485563, #29323c);
 }
 
@@ -854,12 +854,12 @@ body {
   background: linear-gradient(to right, #f0c, #339);
 }
 
-.c-card--highlight-left.c-card--macos .c-card__content::before,
-.c-card--squared-image.c-card--horizontal.c-card--macos .c-card__content::before {
+.c-card--highlight-left.c-card--mac-os .c-card__content::before,
+.c-card--squared-image.c-card--horizontal.c-card--mac-os .c-card__content::before {
   background: linear-gradient(to bottom, #485563, #29323c);
 }
 
-.c-card--highlight-top.c-card--macos .c-card__content::before {
+.c-card--highlight-top.c-card--mac-os .c-card__content::before {
   background: linear-gradient(to right, #485563, #29323c);
 }
 
@@ -975,7 +975,7 @@ body {
   background: linear-gradient(to right, #f0c, #339);
 }
 
-.c-card--macos .c-card__number {
+.c-card--mac-os .c-card__number {
   background: linear-gradient(to right, #485563, #29323c);
 }
 
