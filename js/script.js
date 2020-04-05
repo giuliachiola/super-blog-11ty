@@ -17,8 +17,8 @@ function searchPost () {
   const noResultText = document.querySelector('.j-search__no-results')
   let hasResults = false
 
-  const posts = document.querySelectorAll('.c-card')
-  for (const post of posts) {
+  const cards = document.querySelectorAll('.c-card')
+  for (const post of cards) {
     const title = post.querySelector('.c-card__title-heading')
     const abstract = post.querySelector('.c-card__abstract')
 

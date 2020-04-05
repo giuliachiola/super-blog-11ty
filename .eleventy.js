@@ -35,10 +35,9 @@ module.exports = function(eleventyConfig) {
     return categ // tutte le entries con categorie
   })
 
-  // random TIL post
-  eleventyConfig.addCollection("randomTilArr", function(collection) {
-    const tilEntries = collection.getAll().filter(entry => entry.data.category).filter(el => el.data.category === 'til')
-    return [getRandomItem(tilEntries)] // collection must be an array
+  // posts = entries with category 'blog' or 'til'
+  eleventyConfig.addCollection("posts", function(collection) {
+    return collection.getAll().filter(entry => entry.data.category).filter(el => el.data.category === 'blog' || el.data.category === 'til')
   })
 
   eleventyConfig.addCollection("tagsArr", function(collection) {
