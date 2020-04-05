@@ -11,9 +11,18 @@ img: 'https://source.unsplash.com/1600x900/?nature,water'
 npm run dev
 ```
 
+## Project submodules
+
+This project has its content as git submodule in `super-blog-content` folder.
+To pull updated content run
+
+```shell
+git submodule update --recursive --remote
+```
+
 ## Post
 
-### Post fields
+### Post empty fields
 
 ```md
 ---
@@ -24,7 +33,8 @@ quoteAuthor: ---
 img: 'https://source.unsplash.com/---'
 imgAuthorName: '---'
 imgAuthorProfile: 'https://unsplash.com/---'
-date: 2020-01-23
+date: 2020-03-23
+readingTime: 10 mins
 mainTag: ---
 tags:
   - ---
