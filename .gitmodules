@@ -1,0 +1,3 @@
+[submodule "super-blog-content"]
+	path = super-blog-content
+	url = git@gitlab-GMAIL:giuliach/super-blog-content.git
