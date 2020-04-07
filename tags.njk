@@ -1,5 +1,4 @@
 ---
-title: Tag {{ tag }}
 layout: layouts/base.njk
 img: 'https://source.unsplash.com/-4uJ_qPU0_E'
 imgAuthorProfile: 'https://unsplash.com/@landscapeplaces'
@@ -10,10 +9,8 @@ pagination:
   size: 1
   alias: tag
 renderData:
-  title: 'Tagged posts<br><span class="c-hero__title-custom">{{ tag }}</span>'
+  title: 'Tagged posts<br> <span class="c-hero__title-custom">{{ tag }}</span>'
 ---
-
-{# FIXME: temporary use renderData.title --> https://github.com/11ty/eleventy-base-blog/issues/15 #}
 
 {% block content %}
 

@@ -45,9 +45,10 @@
 
     {# bottom info #}
     <div class="c-card__bottom">
-      {% if card.data.date %}
-      <time class="c-card__date" time="{{ card.data.date }}">{{ card.data.date.toDateString() }}</time>
-      {% endif %}
+      {# {% if card.data.date %} #}
+      {% set articleDate = card.data.date or page.date %}
+      <time class="c-card__date" time="{{ articleDate }}">{{ articleDate.toDateString() }}</time>
+      {# {% endif %} #}
       <div class="c-card__tags">
         {% for tag in card.data.tags %}
           {% set tagUrl %}/tags/{{ tag }}/{% endset %}

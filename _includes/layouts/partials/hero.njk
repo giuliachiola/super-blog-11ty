@@ -8,7 +8,6 @@
 <section class="c-hero {{ modifiers }} ">
   <img class="c-hero__img" src="{{ img }}" alt="">
     <div class="l-main">
-      {# TODO: renderData.title is temporary to fix tags.njk title #}
       {% set heroTitle = renderData.title or title %}
       {% if quote %}
         {% set heroTitle = quote %}

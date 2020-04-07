@@ -4,10 +4,11 @@
   <div class="c-article-section__top l-spacing-m">
     <div class="c-article-section__info">
       {# date #}
-      {% if date %}
-        <time class="c-article-section__date" datetime="{{ date }}">{{ date.toDateString() }}</time>
-      {% endif %}
-      {# date #}
+      {% set articleDate = date or page.date %}
+      {# {% if date %} #}
+        <time class="c-article-section__date" datetime="{{ articleDate }}">{{ articleDate.toDateString() }}</time>
+      {# {% endif %} #}
+      {# reading time #}
       {% if readingTime %}
         <p class="c-article-section__reading-time">{{ readingTime }} read</p>
       {% endif %}
