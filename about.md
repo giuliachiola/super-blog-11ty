@@ -3,9 +3,10 @@ layout: layouts/post.njk
 title: About Me
 quote: Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got to keep going.
 quoteAuthor: Chantal Sutherland
-img: 'https://source.unsplash.com/lpgAlv8I7V8'
-imgAuthorName: '@enka80'
-imgAuthorProfile: 'https://unsplash.com/@enka80'
+# img: 'https://source.unsplash.com/lpgAlv8I7V8'
+# imgAuthorName: '@enka80'
+# imgAuthorProfile: 'https://unsplash.com/@enka80'
+mainTag: general-1
 isCustomPost: true
 
 eleventyNavigation:

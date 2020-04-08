@@ -2,9 +2,11 @@
 layout: layouts/items-list.njk
 title: Projects
 subtitle: 'Side projects I built during the last years'
-img: https://source.unsplash.com/oAPv2AoMmCU
-imgAuthorName: '@lightninghorse'
-imgAuthorProfile: https://unsplash.com/@lightninghorse
+# img: https://source.unsplash.com/oAPv2AoMmCU
+# imgAuthorName: '@lightninghorse'
+# imgAuthorProfile: https://unsplash.com/@lightninghorse
+mainTag: general-3
+
 eleventyNavigation:
   key: projects
   order: 4
