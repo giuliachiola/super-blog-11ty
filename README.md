@@ -20,6 +20,29 @@ To pull updated content run
 git submodule update --recursive --remote
 ```
 
+### Pull **one** submodule only
+
+* Change to the submodule directory
+cd submodule_dir
+
+* Checkout desired branch
+git checkout master
+
+* Update
+git pull
+
+* Get back to your project root
+cd ..
+
+* Now the submodules are in the state you want, so
+git commit -am "Pulled down update to submodule_dir"
+
+### Pull all submodules:
+
+```shell
+git submodule foreach git pull origin master
+```
+
 ## Post
 
 ### Post empty fields
