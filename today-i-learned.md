@@ -10,6 +10,6 @@ paletteColor: 1
 eleventyNavigation:
   key: til
   order: 3
-permalink: /til/
+permalink: /
 categoryFilter: til
 ---
