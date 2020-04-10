@@ -21,8 +21,13 @@
     {# css from styleguide repo #}
     <link rel="stylesheet" href="/super-styleguide/src/css/style.css">
   </head>
+
+  {% set color = 6 %}
+  {% if paletteColor %}
+    {% set color = paletteColor %}
+  {% endif %}
   <body>
-    <div class="l-wrapper">
+    <div class="l-wrapper t-palette-color--{{ color }}">
       {# header #}
       {% include 'layouts/partials/header.njk' %}
 

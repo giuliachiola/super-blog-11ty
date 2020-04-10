@@ -5,7 +5,7 @@ subtitle: A collection of useful code snippets for a faster development. Reading
 # img: https://source.unsplash.com/sfL_QOnmy00
 # imgAuthorName: '@itfeelslikefilm'
 # imgAuthorProfile: https://unsplash.com/@itfeelslikefilm
-mainTag: general-1
+paletteColor: 1
 
 eleventyNavigation:
   key: til

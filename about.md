@@ -6,7 +6,7 @@ quoteAuthor: Chantal Sutherland
 # img: 'https://source.unsplash.com/lpgAlv8I7V8'
 # imgAuthorName: '@enka80'
 # imgAuthorProfile: 'https://unsplash.com/@enka80'
-mainTag: general-1
+paletteColor: 2
 isCustomPost: true
 
 eleventyNavigation:
@@ -27,10 +27,8 @@ For these reasons, in this site you can find
 - a motivational quote for each post, to keep your spirits high ✨
 - lot of kitten photos in code examples  🐾
 
-The content in this website is open-source [in this github repository](), so if you find typos or incorrect explanations, please open me an issue or fix them opening a pull request with corrections! 😇
+Right now, I am working for an italian agency, [Modo](https://modo.md/), where collegues and bosses teach me a lot every day... I feel so lucky to have them on my side!
 
 <hr>
 
-Right now, I am working for an italian agency, [Modo](https://modo.md/), where collegues and bosses teach me a lot every day... I feel so lucky to have them on my side!
-
-
+The content in this website is open-source [in this github repository](), so if you find typos or incorrect explanations, please open me an issue or fix them opening a pull request with corrections! 😇
