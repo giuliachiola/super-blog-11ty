@@ -1,0 +1,23 @@
+:root {
+  --co_palette-1: rgba(8, 7, 8, 1);
+  --co_palette-2: rgba(55, 114, 255, 1);
+  --co_palette-3: rgba(223, 41, 53, 1);
+  --co_palette-4: rgba(253, 202, 64, 1);
+  --co_palette-5: rgba(230, 232, 230, 1);
+}
+
+:root {
+  --co_palette-1: rgba(11, 57, 84, 1);
+  --co_palette-2: rgba(8, 126, 139, 1);
+  --co_palette-3: rgba(191, 215, 234, 1);
+  --co_palette-4: rgba(255, 90, 95, 1);
+  --co_palette-5: rgba(200, 29, 37, 1);
+}
+
+:root {
+  --co_palette-1: rgba(239, 71, 111, 1);
+  --co_palette-2: rgba(255, 209, 102, 1);
+  --co_palette-3: rgba(6, 214, 160, 1);
+  --co_palette-4: rgba(17, 138, 178, 1);
+  --co_palette-5: rgba(7, 59, 76, 1);
+}

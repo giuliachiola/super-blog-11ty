@@ -20,9 +20,10 @@
     <link rel="stylesheet" href="/css/gist-syntax-theme.css">
     {# css from styleguide repo #}
     <link rel="stylesheet" href="/super-styleguide/src/css/style.css">
+    <link rel="stylesheet" href="/css/color-palette.css">
   </head>
 
-  {% set color = 6 %}
+  {% set color = [1,2,3,4,5] | random %}
   {% if paletteColor %}
     {% set color = paletteColor %}
   {% endif %}

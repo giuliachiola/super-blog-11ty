@@ -5,7 +5,7 @@ subtitle: Tutorials step by step to setup projects
 # img: 'https://source.unsplash.com/WS5yjFjycNY'
 # imgAuthorProfile: 'https://unsplash.com/@josefin'
 # imgAuthorName: 'josefin'
-paletteColor: 5
+paletteColor: 2
 
 eleventyNavigation:
   key: blog

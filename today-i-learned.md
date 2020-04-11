@@ -9,7 +9,7 @@ paletteColor: 1
 
 eleventyNavigation:
   key: til
-  order: 3
+  order: 1
 permalink: /
 categoryFilter: til
 ---

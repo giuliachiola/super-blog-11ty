@@ -5,7 +5,7 @@ subtitle: 'Side projects I built during the last years'
 # img: https://source.unsplash.com/oAPv2AoMmCU
 # imgAuthorName: '@lightninghorse'
 # imgAuthorProfile: https://unsplash.com/@lightninghorse
-paletteColor: 3
+paletteColor: 4
 
 eleventyNavigation:
   key: projects
