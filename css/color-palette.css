@@ -1,23 +1,19 @@
+/*
 :root {
-  --co_palette-1: rgba(8, 7, 8, 1);
-  --co_palette-2: rgba(55, 114, 255, 1);
-  --co_palette-3: rgba(223, 41, 53, 1);
-  --co_palette-4: rgba(253, 202, 64, 1);
-  --co_palette-5: rgba(230, 232, 230, 1);
-}
-
-:root {
-  --co_palette-1: rgba(11, 57, 84, 1);
-  --co_palette-2: rgba(8, 126, 139, 1);
-  --co_palette-3: rgba(191, 215, 234, 1);
-  --co_palette-4: rgba(255, 90, 95, 1);
-  --co_palette-5: rgba(200, 29, 37, 1);
-}
-
-:root {
-  --co_palette-1: rgba(239, 71, 111, 1);
-  --co_palette-2: rgba(255, 209, 102, 1);
-  --co_palette-3: rgba(6, 214, 160, 1);
-  --co_palette-4: rgba(17, 138, 178, 1);
-  --co_palette-5: rgba(7, 59, 76, 1);
-}
+  --co_palette-1: #ef476f;
+  --co_palette-2: #ffc233;
+  --co_palette-3: #06d6a0;
+  --co_palette-4: #1b98e0;
+  --co_palette-5: #ff9f1c;
+  --co_palette-dark: #073b4c;
+  --co_palette-1--lighten: #f37694;
+  --co_palette-2--lighten: #ffd166;
+  --co_palette-3--lighten: #17f8be;
+  --co_palette-4--lighten: #45ade9;
+  --co_palette-5--lighten: #ffb54f;
+  --co_palette-1--lightest: rgba(239, 71, 111, 0.1);
+  --co_palette-2--lightest: rgba(255, 194, 51, 0.2);
+  --co_palette-3--lightest: rgba(6, 214, 160, 0.2);
+  --co_palette-4--lightest: rgba(27, 152, 224, 0.1);
+  --co_palette-5--lightest: rgba(255, 159, 28, 0.1);
+} */

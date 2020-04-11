@@ -53,15 +53,22 @@ title: How to delete git branch
 abstract: ---
 quote: ---
 quoteAuthor: ---
-img: 'https://source.unsplash.com/---'
-imgAuthorName: '---'
-imgAuthorProfile: 'https://unsplash.com/---'
+# img: 'https://source.unsplash.com/---'
+# imgAuthorName: '---'
+# imgAuthorProfile: 'https://unsplash.com/---'
+
 date: 2020-03-23
 readingTime: 10 mins
 mainTag: ---
 tags:
   - ---
 ---
+```
+
+Embedded giph from Giphy
+
+```html
+<iframe src="https://giphy.com/embed/62PP2yEIAZF6g" width="480" height="273" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a class="u-giphy__caption" href="https://giphy.com/gifs/swag-80s-sunglasses-62PP2yEIAZF6g">via GIPHY</a>
 ```
 
 ### More info about ...

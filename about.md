@@ -31,4 +31,4 @@ Right now, I am working for an italian agency, [Modo](https://modo.md/), where c
 
 <hr>
 
-The content in this website is open-source [in this github repository](), so if you find typos or incorrect explanations, please open me an issue or fix them opening a pull request with corrections! 😇
+The content in this website is open-source [in this github repository](https://gitlab.com/giuliach/super-blog-content), so if you find typos or incorrect explanations, please open me an issue or fix them opening a pull request with corrections! 😇
