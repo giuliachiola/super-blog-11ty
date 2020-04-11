@@ -43,6 +43,14 @@ git commit -am "Pulled down update to submodule_dir"
 git submodule foreach git pull origin master
 ```
 
+### Pull submodules manually
+
+This is useful for this project if you want to have different test branches and not `master` on every project
+
+```shell
+cd super-blog-content/ && git pull && cd .. && cd super-styleguide/ && git pull && cd ..
+```
+
 ## Post
 
 ### Post empty fields
