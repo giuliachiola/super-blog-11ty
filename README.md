@@ -51,6 +51,11 @@ This is useful for this project if you want to have different test branches and 
 cd super-blog-content/ && git pull && cd .. && cd super-styleguide/ && git pull && cd ..
 ```
 
+**Branches**
+
+- super-styleguide: `develop`
+- super-blog-content: `master`
+
 ## Post
 
 ### Post empty fields
