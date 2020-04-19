@@ -5,9 +5,9 @@
     <div class="c-article-section__info">
       {# date #}
       {% set articleDate = date or page.date %}
-      {# {% if date %} #}
+      {% if not isCustomPost %}
         <time class="c-article-section__date" datetime="{{ articleDate }}">{{ articleDate.toDateString() }}</time>
-      {# {% endif %} #}
+      {% endif %}
       {# reading time #}
       {% if readingTime %}
         <p class="c-article-section__reading-time">{{ readingTime }} read</p>

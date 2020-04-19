@@ -2,9 +2,10 @@
 layout: layouts/items-list.njk
 title: Blog
 subtitle: Tutorials step by step to setup projects
-img: 'https://source.unsplash.com/WS5yjFjycNY'
-imgAuthorProfile: 'https://unsplash.com/@josefin'
-imgAuthorName: 'josefin'
+# img: 'https://source.unsplash.com/WS5yjFjycNY'
+# imgAuthorProfile: 'https://unsplash.com/@josefin'
+# imgAuthorName: 'josefin'
+paletteColor: 2
 
 eleventyNavigation:
   key: blog

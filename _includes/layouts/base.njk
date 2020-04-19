@@ -20,9 +20,15 @@
     <link rel="stylesheet" href="/css/gist-syntax-theme.css">
     {# css from styleguide repo #}
     <link rel="stylesheet" href="/super-styleguide/src/css/style.css">
+    <link rel="stylesheet" href="/css/color-palette.css">
   </head>
+
+  {% set color = [1,2,3,4,5] | random %}
+  {% if paletteColor %}
+    {% set color = paletteColor %}
+  {% endif %}
   <body>
-    <div class="l-wrapper">
+    <div class="l-wrapper t-palette-color--{{ color }}">
       {# header #}
       {% include 'layouts/partials/header.njk' %}
 

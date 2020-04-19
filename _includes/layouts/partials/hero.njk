@@ -5,7 +5,13 @@
   {% endfor %}
 {% endif %}
 
-<section class="c-hero {{ modifiers }} ">
+{% if img %}
+  {% set modifiers = modifiers + ' c-hero--bg-img' %}
+{% else %}
+  {% set modifiers = modifiers + ' c-hero--'+mainTag %}
+{% endif %}
+
+<section class="c-hero {{ modifiers }}">
   <img class="c-hero__img" src="{{ img }}" alt="">
     <div class="l-main">
       {% set heroTitle = renderData.title or title %}
@@ -17,7 +23,9 @@
       {% if quoteAuthor %}
         {% set heroSubtitle = quoteAuthor %}
       {% endif %}
-      <h2 class="c-hero__subtitle">{{ heroSubtitle }}</h2>
+      <h2 class="c-hero__subtitle">{{ heroSubtitle | safe }}</h2>
     </div>
-    <span class="c-hero__credits">photo by <a href="{{ imgAuthorProfile }}" target="_blank">{{ imgAuthorName }}</a> on <a href="{{ img }}" target="_blank">Unsplash</a></span>
+    {% if imgAuthorName %}
+      <span class="c-hero__credits">photo by <a href="{{ imgAuthorProfile }}" target="_blank">{{ imgAuthorName }}</a> on <a href="{{ img }}" target="_blank">Unsplash</a></span>
+    {% endif %}
 </section>
