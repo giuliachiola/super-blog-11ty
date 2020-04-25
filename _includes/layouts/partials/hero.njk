@@ -11,7 +11,7 @@
   {% set modifiers = modifiers + ' c-hero--'+mainTag %}
 {% endif %}
 
-<section class="c-hero {{ modifiers }}">
+<section class="c-hero {{ modifiers }} {% if quote %}c-hero--quote{% endif %}">
   <img class="c-hero__img" src="{{ img }}" alt="">
     <div class="l-main">
       {% set heroTitle = renderData.title or title %}
