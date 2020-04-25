@@ -10,7 +10,11 @@
     <meta name="twitter:creator" content="@giuliachiola" />
     <meta name="twitter:title" content="{{ title }}" />
     <meta name="twitter:description" content="{{ abstract }}" />
-    <meta name="twitter:image" content="/img/og-images/{{ mainTag }}.jpg" />
+    {% set ogImage = 'default' %}
+    {% if mainTag %}
+      {% set ogImage = mainTag %}
+    {% endif %}
+    <meta name="twitter:image" content="/img/og-images/{{ ogImage }}.jpg" />
     <meta property="og:url" content="{{ entry.url | url }}" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ abstract }}" />
