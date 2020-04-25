@@ -21,6 +21,9 @@
     </div>
   {% endif %}
   <div class="c-card__content">
+    {% if card.number %}
+    <span class="c-card__number">#{{ card.number }}</span>
+    {% endif %}
     {# title and link #}
     {% if card.data.externalUrl %}
       {% set cardUrl = card.data.externalUrl %}
@@ -56,9 +59,5 @@
         {% endfor %}
       </div>
     </div>
-
-    {% if card.number %}
-    <span class="c-card__number">#{{ card.number }}</span>
-    {% endif %}
   </div>
 </article>
