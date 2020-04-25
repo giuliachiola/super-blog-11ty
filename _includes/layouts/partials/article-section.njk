@@ -14,10 +14,14 @@
       {% endif %}
 
       {# tags #}
-      {%- for tag in tags %}
-      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
-      {%- endfor %}
+      <ul class="c-article-section__tags">
+        {%- for tag in tags %}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          <li class="c-article-section__tag">
+            <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+          </li>
+        {%- endfor %}
+      </ul>
     </div>
 
     {% if not isCustomPost %}
@@ -36,10 +40,14 @@
   {% if not isCustomPost %}
     <div class="c-article-section__bottom">
       {# tags #}
-      {%- for tag in tags %}
-      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
-      {%- endfor %}
+      <ul class="c-article-section__tags">
+        {%- for tag in tags %}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <li class="c-article-section__tag">
+          <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
 
       {% set randomTil = collections.posts | random %}
       <div class="o-distributed o-distributed--center l-spacing-l">
