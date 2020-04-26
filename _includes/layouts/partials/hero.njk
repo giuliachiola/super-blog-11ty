@@ -7,8 +7,8 @@
 
 {% if img %}
   {% set modifiers = modifiers + ' c-hero--bg-img' %}
-{% else %}
-  {% set modifiers = modifiers + ' c-hero--'+mainTag %}
+{# {% else %}
+  {% set modifiers = modifiers + ' c-hero--'+mainTag %} #}
 {% endif %}
 
 <section class="c-hero {{ modifiers }} {% if quote %}c-hero--quote{% endif %}">
