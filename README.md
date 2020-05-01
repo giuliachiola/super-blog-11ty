@@ -56,6 +56,10 @@ cd super-blog-content/ && git pull && cd .. && cd super-styleguide/ && git pull 
 - super-styleguide: `develop`
 - super-blog-content: `master`
 
+### Netlify
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/418bc946-0474-46c4-9bc3-48031743a7ef/deploy-status)](https://app.netlify.com/sites/blog-giuliachiola/deploys)
+
 ## Post
 
 ### Post empty fields
@@ -78,11 +82,6 @@ tags:
 ---
 ```
 
-Embedded giph from Giphy
-
-```html
-<iframe src="https://giphy.com/embed/62PP2yEIAZF6g" width="480" height="273" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a class="u-giphy__caption" href="https://giphy.com/gifs/swag-80s-sunglasses-62PP2yEIAZF6g">via GIPHY</a>
-```
 
 ### More info about ...
 
