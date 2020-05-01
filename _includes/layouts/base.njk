@@ -1,9 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {# Palette color #}
+    {% set color = [1,2,3,4,5] | random %}
+    {% if paletteColor %}
+      {% set color = paletteColor %}
+    {% endif %}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or renderData.title | striptags }} | Giulia Chiola</title>
+    {# favicon #}
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-color-{{ color }}.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ color }}.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ color }}.png">
+    <link rel="manifest" href="/site-color-{{ color }}.webmanifest">
     {# share #}
     {% set ogImage = '/img/og-images/' + ogImage + '.jpg' %}
     {% if mainTag %}
@@ -30,10 +41,6 @@
     <link rel="stylesheet" href="/css/color-palette.css">
   </head>
 
-  {% set color = [1,2,3,4,5] | random %}
-  {% if paletteColor %}
-    {% set color = paletteColor %}
-  {% endif %}
   <body>
     <div class="l-wrapper t-palette-color--{{ color }}">
       {# header #}
