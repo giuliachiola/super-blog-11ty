@@ -6,7 +6,7 @@
     {% if paletteColor %}
       {% set color = paletteColor %}
     {% endif %}
-
+    {# info #}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or renderData.title | striptags }} | Giulia Chiola</title>
@@ -16,21 +16,21 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ color }}.png">
     <link rel="manifest" href="/site-color-{{ color }}.webmanifest">
     {# share #}
-    {% set ogImage = '/img/og-images/' + ogImage + '.jpg' %}
+    {% set ogImage = global.siteUrl + '/img/og-images/default.jpg' %}
     {% if mainTag %}
-      {% set ogImage = '/img/og-images/' + mainTag + '.jpg' %}
+      {% set ogImage = global.siteUrl + '/img/og-images/' + mainTag + '.jpg' %}
     {% endif %}
     {# twitter share #}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@giuliachiola" />
     <meta name="twitter:creator" content="@giuliachiola" />
     <meta name="twitter:title" content="{{ title }}" />
-    <meta name="twitter:description" content="{{ abstract }}" />
+    <meta name="twitter:description" content="{{ abstract or subtitle }}" />
     <meta name="twitter:image" content="{{ ogImage }}" />
     {# og #}
     <meta property="og:url" content="{{ entry.url | url }}" />
     <meta property="og:title" content="{{ title }}" />
-    <meta property="og:description" content="{{ abstract }}" />
+    <meta property="og:description" content="{{ abstract or subtitle }}" />
     <meta property="og:image" content="{{ ogImage }}" />
     {# css #}
     <link rel="stylesheet" href="/css/prismjs-theme.css">
