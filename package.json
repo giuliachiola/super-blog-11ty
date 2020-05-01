@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rm -rf _site && npx @11ty/eleventy --serve"
+    "dev": "rm -rf _site && npx @11ty/eleventy --serve",
+    "build": "rm -rf _site && npx @11ty/eleventy && cp google* _site/"
   },
   "keywords": [],
   "author": "",
