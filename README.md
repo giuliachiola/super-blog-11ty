@@ -1,10 +1,3 @@
----
-layout: layouts/post.njk
-title: README
-img: 'https://source.unsplash.com/1600x900/?nature,water'
----
-
-
 ## How to run this project
 
 ```
@@ -89,6 +82,12 @@ tags:
 >
 > [...](...)
 > [...](...)
+
+### Shadow image using markdown-it
+
+```
+![alt text](image.jpg){.c-article-section__img--shadow}
+```
 
 # Validators check
 

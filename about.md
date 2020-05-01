@@ -22,7 +22,7 @@ a **front-end developer** from Italy.
 I love writing documentation, read motivational quotes and cats 🐱
 
 For these reasons, in this site you can find
-- useful short tips about what I discover daily 📕[go to today i learned](/til)
+- useful short tips about what I discover daily 📕[go to today i learned](/)
 - detailed articles about setup tools and projects 📘[go to blog](/blog)
 - a motivational quote for each post, to keep your spirits high ✨
 - lot of kitten photos in code examples  🐾
@@ -31,4 +31,4 @@ Right now, I am working for an italian agency, [Modo](https://modo.md/), where c
 
 <hr>
 
-The content in this website is open-source [in this github repository](https://gitlab.com/giuliach/super-blog-content), so if you find typos or incorrect explanations, please open me an issue or fix them opening a pull request with corrections! 😇
+The content in this website is open-source [in this repository](https://gitlab.com/giuliach/super-blog-content), so if you find typos or incorrect explanations, please open me an issue or fix them opening a pull request with corrections! 😇
