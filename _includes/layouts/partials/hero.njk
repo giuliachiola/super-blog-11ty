@@ -18,9 +18,10 @@
     <div class="l-main">
       {% set heroTitle = renderData.title or title %}
       {% if quote %}
-        {% set heroTitle = quote %}
+        <h2>{{ quote | safe }}</h2>
+      {% else %}
+        <h1>{{ heroTitle | safe }}</h1>
       {% endif %}
-      <h1>{{ heroTitle | safe }}</h1>
       {% set heroSubtitle = subtitle %}
       {% if quoteAuthor %}
         {% set heroSubtitle = quoteAuthor %}
