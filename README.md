@@ -1,7 +1,17 @@
-## How to run this project
+# Super blog 11ty
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/418bc946-0474-46c4-9bc3-48031743a7ef/deploy-status)](https://app.netlify.com/sites/blog-giuliachiola/deploys)
+
+## Run this project
 
 ```
 npm run dev
+```
+
+## Build this project (ex. Netlify build)
+
+```
+npm run build
 ```
 
 ## Project submodules
@@ -30,13 +40,13 @@ cd ..
 * Now the submodules are in the state you want, so
 git commit -am "Pulled down update to submodule_dir"
 
-### Pull all submodules:
+### Pull *all* submodules:
 
 ```shell
 git submodule foreach git pull origin master
 ```
 
-### Pull submodules manually
+### Pull submodules *manually*
 
 This is useful for this project if you want to have different test branches and not `master` on every project
 
@@ -49,9 +59,6 @@ cd super-blog-content/ && git pull && cd .. && cd super-styleguide/ && git pull 
 - super-styleguide: `develop`
 - super-blog-content: `master`
 
-### Netlify
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/418bc946-0474-46c4-9bc3-48031743a7ef/deploy-status)](https://app.netlify.com/sites/blog-giuliachiola/deploys)
 
 ## Post
 
