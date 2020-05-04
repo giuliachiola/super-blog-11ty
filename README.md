@@ -96,6 +96,12 @@ tags:
 ![alt text](image.jpg){.c-article-section__img--shadow}
 ```
 
+### GitLab snippet
+
+```md
+[🦊Gitlab snippet](#)
+```
+
 # Validators check
 
 - [Twitter card validartor](https://cards-dev.twitter.com/validator)
