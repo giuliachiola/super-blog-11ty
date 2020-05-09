@@ -1,14 +1,17 @@
----
-layout: layouts/post.njk
-title: README
-img: 'https://source.unsplash.com/1600x900/?nature,water'
----
+# Super blog 11ty
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/418bc946-0474-46c4-9bc3-48031743a7ef/deploy-status)](https://app.netlify.com/sites/blog-giuliachiola/deploys)
 
-## How to run this project
+## Run this project
 
 ```
 npm run dev
+```
+
+## Build this project (ex. Netlify build)
+
+```
+npm run build
 ```
 
 ## Project submodules
@@ -37,13 +40,13 @@ cd ..
 * Now the submodules are in the state you want, so
 git commit -am "Pulled down update to submodule_dir"
 
-### Pull all submodules:
+### Pull *all* submodules:
 
 ```shell
 git submodule foreach git pull origin master
 ```
 
-### Pull submodules manually
+### Pull submodules *manually*
 
 This is useful for this project if you want to have different test branches and not `master` on every project
 
@@ -56,9 +59,6 @@ cd super-blog-content/ && git pull && cd .. && cd super-styleguide/ && git pull 
 - super-styleguide: `develop`
 - super-blog-content: `master`
 
-### Netlify
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/418bc946-0474-46c4-9bc3-48031743a7ef/deploy-status)](https://app.netlify.com/sites/blog-giuliachiola/deploys)
 
 ## Post
 
@@ -89,3 +89,21 @@ tags:
 >
 > [...](...)
 > [...](...)
+
+### Shadow image using markdown-it
+
+```
+![alt text](image.jpg){.c-article-section__img--shadow}
+```
+
+### GitLab snippet
+
+```md
+[🦊Gitlab snippet](#)
+```
+
+# Validators check
+
+- [Twitter card validartor](https://cards-dev.twitter.com/validator)
+- [Facebook card validator](https://developers.facebook.com/tools/debug/)
+- [Check broken links](https://www.drlinkcheck.com/)
