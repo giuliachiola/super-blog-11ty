@@ -2,19 +2,22 @@
 <html lang="en">
   <head>
     {# Palette color #}
-    {% set color = [1,2,3,4,5] | random %}
+    {% set randColor = [ { num: 1, hex: '#ef476f' }, { num: 2, hex: '#ffc233' }, { num: 3, hex: '#06d6a0' }, { num: 4, hex: '#1b98e0' }, { num: 5, hex: '#ff9f1c' } ] | random %}
+    {% set colorN = randColor.num %}
     {% if paletteColor %}
-      {% set color = paletteColor %}
+      {% set colorN = paletteColor %}
     {% endif %}
     {# info #}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or renderData.title | striptags }} | Giulia Chiola</title>
+    {# theme color #}
+    <meta name="theme-color" content="{{ randColor.hex }}">
     {# favicon #}
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-color-{{ color }}.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ color }}.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ color }}.png">
-    <link rel="manifest" href="/site-color-{{ color }}.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-color-{{ colorN }}.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ colorN }}.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ colorN }}.png">
+    <link rel="manifest" href="/site-color-{{ colorN }}.webmanifest">
     {# share #}
     {% set ogImage = global.siteUrl + '/img/og-images/default.jpg' %}
     {% if mainTag %}
@@ -42,7 +45,7 @@
   </head>
 
   <body>
-    <div class="l-wrapper t-palette-color--{{ color }}">
+    <div class="l-wrapper t-palette-color--{{ colorN }}">
       {# header #}
       {% include 'layouts/partials/header.njk' %}
 
