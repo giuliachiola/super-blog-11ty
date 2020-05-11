@@ -1,6 +1,6 @@
 {
-  "name": "Giulia Chiola",
-  "short_name": "",
+  "name": "Giulia Chiola | A collection of useful code snippets for a faster development.",
+  "short_name": "Giulia Chiola | Blog",
   "icons": [{
     "src": "/img/favicon/android-chrome-192x192-color-2.png",
     "sizes": "192x192",
@@ -10,6 +10,7 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
+  "start_url": "/",
   "theme_color": "#ffc233",
   "background_color": "#ffc233",
   "display": "standalone"
