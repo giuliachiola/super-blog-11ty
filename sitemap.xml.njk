@@ -7,7 +7,7 @@ eleventyExcludeFromCollections: true
 {%- for page in collections.all %}
   <url>
     <loc>{{ global.siteUrl }}{{ page.url | url }}</loc>
-    <lastmod>{{ page.date }}</lastmod>
+    <lastmod>{{ page.date | htmlDateString }}</lastmod>
     {# TODO: add change frequency: https://www.belter.io/eleventy-sitemap/ #}
     {# <changefreq>{{page.data.changeFreq}}</changefreq> #}
   </url>
