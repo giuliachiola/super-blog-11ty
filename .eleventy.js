@@ -1,5 +1,6 @@
 const eleventyNavigation = require("@11ty/eleventy-navigation");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { DateTime } = require("luxon");
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -38,6 +39,12 @@ module.exports = function(eleventyConfig) {
     const entriesWithTags = collection.getAll().filter(entry => entry.data.tags)
     const tags = entriesWithTags.reduce((tags, entry) => [...tags, ...entry.data.tags], [])
     return uniqueArray(tags)
+  })
+
+  // date manipulation
+
+  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-MM-dd');
   })
 
   // Markdown options
