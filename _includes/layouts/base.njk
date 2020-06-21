@@ -11,6 +11,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or renderData.title | striptags }} | Giulia Chiola</title>
+    <meta name="description" content="{{ abstract or subtitle }}">
+    {# search engine #}
+    <meta name="robots" content="index,follow"><!-- All Search Engines -->
+    {# archive #}
+    <link rel="archives" href="{{ global.siteUrl | url }} + '/search'">
     {# theme color #}
     <meta name="theme-color" content="{{ randColor.hex }}">
     {# favicon #}
@@ -23,18 +28,24 @@
     {% if mainTag %}
       {% set ogImage = global.siteUrl + '/img/og-images/' + mainTag + '.jpg' %}
     {% endif %}
-    {# twitter share #}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@giuliachiola" />
-    <meta name="twitter:creator" content="@giuliachiola" />
-    <meta name="twitter:title" content="{{ title }}" />
-    <meta name="twitter:description" content="{{ abstract or subtitle }}" />
-    <meta name="twitter:image" content="{{ ogImage }}" />
-    {# og #}
-    <meta property="og:url" content="{{ entry.url | url }}" />
-    <meta property="og:title" content="{{ title }}" />
-    <meta property="og:description" content="{{ abstract or subtitle }}" />
-    <meta property="og:image" content="{{ ogImage }}" />
+    {# share - twitter #}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@giulia_chiola">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ abstract or subtitle }}">
+    <meta name="twitter:image" content="{{ ogImage }}">
+    {# <meta name="twitter:image:alt" content="A description of what is in the image (not a caption)"> #}
+    {# share - og facebook #}
+    <meta property="og:url" content="{{ global.siteUrl | url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:image" content="{{ ogImage }}">
+    {# <meta property="og:image:alt" content="A description of what is in the image (not a caption)"> #}
+    <meta property="og:description" content="{{ abstract or subtitle }}">
+    <meta property="og:site_name" content="Blog | Giulia Chiola">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Giulia Chiola">
+
     {# css #}
     <link rel="stylesheet" href="/css/prismjs-theme.css">
     <link rel="stylesheet" href="/css/gist-syntax-theme.css">
