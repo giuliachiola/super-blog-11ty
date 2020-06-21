@@ -2,10 +2,21 @@
 <html lang="en">
   <head>
     {# Palette color #}
-    {% set randColor = [ { num: 1, hex: '#ef476f' }, { num: 2, hex: '#ffc233' }, { num: 3, hex: '#06d6a0' }, { num: 4, hex: '#1b98e0' }, { num: 5, hex: '#ff9f1c' } ] | random %}
-    {% set colorN = randColor.num %}
+    {% set colors = [
+      { num: 1, hex: '#ef476f', lighten: '#f37694' },
+      { num: 2, hex: '#ffc233', lighten: '#ffd166' },
+      { num: 3, hex: '#06d6a0', lighten: '#17f8be' },
+      { num: 4, hex: '#1b98e0', lighten: '#45ade9' },
+      { num: 5, hex: '#ff9f1c', lighten: '#ffb54f' }
+    ] %}
+    {% set randColor = colors | random %}
+    {% set color = randColor %}
     {% if paletteColor %}
-      {% set colorN = paletteColor %}
+      {% for item in colors %}
+        {% if item.num === paletteColor %}
+          {% set color = item %}
+        {% endif %}
+      {% endfor %}
     {% endif %}
     {# info #}
     <meta charset="utf-8">
@@ -17,12 +28,12 @@
     {# archive #}
     <link rel="archives" href="{{ global.siteUrl | url }} + '/search'">
     {# theme color #}
-    <meta name="theme-color" content="{{ randColor.hex }}">
+    <meta name="theme-color" content="{{ color.lighten }}">
     {# favicon #}
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-color-{{ colorN }}.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ colorN }}.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ colorN }}.png">
-    <link rel="manifest" href="/site-color-{{ colorN }}.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-color-{{ color.num }}.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ color.num }}.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ color.num }}.png">
+    <link rel="manifest" href="/site-color-{{ color.num }}.webmanifest">
     {# share #}
     {% set ogImage = global.siteUrl + '/img/og-images/default.jpg' %}
     {% if mainTag %}
@@ -56,7 +67,7 @@
   </head>
 
   <body>
-    <div class="l-wrapper t-palette-color--{{ colorN }}">
+    <div class="l-wrapper t-palette-color--{{ color.num }}">
       {# header #}
       {% include 'layouts/partials/header.njk' %}
 
