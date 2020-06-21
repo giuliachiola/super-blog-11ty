@@ -43,8 +43,14 @@ module.exports = function(eleventyConfig) {
 
   // date manipulation
 
-  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-MM-dd');
+  eleventyConfig.addFilter('htmlDateString', (dateObj, format) => {
+    let dateFormat = 'yyyy-LL-dd' // 2020-03-30
+
+    if (format === 'human-readable') {
+      dateFormat = 'dd LLL yyyy' // 30 Mar 2020
+    }
+
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(dateFormat);
   })
 
   // Markdown options
