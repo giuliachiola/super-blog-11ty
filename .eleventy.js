@@ -1,5 +1,6 @@
 const eleventyNavigation = require("@11ty/eleventy-navigation");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { DateTime } = require("luxon");
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -20,6 +21,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("google*.html"); // TODO: check this!
   eleventyConfig.addPassthroughCopy("site-*.webmanifest");
+  eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("super-styleguide/src/css/style.css");
   eleventyConfig.setDataDeepMerge(true); // used to merge 'blog.11tydata.js' tags with .md tags
 
@@ -37,6 +39,18 @@ module.exports = function(eleventyConfig) {
     const entriesWithTags = collection.getAll().filter(entry => entry.data.tags)
     const tags = entriesWithTags.reduce((tags, entry) => [...tags, ...entry.data.tags], [])
     return uniqueArray(tags)
+  })
+
+  // date manipulation
+
+  eleventyConfig.addFilter('htmlDateString', (dateObj, format) => {
+    let dateFormat = 'yyyy-LL-dd' // 2020-03-30
+
+    if (format === 'human-readable') {
+      dateFormat = 'dd LLL yyyy' // 30 Mar 2020
+    }
+
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(dateFormat);
   })
 
   // Markdown options

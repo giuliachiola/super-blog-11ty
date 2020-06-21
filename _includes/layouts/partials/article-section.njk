@@ -6,7 +6,7 @@
       {# date #}
       {% set articleDate = date or page.date %}
       {% if not isCustomPost %}
-        <time class="c-article-section__date" datetime="{{ articleDate }}">{{ articleDate.toDateString() }}</time>
+        <time class="c-article-section__date" datetime="{{ articleDate | htmlDateString }}">{{ articleDate | htmlDateString('human-readable') }}</time>
       {% endif %}
       {# reading time #}
       {% if readingTime %}
@@ -39,6 +39,10 @@
   {# bottom #}
   {% if not isCustomPost %}
     <div class="c-article-section__bottom">
+      {# Footer notes #}
+      {# TODO: #}
+      {# <footer>Last updated {{ updated }}</footer> #}
+
       {# tags #}
       <ul class="c-article-section__tags">
         {%- for tag in tags %}

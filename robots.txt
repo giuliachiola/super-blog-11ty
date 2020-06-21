@@ -1,0 +1,4 @@
+Sitemap: http://blog-giuliachiola.netlify.app/sitemap.xml
+
+User-agent: *
+Disallow:

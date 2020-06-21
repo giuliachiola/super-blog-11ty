@@ -1,4 +1,4 @@
-const siteUrl = 'http://blog-giuliachiola.netlify.app'
+const siteUrl = 'https://blog-giuliachiola.netlify.app'
 
 module.exports = {
   siteUrl,
