@@ -20,6 +20,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("google*.html"); // TODO: check this!
   eleventyConfig.addPassthroughCopy("site-*.webmanifest");
+  eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("super-styleguide/src/css/style.css");
   eleventyConfig.setDataDeepMerge(true); // used to merge 'blog.11tydata.js' tags with .md tags
 
