@@ -1,6 +1,7 @@
 /* ----------------------------
   Get the checkbox
 ---------------------------- */
+
 const checkbox = document.querySelector(".c-header__toggle");
 checkbox.addEventListener('change', function() {
   document.body.classList.toggle("is-menu-open");
@@ -9,8 +10,8 @@ checkbox.addEventListener('change', function() {
 /* ----------------------------
   Search post
 ---------------------------- */
-const form = document.querySelector('.j-form')
-const searchInput = form.querySelector('.j-search__input');
+
+const searchInput = document.querySelector('.j-search__input');
 
 function searchPost () {
   const searchValue = searchInput.value.toLocaleLowerCase()
@@ -40,6 +41,9 @@ function searchPost () {
 }
 
 // trigger search post at search input change
-searchInput.oninput = function() {
-  searchPost();
-};
+
+if (searchInput) { // if the DOM not exists
+  searchInput.oninput = function() {
+    searchPost();
+  };
+}
