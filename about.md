@@ -23,7 +23,7 @@ I love writing documentation, read motivational quotes and cats 🐱
 
 For these reasons, in this site you can find
 - useful short tips about what I discover daily 📕[go to today i learned](/)
-- detailed articles about setup tools and projects 📘[go to blog](/blog)
+- detailed articles about setup tools and projects 📘[go to tutorials](/tutorials)
 - a motivational quote for each post, to keep your spirits high ✨
 - lot of kitten photos in code examples  🐾
 

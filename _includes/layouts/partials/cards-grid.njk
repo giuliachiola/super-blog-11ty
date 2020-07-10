@@ -13,7 +13,7 @@
         {% if entry.data.category == categoryFilter or isPageTag %}
           {# card settings #}
           {% if mainLayout == 'grid' %}
-            {# blog and tags #}
+            {# tutorials and tags #}
             {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
           {% elif categoryFilter == 'projects' %}
             {% set card = { data: entry.data, modifiers: ['highlight-left'], isExpanded: true } %}

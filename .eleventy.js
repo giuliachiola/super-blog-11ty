@@ -30,9 +30,9 @@ module.exports = function(eleventyConfig) {
     return categ // tutte le entries con categorie
   })
 
-  // posts = entries with category 'blog' or 'til'
+  // posts = entries with category 'tutorials' or 'til'
   eleventyConfig.addCollection("posts", function(collection) {
-    return collection.getAll().filter(entry => entry.data.category).filter(el => el.data.category === 'blog' || el.data.category === 'til')
+    return collection.getAll().filter(entry => entry.data.category).filter(el => el.data.category === 'tutorials' || el.data.category === 'til')
   })
 
   eleventyConfig.addCollection("tagsArr", function(collection) {
