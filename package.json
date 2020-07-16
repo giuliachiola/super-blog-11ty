@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "rm -rf _site && npx @11ty/eleventy --serve",
+    "dev:debug": "DEBUG=Eleventy* npm run dev",
     "build": "rm -rf _site && npx @11ty/eleventy"
   },
   "keywords": [],
