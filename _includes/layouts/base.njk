@@ -42,14 +42,15 @@
     {# share - twitter #}
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@giulia_chiola">
-    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:site" content="@giulia_chiola">
+    <meta name="twitter:title" content="{{ title or renderData.title | striptags }} by @giulia_chiola #CodeNewbie #100DaysOfCode">
     <meta name="twitter:description" content="{{ abstract or subtitle }}">
     <meta name="twitter:image" content="{{ ogImage }}">
     {# <meta name="twitter:image:alt" content="A description of what is in the image (not a caption)"> #}
     {# share - og facebook #}
     <meta property="og:url" content="{{ global.siteUrl | url }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ title }}">
+    <meta property="og:title" content="{{ title or renderData.title | striptags }} by @giulia_chiola #CodeNewbie #100DaysOfCode">
     <meta property="og:image" content="{{ ogImage }}">
     {# <meta property="og:image:alt" content="A description of what is in the image (not a caption)"> #}
     <meta property="og:description" content="{{ abstract or subtitle }}">
