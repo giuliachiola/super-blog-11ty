@@ -49,7 +49,7 @@
     {# bottom info #}
     <div class="c-card__bottom">
       {# {% if card.data.date %} #}
-      {% set articleDate = card.data.date or page.date %}
+      {% set articleDate = card.data.articleDate or page.articleDate %}
       <time class="c-card__date" datetime="{{ articleDate | htmlDateString }}">{{ articleDate | htmlDateString('human-readable') }}</time>
       {# {% endif %} #}
       <div class="c-card__tags">

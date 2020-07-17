@@ -4,7 +4,6 @@
   <div class="c-article-section__top l-spacing-m">
     <div class="c-article-section__info">
       {# date #}
-      {% set articleDate = date or page.date %}
       {% if not isCustomPost %}
         <time class="c-article-section__date" datetime="{{ articleDate | htmlDateString }}">{{ articleDate | htmlDateString('human-readable') }}</time>
       {% endif %}
@@ -39,9 +38,10 @@
   {# bottom #}
   {% if not isCustomPost %}
     <div class="c-article-section__bottom">
-      {# Footer notes #}
-      {# TODO: #}
-      <footer>Last updated **{{ dateUpdated }}**</footer>
+      {# last updated date #}
+      {% if page.date !== articleDate %}
+        <footer class="c-article-section__date">Last updated <time datetime="page.date">{{ page.date | htmlDateString('human-readable') }}</time></footer>
+      {% endif %}
 
       {# tags #}
       <ul class="c-article-section__tags">
