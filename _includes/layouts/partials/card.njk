@@ -16,7 +16,9 @@
     <div class="c-card__img-wrapper">
       {# check if SVG exists, otherwise 11ty build explodes! #}
       {% if card.data.mainTag in ['git', 'vuejs', 'js', 'vsc', 'css', 'nodejs', 'design-system', 'static-site-generator', 'markdown', 'mac-os', 'template-engine'] %}
-        {% include '../../../svg/' + card.data.mainTag + '.svg' %}
+        {% include global.svgoPath + card.data.mainTag + '.svg' %}
+      {% else %}
+        {% include global.svgoPath + 'reindeer.svg' %}
       {% endif %}
     </div>
   {% endif %}
