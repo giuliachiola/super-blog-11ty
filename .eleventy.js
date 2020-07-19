@@ -53,6 +53,12 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(dateFormat);
   })
 
+  // Remove dashes in strings (e.g. label tags)
+
+  eleventyConfig.addFilter('removeDashes', (string) => {
+    return string.replace(/-/g, ' ')
+  })
+
   // Markdown options
 
   const markdownIt = require("markdown-it")

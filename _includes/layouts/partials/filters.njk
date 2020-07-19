@@ -8,7 +8,7 @@
     {% for tag in collections.tagsArr %}
       <li class="c-filter__item">
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="c-label" {% if tag == _tag %}data-state="active"{% endif %}>{{ tag }}</a>
+        <a href="{{ tagUrl | url }}" class="c-label" {% if tag == _tag %}data-state="active"{% endif %}>{{ tag | removeDashes }}</a>
       </li>
     {% endfor %}
   </ul>

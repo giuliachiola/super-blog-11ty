@@ -57,7 +57,7 @@
       <div class="c-card__tags">
         {% for tag in card.data.tags %}
           {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-          <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+          <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
         {% endfor %}
       </div>
     </div>
