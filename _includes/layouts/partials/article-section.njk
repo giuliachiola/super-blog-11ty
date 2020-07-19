@@ -31,6 +31,13 @@
   </div>
 
   {# content #}
+  <aside>
+    <details class="c-article-section__toc">
+        <summary><span>📚</span>Table of contents</summary>
+        {{ content | toc | safe }}
+    </details>
+  </aside>
+
   <div class="c-article-section__content">
     {{ content | safe }}
   </div>

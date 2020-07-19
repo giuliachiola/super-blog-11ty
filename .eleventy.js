@@ -1,6 +1,7 @@
-const eleventyNavigation = require("@11ty/eleventy-navigation");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { DateTime } = require("luxon");
+const eleventyNavigation = require("@11ty/eleventy-navigation")
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+const { DateTime } = require("luxon")
+const tableOfContents = require('eleventy-plugin-nesting-toc')
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -14,6 +15,7 @@ module.exports = function(eleventyConfig) {
   // plugins
   eleventyConfig.addPlugin(eleventyNavigation);
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(tableOfContents)
 
   // configs
   eleventyConfig.addPassthroughCopy("img");
@@ -63,11 +65,14 @@ module.exports = function(eleventyConfig) {
 
   const markdownIt = require("markdown-it")
   const markdownItAttrs = require('markdown-it-attrs')
+  const markdownItAnchor = require('markdown-it-anchor');
   const options = {
     html: true,
     breaks: true,
     linkify: true
   }
-  const markdownLib = markdownIt(options).use(markdownItAttrs)
+  const markdownLib = markdownIt(options)
+    .use(markdownItAttrs)
+    .use(markdownItAnchor)
   eleventyConfig.setLibrary("md", markdownLib)
 }
