@@ -31,12 +31,14 @@
   </div>
 
   {# content #}
-  <aside>
-    <details class="c-article-section__toc">
-        <summary><span>📚</span>Table of contents</summary>
-        {{ content | toc | safe }}
-    </details>
-  </aside>
+  {% if content | toc | safe | length %}
+    <aside>
+      <details class="c-article-section__toc">
+          <summary><span>📚</span>Table of contents</summary>
+          {{ content | toc | safe }}
+      </details>
+    </aside>
+  {% endif %}
 
   <div class="c-article-section__content">
     {{ content | safe }}
