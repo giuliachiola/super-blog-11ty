@@ -4,9 +4,6 @@ title: About Me
 subtitle: Hey! I am Giulia, a front-end developer from Torino, Italy. In this blog, I collect all the useful snippets and tips I learn day-to-day.
 quote: Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got to keep going.
 quoteAuthor: Chantal Sutherland
-# img: 'https://source.unsplash.com/lpgAlv8I7V8'
-# imgAuthorName: '@enka80'
-# imgAuthorProfile: 'https://unsplash.com/@enka80'
 paletteColor: 5
 isCustomPost: true
 

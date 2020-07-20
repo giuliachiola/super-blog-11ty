@@ -108,3 +108,6 @@ tags:
 - [Facebook card validator](https://developers.facebook.com/tools/debug/)
 - [Check broken links](https://www.drlinkcheck.com/)
 
+### WIP posts
+
+- add `eleventyExcludeFromCollections: true` flag in WIP posts
