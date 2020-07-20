@@ -8,8 +8,8 @@
         <time class="c-article-section__date" datetime="{{ articleDate | htmlDateString }}">{{ articleDate | htmlDateString('human-readable') }}</time>
       {% endif %}
       {# reading time #}
-      {% if readingTime %}
-        <p class="c-article-section__reading-time">{{ readingTime }} read</p>
+      {% if not isCustomPost %}
+        <p class="c-article-section__reading-time">{{ content | readingTime }} read</p>
       {% endif %}
 
       {# tags #}
