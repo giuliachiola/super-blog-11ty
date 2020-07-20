@@ -7,7 +7,7 @@
     <ul class="c-header__list">
       {%- for entry in navPages %}
         <li class="c-header__item">
-          <a class="c-header__link" href="{{ entry.url | url }}"{% if entry.url == page.url %} data-state="active"{% endif %}>{{ entry.title }}</a>
+          <a class="c-header__link {% if entry.title in page.url %}is-current-section{% endif %}" href="{{ entry.url | url }}"{% if entry.url == page.url %} data-state="active"{% endif %}>{{ entry.title }}</a>
         </li>
       {%- endfor %}
     </ul>
