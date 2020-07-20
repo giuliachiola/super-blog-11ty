@@ -47,3 +47,40 @@ if (searchInput) { // if the DOM not exists
     searchPost();
   };
 }
+
+/* ----------------------------
+  Dark mode toggle
+---------------------------- */
+
+const toggleSwitch = document.querySelector('.c-theme-switcher__checkbox input[type="checkbox"]')
+const currentTheme = localStorage.getItem('theme')
+const toggleSwitchLabel = document.querySelector('.c-theme-switcher__text')
+const toggleLabels = {
+  dark: 'Dark mode 🌙',
+  light: 'Light mode ☀️'
+}
+
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true;
+    toggleSwitchLabel.textContent = toggleLabels.light
+  } else {
+    toggleSwitchLabel.textContent = toggleLabels.dark
+  }
+}
+
+function switchTheme(e) {
+  if (e.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    toggleSwitchLabel.textContent = toggleLabels.light
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    toggleSwitchLabel.textContent = toggleLabels.dark
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
