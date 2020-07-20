@@ -2,6 +2,7 @@ const eleventyNavigation = require("@11ty/eleventy-navigation")
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const { DateTime } = require("luxon")
 const tableOfContents = require('eleventy-plugin-nesting-toc')
+const readingTime = require('eleventy-plugin-reading-time');
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -16,6 +17,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(eleventyNavigation);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(tableOfContents)
+  eleventyConfig.addPlugin(readingTime);
 
   // configs
   eleventyConfig.addPassthroughCopy("img");
