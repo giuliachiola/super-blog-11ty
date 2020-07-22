@@ -107,3 +107,45 @@ tags:
 - [Twitter card validartor](https://cards-dev.twitter.com/validator)
 - [Facebook card validator](https://developers.facebook.com/tools/debug/)
 - [Check broken links](https://www.drlinkcheck.com/)
+
+### WIP posts
+
+- add `eleventyExcludeFromCollections: true` flag in WIP posts
+
+### Gifs
+
+```html
+<div class="s-giphy s-giphy--medium-d">
+...
+</div>
+```
+
+Example:
+
+```html
+<div class="s-giphy s-giphy--medium-d">
+  <div style="width:100%;height:0;padding-bottom:79%;position:relative;"><iframe src="https://giphy.com/embed/m8WzRSb4xDcMx2WbkV" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/smallfootmovie-omg-crazy-m8WzRSb4xDcMx2WbkV">via GIPHY</a></p>
+</div>
+```
+
+### Tags
+
+```md
+tags:
+  - css
+  - design-system
+  - git
+  - js
+  - json
+  - mac-os
+  - nodejs
+  - nunjucks
+  - performance
+  - pug
+  - regex
+  - shell
+  - shell
+  - static-site-generator
+  - uiengine
+  - vsc
+```

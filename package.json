@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "rm -rf _site && npx @11ty/eleventy --serve",
+    "dev:debug": "DEBUG=Eleventy* npm run dev",
     "build": "rm -rf _site && npx @11ty/eleventy"
   },
   "keywords": [],
@@ -12,9 +13,12 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-navigation": "^0.1.5",
+    "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "luxon": "^1.23.0",
-    "markdown-it-attrs": "^3.0.2"
+    "eleventy-plugin-nesting-toc": "^1.2.0",
+    "eleventy-plugin-reading-time": "0.0.1",
+    "luxon": "^1.24.1",
+    "markdown-it-anchor": "^5.3.0",
+    "markdown-it-attrs": "^3.0.3"
   }
 }

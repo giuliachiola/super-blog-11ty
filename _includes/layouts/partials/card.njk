@@ -15,8 +15,10 @@
   {% if card.hasImg and card.data.mainTag %}
     <div class="c-card__img-wrapper">
       {# check if SVG exists, otherwise 11ty build explodes! #}
-      {% if card.data.mainTag in ['git', 'vuejs', 'js', 'vsc', 'css', 'nodejs', 'design-system', 'static-site-generator', 'markdown', 'mac-os', 'template-engine'] %}
-        {% include '../../../svg/' + card.data.mainTag + '.svg' %}
+      {% if card.data.mainTag in ['css', 'design-system', 'git', 'github', 'gitlab', 'js', 'mac-os', 'markdown', 'nodejs', 'static-site-generator', 'svg', 'template-engine', 'shell', 'vuejs'] %}
+        {% include global.svgoPath + card.data.mainTag + '.svg' %}
+      {% else %}
+        {% include global.svgoPath + 'reindeer.svg' %}
       {% endif %}
     </div>
   {% endif %}
@@ -49,13 +51,13 @@
     {# bottom info #}
     <div class="c-card__bottom">
       {# {% if card.data.date %} #}
-      {% set articleDate = card.data.date or page.date %}
-      <time class="c-card__date" datetime="{{ articleDate }}">{{ articleDate.toDateString() }}</time>
+      {% set articleDate = card.data.articleDate or page.articleDate %}
+      <time class="c-card__date" datetime="{{ articleDate | htmlDateString }}">{{ articleDate | htmlDateString('human-readable') }}</time>
       {# {% endif %} #}
       <div class="c-card__tags">
         {% for tag in card.data.tags %}
           {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-          <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+          <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
         {% endfor %}
       </div>
     </div>

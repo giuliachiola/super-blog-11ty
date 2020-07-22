@@ -2,39 +2,62 @@
 <html lang="en">
   <head>
     {# Palette color #}
-    {% set randColor = [ { num: 1, hex: '#ef476f' }, { num: 2, hex: '#ffc233' }, { num: 3, hex: '#06d6a0' }, { num: 4, hex: '#1b98e0' }, { num: 5, hex: '#ff9f1c' } ] | random %}
-    {% set colorN = randColor.num %}
+    {% set colors = [
+      { num: 1, hex: '#ef476f', lighten: '#f37694' },
+      { num: 2, hex: '#ffc233', lighten: '#ffd166' },
+      { num: 3, hex: '#06d6a0', lighten: '#17f8be' },
+      { num: 4, hex: '#1b98e0', lighten: '#45ade9' },
+      { num: 5, hex: '#ff9f1c', lighten: '#ffb54f' }
+    ] %}
+    {% set randColor = colors | random %}
+    {% set color = randColor %}
     {% if paletteColor %}
-      {% set colorN = paletteColor %}
+      {% for item in colors %}
+        {% if item.num === paletteColor %}
+          {% set color = item %}
+        {% endif %}
+      {% endfor %}
     {% endif %}
     {# info #}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or renderData.title | striptags }} | Giulia Chiola</title>
+    <meta name="description" content="{{ abstract or subtitle }}">
+    {# search engine #}
+    <meta name="robots" content="index,follow"><!-- All Search Engines -->
+    {# archive #}
+    <link rel="archives" href="{{ global.siteUrl | url }} + '/search'">
     {# theme color #}
-    <meta name="theme-color" content="{{ randColor.hex }}">
+    <meta name="theme-color" content="{{ color.lighten }}">
     {# favicon #}
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-color-{{ colorN }}.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ colorN }}.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ colorN }}.png">
-    <link rel="manifest" href="/site-color-{{ colorN }}.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-color-{{ color.num }}.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ color.num }}.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ color.num }}.png">
+    <link rel="manifest" href="/site-color-{{ color.num }}.webmanifest">
     {# share #}
     {% set ogImage = global.siteUrl + '/img/og-images/default.jpg' %}
     {% if mainTag %}
       {% set ogImage = global.siteUrl + '/img/og-images/' + mainTag + '.jpg' %}
     {% endif %}
-    {# twitter share #}
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@giuliachiola" />
-    <meta name="twitter:creator" content="@giuliachiola" />
-    <meta name="twitter:title" content="{{ title }}" />
-    <meta name="twitter:description" content="{{ abstract or subtitle }}" />
-    <meta name="twitter:image" content="{{ ogImage }}" />
-    {# og #}
-    <meta property="og:url" content="{{ entry.url | url }}" />
-    <meta property="og:title" content="{{ title }}" />
-    <meta property="og:description" content="{{ abstract or subtitle }}" />
-    <meta property="og:image" content="{{ ogImage }}" />
+    {# share - twitter #}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@giulia_chiola">
+    <meta name="twitter:site" content="@giulia_chiola">
+    <meta name="twitter:title" content="{{ title or renderData.title | striptags }} by @giulia_chiola #CodeNewbie #100DaysOfCode">
+    <meta name="twitter:description" content="{{ abstract or subtitle }}">
+    <meta name="twitter:image" content="{{ ogImage }}">
+    {# <meta name="twitter:image:alt" content="A description of what is in the image (not a caption)"> #}
+    {# share - og facebook #}
+    <meta property="og:url" content="{{ global.siteUrl | url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title or renderData.title | striptags }} by @giulia_chiola #CodeNewbie #100DaysOfCode">
+    <meta property="og:image" content="{{ ogImage }}">
+    {# <meta property="og:image:alt" content="A description of what is in the image (not a caption)"> #}
+    <meta property="og:description" content="{{ abstract or subtitle }}">
+    <meta property="og:site_name" content="Blog | Giulia Chiola">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Giulia Chiola">
+
     {# css #}
     <link rel="stylesheet" href="/css/prismjs-theme.css">
     <link rel="stylesheet" href="/css/gist-syntax-theme.css">
@@ -45,17 +68,12 @@
   </head>
 
   <body>
-    <div class="l-wrapper t-palette-color--{{ colorN }}">
+    <div class="l-wrapper t-palette-color--{{ color.num }}">
       {# header #}
       {% include 'layouts/partials/header.njk' %}
 
-      {% if hasHomeContent %}
-        {# home content #}
-        {% include 'layouts/partials/photogrid.njk' %}
-      {% else %}
-        {# base content #}
-        {% include './base-content.njk' %}
-      {% endif %}
+      {# base content #}
+      {% include './base-content.njk' %}
 
       {# footer #}
       {% include 'layouts/partials/footer.njk' %}

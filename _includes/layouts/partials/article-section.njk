@@ -4,13 +4,12 @@
   <div class="c-article-section__top l-spacing-m">
     <div class="c-article-section__info">
       {# date #}
-      {% set articleDate = date or page.date %}
       {% if not isCustomPost %}
         <time class="c-article-section__date" datetime="{{ articleDate | htmlDateString }}">{{ articleDate | htmlDateString('human-readable') }}</time>
       {% endif %}
       {# reading time #}
-      {% if readingTime %}
-        <p class="c-article-section__reading-time">{{ readingTime }} read</p>
+      {% if not isCustomPost %}
+        <p class="c-article-section__reading-time">{{ content | readingTime }} read</p>
       {% endif %}
 
       {# tags #}
@@ -18,7 +17,7 @@
         {%- for tag in tags %}
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
           <li class="c-article-section__tag">
-            <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+            <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
           </li>
         {%- endfor %}
       </ul>
@@ -32,6 +31,15 @@
   </div>
 
   {# content #}
+  {% if content | toc | safe | length %}
+    <aside>
+      <details class="c-article-section__toc">
+          <summary><span>📚</span>Table of contents</summary>
+          {{ content | toc | safe }}
+      </details>
+    </aside>
+  {% endif %}
+
   <div class="c-article-section__content">
     {{ content | safe }}
   </div>
@@ -39,9 +47,10 @@
   {# bottom #}
   {% if not isCustomPost %}
     <div class="c-article-section__bottom">
-      {# Footer notes #}
-      {# TODO: #}
-      {# <footer>Last updated {{ updated }}</footer> #}
+      {# last updated date #}
+      {% if page.date !== articleDate %}
+        <footer class="c-article-section__date">Last updated <time datetime="page.date">{{ page.date | htmlDateString('human-readable') }}</time></footer>
+      {% endif %}
 
       {# tags #}
       <ul class="c-article-section__tags">

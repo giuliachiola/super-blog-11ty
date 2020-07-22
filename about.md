@@ -1,11 +1,9 @@
 ---
 layout: layouts/post.njk
 title: About Me
+subtitle: Hey! I am Giulia, a front-end developer from Torino, Italy. In this blog, I collect all the useful snippets and tips I learn day-to-day.
 quote: Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got to keep going.
 quoteAuthor: Chantal Sutherland
-# img: 'https://source.unsplash.com/lpgAlv8I7V8'
-# imgAuthorName: '@enka80'
-# imgAuthorProfile: 'https://unsplash.com/@enka80'
 paletteColor: 5
 isCustomPost: true
 
@@ -23,7 +21,7 @@ I love writing documentation, read motivational quotes and cats 🐱
 
 For these reasons, in this site you can find
 - useful short tips about what I discover daily 📕[go to today i learned](/)
-- detailed articles about setup tools and projects 📘[go to blog](/blog)
+- detailed articles about setup tools and projects 📘[go to tutorials](/tutorials)
 - a motivational quote for each post, to keep your spirits high ✨
 - lot of kitten photos in code examples  🐾
 

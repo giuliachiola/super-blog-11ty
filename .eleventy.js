@@ -1,6 +1,8 @@
-const eleventyNavigation = require("@11ty/eleventy-navigation");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { DateTime } = require("luxon");
+const eleventyNavigation = require("@11ty/eleventy-navigation")
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+const { DateTime } = require("luxon")
+const tableOfContents = require('eleventy-plugin-nesting-toc')
+const readingTime = require('eleventy-plugin-reading-time');
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -14,6 +16,8 @@ module.exports = function(eleventyConfig) {
   // plugins
   eleventyConfig.addPlugin(eleventyNavigation);
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(tableOfContents)
+  eleventyConfig.addPlugin(readingTime);
 
   // configs
   eleventyConfig.addPassthroughCopy("img");
@@ -30,9 +34,9 @@ module.exports = function(eleventyConfig) {
     return categ // tutte le entries con categorie
   })
 
-  // posts = entries with category 'blog' or 'til'
+  // posts = entries with category 'tutorials' or 'til'
   eleventyConfig.addCollection("posts", function(collection) {
-    return collection.getAll().filter(entry => entry.data.category).filter(el => el.data.category === 'blog' || el.data.category === 'til')
+    return collection.getAll().filter(entry => entry.data.category).filter(el => el.data.category === 'tutorials' || el.data.category === 'til')
   })
 
   eleventyConfig.addCollection("tagsArr", function(collection) {
@@ -53,15 +57,24 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(dateFormat);
   })
 
+  // Remove dashes in strings (e.g. label tags)
+
+  eleventyConfig.addFilter('removeDashes', (string) => {
+    return string.replace(/-/g, ' ')
+  })
+
   // Markdown options
 
   const markdownIt = require("markdown-it")
   const markdownItAttrs = require('markdown-it-attrs')
+  const markdownItAnchor = require('markdown-it-anchor');
   const options = {
     html: true,
     breaks: true,
     linkify: true
   }
-  const markdownLib = markdownIt(options).use(markdownItAttrs)
+  const markdownLib = markdownIt(options)
+    .use(markdownItAttrs)
+    .use(markdownItAnchor)
   eleventyConfig.setLibrary("md", markdownLib)
 }

@@ -1,17 +1,21 @@
 <footer class="c-footer">
   <div class="l-main">
     <div class="c-footer__group">
+      <div class="c-footer__theme-switcher">
+        {%- include "_includes/layouts/partials/theme-switcher.njk" %}
+      </div>
+
       <a class="c-footer__item" href="https://twitter.com/giulia_chiola" target="_blank">
-        {% include '../../../svg/twitter.svg' %}
+        {% include global.svgoPath + 'twitter.svg' %}
       </a>
       <a class="c-footer__item" href="https://gitlab.com/giuliach" target="_blank">
-        {% include '../../../svg/gitlab.svg' %}
+        {% include global.svgoPath + 'gitlab.svg' %}
       </a>
       <a class="c-footer__item" href="https://github.com/giuliachiola" target="_blank">
-        {% include '../../../svg/github.svg' %}
+        {% include global.svgoPath + 'github.svg' %}
       </a>
       <a class="c-footer__item" href="https://codepen.io/giuliachiola/pens/public" target="_blank">
-        {% include '../../../svg/codepen.svg' %}
+        {% include global.svgoPath + 'codepen.svg' %}
       </a>
     </div>
   </div>
