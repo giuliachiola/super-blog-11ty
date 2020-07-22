@@ -72,13 +72,8 @@
       {# header #}
       {% include 'layouts/partials/header.njk' %}
 
-      {% if hasHomeContent %}
-        {# home content #}
-        {% include 'layouts/partials/photogrid.njk' %}
-      {% else %}
-        {# base content #}
-        {% include './base-content.njk' %}
-      {% endif %}
+      {# base content #}
+      {% include './base-content.njk' %}
 
       {# footer #}
       {% include 'layouts/partials/footer.njk' %}
