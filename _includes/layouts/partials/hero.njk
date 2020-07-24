@@ -29,6 +29,6 @@
       <h2 class="c-hero__subtitle">{{ heroSubtitle | safe }}</h2>
     </div>
     {% if imgAuthorName %}
-      <span class="c-hero__credits">photo by <a href="{{ imgAuthorProfile }}" target="_blank">{{ imgAuthorName }}</a> on <a href="{{ img }}" target="_blank">Unsplash</a></span>
+      <span class="c-hero__credits">photo by <a href="{{ imgAuthorProfile }}" target="_blank" rel="noopener">{{ imgAuthorName }}</a> on <a href="{{ img }}" target="_blank" rel="noopener">Unsplash</a></span>
     {% endif %}
 </section>

@@ -128,6 +128,8 @@ Example:
 </div>
 ```
 
+Remember to add a `title` to the iframe for accessibility `<iframe title="gif-party">`
+
 ### Tags
 
 ```md
