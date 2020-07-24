@@ -83,9 +83,9 @@ tags:
 ```
 
 
-### More info about ...
+### More info
 
-> 📚 More info about ...
+> 📚 More info
 >
 > [...](...)
 > [...](...)

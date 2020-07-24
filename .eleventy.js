@@ -9,7 +9,18 @@ function uniqueArray(arr) {
 }
 
 module.exports = {
-  // markdownTemplateEngine: 'njk',
+  // markdownTemplateEngine: 'md',
+
+  /**
+  * default is liquid template, please be sure to wrap twig/nunjucks snippets
+
+  {% raw %}
+  ```html
+  <article class="c-card c-card--{{ tag }}"> ... </div>
+  ```
+  {% endraw %}
+
+  */
 }
 
 module.exports = function(eleventyConfig) {

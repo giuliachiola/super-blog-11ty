@@ -3,9 +3,11 @@
 ---------------------------- */
 
 const checkbox = document.querySelector(".c-header__toggle");
-checkbox.addEventListener('change', function() {
-  document.body.classList.toggle("is-menu-open");
-});
+if (checkbox) {
+  checkbox.addEventListener('change', function() {
+    document.body.classList.toggle("is-menu-open");
+  })
+}
 
 /* ----------------------------
   Search post
