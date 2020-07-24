@@ -3,7 +3,6 @@
   {% set mainTag = 'c-card--' + card.data.mainTag %}
 {% endif %}
 
-
 {% set modifiers = '' %}
 {% if card.modifiers %}
   {% for mod in card.modifiers %}
@@ -11,7 +10,22 @@
   {% endfor %}
 {% endif %}
 
-<article class="c-card {{ modifiers }} {{ mainTag }}">
+{% set articleDate = card.data.articleDate or page.articleDate %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "proficiencyLevel": "Beginner",
+  "author": "Giulia Chiola",
+  "datePublished": "{{ articleDate }}",
+  "headline": "{{ card.data.title }}",
+  "abstract": "{{ card.data.abstract }}",
+  "dateModified": "{{ card.data.date }}",
+}
+</script>
+
+<article class="c-card {{ modifiers }} {{ mainTag }}" itemscope>
   {% if card.hasImg and card.data.mainTag %}
     <div class="c-card__img-wrapper">
       {# check if SVG exists, otherwise 11ty build explodes! #}
@@ -32,7 +46,7 @@
     {% else %}
       {% set cardUrl = entry.url | url %}
     {% endif %}
-    <a class="c-card__title" href="{{ cardUrl }}" {% if card.data.externalUrl %}target="_blank"{% endif %}>
+    <a class="c-card__title" href="{{ cardUrl }}" {% if card.data.externalUrl %}target="_blank" rel="noopener"{% endif %}>
       <h2 class="c-card__title-heading">{{ card.data.title }}</h2>
     </a>
 
@@ -50,10 +64,7 @@
 
     {# bottom info #}
     <div class="c-card__bottom">
-      {# {% if card.data.date %} #}
-      {% set articleDate = card.data.articleDate or page.articleDate %}
       <time class="c-card__date" datetime="{{ articleDate | htmlDateString }}">{{ articleDate | htmlDateString('human-readable') }}</time>
-      {# {% endif %} #}
       <div class="c-card__tags">
         {% for tag in card.data.tags %}
           {% set tagUrl %}/tags/{{ tag }}/{% endset %}
