@@ -70,7 +70,7 @@
         {%- for tag in tags %}
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
         <li class="c-article-section__tag">
-          <a href="{{ tagUrl | url }}" class="c-label">{{ tag }}</a>
+          <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
         </li>
         {%- endfor %}
       </ul>
