@@ -11,7 +11,7 @@
 
 <section class="c-hero {{ modifiers }} {% if quote %}c-hero--quote{% endif %}">
   {% if img %}
-  <img class="c-hero__img" src="{{ img }}" alt="">
+  <div class="c-hero__img" style="--hero-image: url('{{ img }}');"></div>
   {% endif %}
     <div class="l-main">
       {% set heroTitle = renderData.title or title %}
