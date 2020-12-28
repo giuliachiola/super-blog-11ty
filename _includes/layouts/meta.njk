@@ -1,7 +1,7 @@
-{# share #}
-{% set ogImage = global.siteUrl + '/img/og-images/default.jpg' %}
-{% if mainTag %}
-  {% set ogImage = global.siteUrl + '/img/og-images/' + mainTag + '.jpg' %}
+{# social image #}
+{% set socialImg = '' %}
+{% if title|length %}
+  {%- set socialImg %}{{ global.url }}/social-img/{{ title | slug }}.png{% endset-%}
 {% endif %}
 
 {# SEO #}
@@ -13,10 +13,10 @@
 <meta property="og:description" content="{{ abstract or subtitle }}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{{ global.siteUrl | url }}">
-<meta property="og:image" content="{{ ogImage }}">
+<meta property="og:image" content="{{ socialImg }}" />
 
 {# twitter #}
-<meta name="twitter:image" content="{{ ogImage }}">
+<meta name="twitter:image" content="{{ socialImg }}" />
 <meta name="twitter:creator" content="@giulia_chiola">
 <meta name="twitter:site" content="@giulia_chiola">
 <meta name="twitter:card" content="summary">

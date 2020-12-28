@@ -3,6 +3,7 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const { DateTime } = require("luxon")
 const tableOfContents = require('eleventy-plugin-nesting-toc')
 const readingTime = require('eleventy-plugin-reading-time');
+const socialImages = require("@11tyrocks/eleventy-plugin-social-images");
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -29,6 +30,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(tableOfContents)
   eleventyConfig.addPlugin(readingTime);
+  eleventyConfig.addPlugin(socialImages);
 
   // configs
   eleventyConfig.addPassthroughCopy("img");
