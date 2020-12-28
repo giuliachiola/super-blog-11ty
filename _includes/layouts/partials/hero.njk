@@ -7,8 +7,6 @@
 
 {% if img %}
   {% set modifiers = modifiers + ' c-hero--bg-img' %}
-{# {% else %}
-  {% set modifiers = modifiers + ' c-hero--'+mainTag %} #}
 {% endif %}
 
 <section class="c-hero {{ modifiers }} {% if quote %}c-hero--quote{% endif %}">
@@ -28,7 +26,7 @@
       {% endif %}
       <h2 class="c-hero__subtitle">{{ heroSubtitle | safe }}</h2>
     </div>
-    {% if imgAuthorName %}
+    {# {% if imgAuthorName %}
       <span class="c-hero__credits">photo by <a href="{{ imgAuthorProfile }}" target="_blank" rel="noopener">{{ imgAuthorName }}</a> on <a href="{{ img }}" target="_blank" rel="noopener">Unsplash</a></span>
-    {% endif %}
+    {% endif %} #}
 </section>

@@ -22,7 +22,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or renderData.title | striptags }} | Giulia Chiola</title>
-    <meta name="description" content="{{ abstract or subtitle }}">
     {# search engine #}
     <meta name="robots" content="index,follow"><!-- All Search Engines -->
     {# archive #}
@@ -34,29 +33,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ color.num }}.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ color.num }}.png">
     <link rel="manifest" href="/site-color-{{ color.num }}.webmanifest">
-    {# share #}
-    {% set ogImage = global.siteUrl + '/img/og-images/default.jpg' %}
-    {% if mainTag %}
-      {% set ogImage = global.siteUrl + '/img/og-images/' + mainTag + '.jpg' %}
-    {% endif %}
-    {# share - twitter #}
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@giulia_chiola">
-    <meta name="twitter:site" content="@giulia_chiola">
-    <meta name="twitter:title" content="{{ title or renderData.title | striptags }} by @giulia_chiola #CodeNewbie #100DaysOfCode">
-    <meta name="twitter:description" content="{{ abstract or subtitle }}">
-    <meta name="twitter:image" content="{{ ogImage }}">
-    {# <meta name="twitter:image:alt" content="A description of what is in the image (not a caption)"> #}
-    {# share - og facebook #}
-    <meta property="og:url" content="{{ global.siteUrl | url }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ title or renderData.title | striptags }} by @giulia_chiola #CodeNewbie #100DaysOfCode">
-    <meta property="og:image" content="{{ ogImage }}">
-    {# <meta property="og:image:alt" content="A description of what is in the image (not a caption)"> #}
-    <meta property="og:description" content="{{ abstract or subtitle }}">
-    <meta property="og:site_name" content="Blog | Giulia Chiola">
-    <meta property="og:locale" content="en_US">
-    <meta property="article:author" content="Giulia Chiola">
+    {# og, twitter, SEO #}
+    {% include 'layouts/meta.njk' %}
 
     {# css #}
     <link rel="stylesheet" href="/css/prismjs-theme.css">
