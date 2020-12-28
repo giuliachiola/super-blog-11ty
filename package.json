@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "social:images": "eleventy-social-images --imageDir social-img --templatePath _generate/social-img-build/preview.html",
     "dev": "rm -rf _site && npx @11ty/eleventy --serve",
     "dev:debug": "DEBUG=Eleventy* npm run dev",
-    "build": "rm -rf _site && npx @11ty/eleventy"
+    "build": "rm -rf _site && npx @11ty/eleventy && npm run social:images",
+    "deploy:netlify": "AWS_LAMBDA_FUNCTION_NAME=trickpuppeteer npm run build"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +22,8 @@
     "luxon": "^1.24.1",
     "markdown-it-anchor": "^5.3.0",
     "markdown-it-attrs": "^3.0.3"
+  },
+  "dependencies": {
+    "@11tyrocks/eleventy-plugin-social-images": "^0.1.2"
   }
 }
