@@ -120,11 +120,14 @@ tags:
 </div>
 ```
 
-Example:
+Use tag `<video>` to improve performance:
 
 ```html
-<div class="s-giphy s-giphy--medium-d">
-  <div style="width:100%;height:0;padding-bottom:79%;position:relative;"><iframe src="https://giphy.com/embed/m8WzRSb4xDcMx2WbkV" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/smallfootmovie-omg-crazy-m8WzRSb4xDcMx2WbkV">via GIPHY</a></p>
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/5gXYzsVBmjIsw/giphy.mp4" type="video/mp4">
+  </video>
+  <p><a href="https://giphy.com/gifs/cat-cool-5gXYzsVBmjIsw">via GIPHY</a></p>
 </div>
 ```
 
