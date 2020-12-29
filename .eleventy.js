@@ -25,14 +25,20 @@ module.exports = {
 }
 
 module.exports = function(eleventyConfig) {
-  // plugins
+  /**
+  * plugins
+  */
+
   eleventyConfig.addPlugin(eleventyNavigation);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(tableOfContents)
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(socialImages);
 
-  // configs
+  /**
+  * pass through copy
+  */
+
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
@@ -41,6 +47,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("super-styleguide/src/css/style.css");
   eleventyConfig.setDataDeepMerge(true); // used to merge 'blog.11tydata.js' tags with .md tags
+
+  /**
+  * collections
+  */
 
   eleventyConfig.addCollection("categories", function(collection) {
     const categ = collection.getAll().filter(entry => entry.data.category)
@@ -57,6 +67,10 @@ module.exports = function(eleventyConfig) {
     const tags = entriesWithTags.reduce((tags, entry) => [...tags, ...entry.data.tags], [])
     return uniqueArray(tags)
   })
+
+  /**
+  * filters
+  */
 
   // date manipulation
 
