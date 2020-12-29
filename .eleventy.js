@@ -90,6 +90,10 @@ module.exports = function(eleventyConfig) {
     return string.replace(/-/g, ' ')
   })
 
+  eleventyConfig.addFilter('filterByTag', (collection, tag) => {
+    return collection.filter(post => post.data.tags.includes(tag))
+  })
+
   // Markdown options
 
   const markdownIt = require("markdown-it")

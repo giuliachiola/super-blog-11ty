@@ -14,7 +14,7 @@ renderData:
 
 {% block content %}
 
-{% set list = collections[ tag ] %}
+{% set list = collections.posts|filterByTag(tag) %}
 {% set mainLayout = 'grid' %}
 {% set isPageTag = true %}
 {% include '_includes/layouts/partials/cards-grid.njk' %}
