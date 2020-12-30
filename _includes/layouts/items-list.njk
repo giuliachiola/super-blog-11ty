@@ -4,14 +4,28 @@ layout: layouts/base.njk
 
 {% block content %}
 
-  {% if isPageTag %}
-    {# filter posts (= exclude projects) by tag #}
-    {% set list = collections.post|filterByTag(tag) %}
-  {% else %}
-    {# filter all entries by category #}
-    {% set list = collections.all|filterByCategory(categoryFilter) %}
-  {% endif %}
+{% if isPageTag %}
+  {# filter posts (= exclude projects) by tag #}
+  {% set list = collections.post|filterByTag(tag) %}
+{% else %}
+  {# filter all entries by category #}
+  {% set list = collections.all|filterByCategory(categoryFilter) %}
+{% endif %}
 
-  {% include '_includes/layouts/partials/cards-grid.njk' %}
+<main class="l-main">
+  {# filters #}
+  <div class="l-spacing-m">
+    {%- include "_includes/layouts/partials/filters.njk" %}
+  </div>
+  {# items #}
+  {% if list|length %}
+    <div class="l-spacing-l">
+      {% include '_includes/layouts/partials/cards-grid.njk' %}
+    </div>
+  {% else %}
+    <h2>Oh no!<br>There are no cool posts with this tag 💔</h2>
+  {% endif %}
+</main>
+
 
 {% endblock %}

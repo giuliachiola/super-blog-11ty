@@ -46,7 +46,7 @@ module.exports = function(eleventyConfig) {
   // important: this function returns all tags used in posts (that means thats 'projects' are exluced!)
 
   eleventyConfig.addCollection("tagsArr", function(collection) {
-    const entriesWithTags = collection.getAll().filter(entry => entry.data.tags)
+    const entriesWithTags = collection.getFilteredByTag('post').filter(entry => entry.data.tags)
     const tags = entriesWithTags.reduce((tags, entry) => [...tags, ...entry.data.tags], [])
     return uniqueArray(tags)
   })

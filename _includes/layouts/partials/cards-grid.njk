@@ -1,18 +1,7 @@
-<main class="l-main">
-  {# filters #}
-  <div class="l-spacing-m">
-    {%- include "_includes/layouts/partials/filters.njk" %}
+{% if categoryFilter == 'tutorials' %}
+  <div class="o-cards-grid">
+    {%- include "_includes/layouts/partials/cards.njk" %}
   </div>
-  {# items #}
-  <div class="l-spacing-l">
-
-    {% if categoryFilter == 'tutorials' %}
-      <div class="o-cards-grid">
-        {%- include "_includes/layouts/partials/cards.njk" %}
-      </div>
-    {% else %}
-      {%- include "_includes/layouts/partials/cards.njk" %}
-    {% endif %}
-
-  </div>
-</main>
+{% else %}
+  {%- include "_includes/layouts/partials/cards.njk" %}
+{% endif %}
