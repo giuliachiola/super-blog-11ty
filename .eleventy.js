@@ -11,17 +11,7 @@ function uniqueArray(arr) {
 
 module.exports = {
   // markdownTemplateEngine: 'md',
-
-  /**
-  * default is liquid template, please be sure to wrap twig/nunjucks snippets
-
-  {% raw %}
-  ```html
-  <article class="c-card c-card--{{ tag }}"> ... </div>
-  ```
-  {% endraw %}
-
-  */
+  // see README for more informations
 }
 
 module.exports = function(eleventyConfig) {
@@ -52,15 +42,12 @@ module.exports = function(eleventyConfig) {
   * collections
   */
 
-  eleventyConfig.addCollection("categories", function(collection) {
-    const categ = collection.getAll().filter(entry => entry.data.category)
-    return categ // tutte le entries con categorie
+  // posts = entries with category 'tutorials' or 'til' ('projects' is excluded)
+  eleventyConfig.addCollection("posts", function(collection) {
+    return collection.getAllSorted().filter(entry => entry.data.category).filter(el => el.data.category !== 'projects')
   })
 
-  // posts = entries with category 'tutorials' or 'til'
-  eleventyConfig.addCollection("posts", function(collection) {
-    return collection.getAllSorted().filter(entry => entry.data.category).filter(el => el.data.category === 'tutorials' || el.data.category === 'til')
-  })
+  // array of tags, used in pills
 
   eleventyConfig.addCollection("tagsArr", function(collection) {
     const entriesWithTags = collection.getAll().filter(entry => entry.data.tags)
@@ -90,11 +77,21 @@ module.exports = function(eleventyConfig) {
     return string.replace(/-/g, ' ')
   })
 
+  // Filter collection by tag
+
   eleventyConfig.addFilter('filterByTag', (collection, tag) => {
-    return collection.filter(post => post.data.tags.includes(tag))
+    return collection.filter(entry => entry.data.tags.includes(tag))
   })
 
-  // Markdown options
+  // Filter collection by categoy
+
+  eleventyConfig.addFilter('filterByCategory', (collection, category) => {
+    return collection.filter(entry => entry.data.category == category)
+  })
+
+  /**
+  * Markdown optionsilters
+  */
 
   const markdownIt = require("markdown-it")
   const markdownItAttrs = require('markdown-it-attrs')

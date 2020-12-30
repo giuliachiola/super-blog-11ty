@@ -1,0 +1,14 @@
+{%- for entry in list | reverse %}
+  {# card settings #}
+  {% if mainLayout == 'grid' %}
+    {# tutorials and tags #}
+    {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
+  {% elif categoryFilter == 'projects' %}
+    {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-left'], isExpanded: true } %}
+  {% elif categoryFilter == 'til' %}
+    {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-top'], isExpanded: true, number: loop.index } %}
+  {% endif %}
+
+  {# card #}
+  {% include '_includes/layouts/partials/card.njk' %}
+{%- endfor %}

@@ -154,3 +154,13 @@ tags:
   - uiengine
   - vsc
 ```
+
+## Markdown
+
+Default is liquid template, please be sure to wrap twig/nunjucks snippets
+
+{% raw %}
+```html
+<article class="c-card c-card--{{ tag }}"> ... </div>
+```
+{% endraw %}
