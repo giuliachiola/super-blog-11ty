@@ -6,7 +6,7 @@ layout: layouts/base.njk
 
   {% if isPageTag %}
     {# filter posts (= exclude projects) by tag #}
-    {% set list = collections.posts|filterByTag(tag) %}
+    {% set list = collections.post|filterByTag(tag) %}
   {% else %}
     {# filter all entries by category #}
     {% set list = collections.all|filterByCategory(categoryFilter) %}

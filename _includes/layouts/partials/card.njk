@@ -73,7 +73,7 @@
     <div class="c-card__bottom">
       <time class="c-card__date" datetime="{{ date | htmlDateString }}">{{ date | htmlDateString('human-readable') }}</time>
       <div class="c-card__tags">
-        {% for tag in card.data.tags %}
+        {% for tag in card.data.tags|removeFromArray('post') %}
           {% set tagUrl %}/tags/{{ tag }}/{% endset %}
           <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
         {% endfor %}

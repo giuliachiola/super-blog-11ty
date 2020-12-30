@@ -42,12 +42,8 @@ module.exports = function(eleventyConfig) {
   * collections
   */
 
-  // posts = entries with category 'tutorials' or 'til' ('projects' is excluded)
-  eleventyConfig.addCollection("posts", function(collection) {
-    return collection.getAllSorted().filter(entry => entry.data.category).filter(el => el.data.category !== 'projects')
-  })
-
   // array of tags, used in pills
+  // important: this function returns all tags used in posts (that means thats 'projects' are exluced!)
 
   eleventyConfig.addCollection("tagsArr", function(collection) {
     const entriesWithTags = collection.getAll().filter(entry => entry.data.tags)
@@ -87,6 +83,11 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter('filterByCategory', (collection, category) => {
     return collection.filter(entry => entry.data.category == category)
+  })
+
+  // Remove from array
+  eleventyConfig.addFilter('removeFromArray', (arr, itemToRemove) => {
+    return arr.filter(item => item !== itemToRemove)
   })
 
   /**

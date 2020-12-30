@@ -90,7 +90,7 @@
         {%- endfor %}
       </ul>
 
-      {% set randomTil = collections.posts | random %}
+      {% set randomTil = collections.post | random %}
       <div class="o-distributed o-distributed--center l-spacing-l">
         <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a>
       </div>
