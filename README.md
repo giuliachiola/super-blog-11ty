@@ -170,3 +170,9 @@ Default is liquid template, please be sure to wrap twig/nunjucks snippets
 ```md
 quote: If opportunity doesn’t knock, <br class="u-ty-break-t">build a door.
 ```
+
+## Table of contents 
+
+Used for Cloudinary folder match
+
+http://localhost:8080/_generate/table-of-content
