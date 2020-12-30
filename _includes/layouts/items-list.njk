@@ -4,7 +4,14 @@ layout: layouts/base.njk
 
 {% block content %}
 
-{% set list = collections.categories %}
-{% include '_includes/layouts/partials/cards-grid.njk' %}
+  {% if isPageTag %}
+    {# filter posts (= exclude projects) by tag #}
+    {% set list = collections.posts|filterByTag(tag) %}
+  {% else %}
+    {# filter all entries by category #}
+    {% set list = collections.all|filterByCategory(categoryFilter) %}
+  {% endif %}
+
+  {% include '_includes/layouts/partials/cards-grid.njk' %}
 
 {% endblock %}

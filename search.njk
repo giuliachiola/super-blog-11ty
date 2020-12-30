@@ -17,9 +17,9 @@ eleventyNavigation:
   </form>
 
   <ul class="s-search-list">
-    {% for entry in collections.posts %}
-      <li class="j-search__item l-spacing-m">
-        {% set card = { data: entry.data, modifiers: ['squared-image', 'horizontal'], hasImg: true } %}
+    {% for entry in collections.posts | reverse %}
+      <li class="j-search__item">
+        {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['squared-image', 'horizontal'], hasImg: true } %}
         {% include '_includes/layouts/partials/card.njk' %}
       </li>
     {% endfor %}
