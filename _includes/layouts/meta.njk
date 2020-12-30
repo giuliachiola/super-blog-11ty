@@ -1,4 +1,5 @@
 {# social image #}
+{# note that social image is copied-pasted also in card.njk and article-section.njk #}
 {% set socialImg = '' %}
 {% if title|length %}
   {%- set socialImg %}{{ global.url }}/social-img/{{ title | slug }}.png{% endset-%}

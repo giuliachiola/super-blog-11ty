@@ -12,6 +12,12 @@
 
 {% set date = card.data.date or page.date %}
 
+{# social image #}
+{% set socialImg = '' %}
+{% if title|length %}
+  {%- set socialImg %}{{ global.url }}/social-img/{{ title | slug }}.png{% endset-%}
+{% endif %}
+
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
@@ -22,6 +28,7 @@
   "headline": "{{ card.data.title }}",
   "abstract": "{{ card.data.abstract }}",
   "dateModified": "{{ card.data.date }}",
+  "image": "{{ socialImg }}"
 }
 </script>
 
