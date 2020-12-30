@@ -25,7 +25,9 @@ const switchTheme = (e) => {
   localStorage.setItem('theme', theme)
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false)
+if(toggleSwitch) {
+  toggleSwitch.addEventListener('change', switchTheme, false)
+}
 
 /* ----------------------------
   Add copy button in snippets using PrismJS
