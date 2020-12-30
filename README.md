@@ -56,9 +56,9 @@ cd super-blog-content/ && git pull && cd .. && cd super-styleguide/ && git pull 
 
 **Branches**
 
-- super-styleguide: `develop`
+- super-styleguide: `master` -> production
 - super-blog-content: `master`
-
+- (this project) super-blog-11ty: `master` -> production, `develop` -> staging
 
 ## Post
 
