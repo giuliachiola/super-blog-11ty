@@ -1,11 +1,16 @@
 {%- for entry in list | reverse %}
   {# card settings #}
-  {% if mainLayout == 'grid' %}
-    {# tutorials and tags #}
+  {% if categoryFilter == 'tutorials' %}
+    {# tutorials #}
     {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
+  {% elif isPageTag %}
+    {# tags #}
+    {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['squared-image', 'horizontal'], hasImg: true } %}
   {% elif categoryFilter == 'projects' %}
+    {# projects #}
     {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-left'], isExpanded: true } %}
   {% elif categoryFilter == 'til' %}
+    {# til #}
     {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-top'], isExpanded: true, number: loop.index } %}
   {% endif %}
 

@@ -8,5 +8,4 @@ eleventyNavigation:
   key: tutorials
   order: 2
 categoryFilter: tutorials
-mainLayout: grid
 ---
