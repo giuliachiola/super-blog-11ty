@@ -1,6 +1,7 @@
 {% set mainTag = '' %}
 {% if card.data.mainTag %}
-  {% set mainTag = 'c-card--' + card.data.mainTag %}
+  {# at the moment there is any custom CSS for main tag modifiers (ex. c-card--git) #}
+  {# {% set mainTag = 'c-card--' + card.data.mainTag %} #}
 {% endif %}
 
 {% set modifiers = '' %}
