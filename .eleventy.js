@@ -1,9 +1,10 @@
-const eleventyNavigation = require("@11ty/eleventy-navigation")
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
-const { DateTime } = require("luxon")
+const eleventyNavigation = require('@11ty/eleventy-navigation')
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const { DateTime } = require('luxon')
 const tableOfContents = require('eleventy-plugin-nesting-toc')
-const readingTime = require('eleventy-plugin-reading-time');
-const socialImages = require("@11tyrocks/eleventy-plugin-social-images");
+const readingTime = require('eleventy-plugin-reading-time')
+const socialImages = require('@11tyrocks/eleventy-plugin-social-images')
+const CleanCSS = require('clean-css');
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -88,6 +89,12 @@ module.exports = function(eleventyConfig) {
   // Remove from array
   eleventyConfig.addFilter('removeFromArray', (arr, itemToRemove) => {
     return arr.filter(item => item !== itemToRemove)
+  })
+
+  // CSS
+
+  eleventyConfig.addFilter('cssmin', function(code) {
+    return new CleanCSS({}).minify(code).styles
   })
 
   /**
