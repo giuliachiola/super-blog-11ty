@@ -1,4 +1,4 @@
-{%- for entry in list | reverse %}
+{%- for entry in list | reverse -%}
   {# card settings #}
   {% if categoryFilter == 'tutorials' %}
     {# tutorials #}
@@ -11,9 +11,9 @@
     {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-left'], isExpanded: true } %}
   {% elif categoryFilter == 'til' %}
     {# til #}
-    {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-top'], isExpanded: true, number: loop.index } %}
+    {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-top'], isExpanded: true, number: loop.revindex } %}
   {% endif %}
 
   {# card #}
   {% include '_includes/layouts/partials/card.njk' %}
-{%- endfor %}
+{%- endfor -%}
