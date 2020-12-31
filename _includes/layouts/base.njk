@@ -51,7 +51,7 @@
     {% endset %}
     {# feed it through our cssmin filter to minify #}
     <style>
-      {{ css | safe }}
+      {{ css | cssmin | safe }}
     </style>
   </head>
 
