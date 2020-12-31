@@ -53,6 +53,25 @@
     <style>
       {{ css | cssmin | safe }}
     </style>
+
+    {# fonts #}
+    {% set fontsPath = "https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;600&display=swap" %}
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+
+    <link rel="preload"
+          as="style"
+          href={{ fontsPath }} />
+
+    <link rel="stylesheet"
+          href={{ fontsPath }}
+          media="print" onload="this.media='all'" />
+
+    <noscript>
+      <link rel="stylesheet"
+            href={{ fontsPath }} />
+    </noscript>
   </head>
 
   <body>
