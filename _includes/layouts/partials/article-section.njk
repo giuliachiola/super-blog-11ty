@@ -90,9 +90,17 @@
         {%- endfor %}
       </ul>
 
-      {% set randomTil = collections.post | random %}
+      {% set nextPost = collections.post | getNextCollectionItem(page) %}
+      {% if nextPost.url %}
+        {# go to the next post #}
+        {% set goToPost = nextPost %}
+      {% else %}
+        {# go to the first post #}
+        {% set goToPost = collections.post|first %}
+      {% endif %}
+
       <div class="o-distributed o-distributed--center l-spacing-l">
-        <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a>
+        <a class="c-button" href="{{ goToPost.url | url }}">Take me to the next post!</a>
       </div>
     </div>
   {% endif %}

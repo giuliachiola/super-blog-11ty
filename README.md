@@ -176,3 +176,22 @@ quote: If opportunity doesn’t knock, <br class="u-ty-break-t">build a door.
 Used for Cloudinary folder match
 
 http://localhost:8080/_generate/table-of-content
+
+### Responsive images
+
+```html
+<img srcset="photo-720w.jpg 720w,
+             photo-976w.jpg 976w,
+             photo-1024w.jpg 1024w,
+             photo-2048w.jpg 2048w"
+     sizes="(max-width: 767px) 720px, (max-width: 1023px) 976px,
+            1024px"
+     src="photo-1024w.jpg"
+     alt="">
+```
+
+Example at 720w:
+```
+https://res.cloudinary.com/giuliachiola/image/upload/v1586637232/f_auto,w_720/super-blog/T8-issue-and-pr-templates/til-14-bug-report-01_fcauoy.jpg
+```
+
