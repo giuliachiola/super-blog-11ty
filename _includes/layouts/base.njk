@@ -43,6 +43,16 @@
     <link rel="stylesheet" href="/super-styleguide/src/css/style.css">
     {# colors override to test #}
     <link rel="stylesheet" href="/css/color-palette.css">
+
+    {# critical css #}
+    {# capture the CSS content as a Nunjucks variable #}
+    {% set css %}
+      {% include "super-styleguide/src/css/critical.css" %}
+    {% endset %}
+    {# feed it through our cssmin filter to minify #}
+    <style>
+      {{ css | safe }}
+    </style>
   </head>
 
   <body>
