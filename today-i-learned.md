@@ -7,6 +7,12 @@ paletteColor: 1
 eleventyNavigation:
   key: til
   order: 1
-permalink: /
+
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+permalink: "{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}/"
+
 categoryFilter: til
 ---

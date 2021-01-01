@@ -2,14 +2,28 @@
 layout: layouts/base.njk
 ---
 
+{# IMPORTANT!
+Please pay attention to the 'reverse' keyword 🤯
+- TIL use the 'reverse: true' parameter in pagination because I needed to reverse the array _before_ the pagination splits in pages
+- tutorials/projects/tags use the '| reverse' filter because there is not the pagination, but I still neeeded the array reversed #}
+
 {% block content %}
 
 {% if isPageTag %}
-  {# filter posts (= exclude projects) by tag #}
-  {% set list = collections.post|filterByTag(tag) %}
+  {# filter posts (= projects excluded) by tag #}
+  {% set list = collections.post|filterByTag(tag) | reverse %}
 {% else %}
-  {# filter all entries by category #}
-  {% set list = collections.all|filterByCategory(categoryFilter) %}
+  {# filter all entries (= projects included) by category #}
+  {% if categoryFilter == 'til' %}
+    {# til #}
+    {# use paginated list #}
+    {% set arr = pagination.items %}
+  {% else %}
+    {# tutorials, projects, search #}
+    {# use complete list #}
+    {% set arr = collections.all | reverse %}
+  {% endif %}
+  {% set list = arr|filterByCategory(categoryFilter) %}
 {% endif %}
 
 <main class="l-main">
@@ -21,10 +35,12 @@ layout: layouts/base.njk
   {% if list|length %}
     <div class="l-spacing-l">
       {% include '_includes/layouts/partials/cards-grid.njk' %}
+      {%- include "_includes/layouts/partials/pagination.njk" %}
     </div>
   {% else %}
     <h2>Oh no!<br>There are no cool posts with this tag 💔</h2>
   {% endif %}
+
 </main>
 
 

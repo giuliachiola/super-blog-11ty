@@ -1,0 +1,14 @@
+<nav class="c-pagination">
+  <ol class="c-pagination__list">
+    <li class="c-pagination__item">
+      {% if pagination.href.previous %}
+      <a class="c-pagination__link" href="{{ pagination.href.previous }}">&#8592; prev</a>
+      {% endif %}
+    </li>
+    <li class="c-pagination__item">
+      {% if pagination.href.next %}
+      <a class="c-pagination__link" href="{{ pagination.href.next }}">next &#8594;</a>
+      {% endif %}
+    </li>
+  </ol>
+</nav>
