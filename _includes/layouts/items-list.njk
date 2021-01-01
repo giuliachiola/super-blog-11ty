@@ -35,8 +35,11 @@ Please pay attention to the 'reverse' keyword 🤯
   {% if list|length %}
     <div class="l-spacing-l">
       {% include '_includes/layouts/partials/cards-grid.njk' %}
-      {%- include "_includes/layouts/partials/pagination.njk" %}
     </div>
+    {# pagination (just for TIL page) #}
+    {% if categoryFilter == 'til' %}
+      {%- include "_includes/layouts/partials/pagination.njk" %}
+    {% endif %}
   {% else %}
     <h2>Oh no!<br>There are no cool posts with this tag 💔</h2>
   {% endif %}
