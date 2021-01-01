@@ -12,7 +12,7 @@ pagination:
   data: collections.post
   size: 10
   reverse: true
-permalink: "{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}/"
+permalink: "{% if pagination.pageNumber > 1 %}{{ pagination.pageNumber + 1 }}/{% endif %}/"
 
 categoryFilter: til
 ---
