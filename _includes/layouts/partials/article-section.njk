@@ -68,7 +68,13 @@
     </aside>
   {% endif %}
 
-  <div class="c-article-section__content">
+  {# reading progress #}
+  {% if category === 'tutorials' %}
+    <div class="c-reading-progress j-reading-progress"><span class="c-reading-progress__value j-reading-progress__value"></span></div>
+  {% endif %}
+
+  {# article content #}
+  <div class="c-article-section__content {% if category === 'tutorials' %}j-article-section__content{% endif %}">
     {{ content | safe }}
   </div>
 
