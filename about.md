@@ -21,12 +21,12 @@ I love writing documentation, read motivational quotes and cats 🐱
 
 For these reasons, in this site you can find
 - useful short tips about what I discover daily 📕[go to today i learned](/)
-- detailed articles about setup tools and projects 📘[go to tutorials](/tutorials)
-- a motivational quote for each post, to keep your spirits high ✨
-- lot of kitten photos in code examples  🐾
+- detailed articles about tools and projects setup 📘[go to tutorials](/tutorials)
+- a motivational quote for each post, to keep your spirit high ✨
+- lot of funny gifs to make you take a break and smile 🙃
 
-Right now, I am working for an italian agency, [Modo](https://modo.md/), where collegues and bosses teach me a lot every day... I feel so lucky to have them on my side!
+About my actual employment, I am working for [Modo](https://modo.md/), an italian agency where collegues teach me a lot every day... I feel lucky to have them on my side!
 
 <hr>
 
-The content in this website is open-source [in this repository](https://gitlab.com/giuliach/super-blog-content), so if you find typos or incorrect explanations, please open me an issue or fix them opening a pull request with corrections! 😇
+All content in this blog is open-source and accessible [in this repository](https://gitlab.com/giuliach/super-blog-content), so if you find typos or incorrect explanations (I tried my best with English but I am still learning 😇), please open an issue/pull-request, or DM me at Twitter <a href="https://twitter.com/giulia_chiola">@giulia_chiola</a> **Thank you!**
