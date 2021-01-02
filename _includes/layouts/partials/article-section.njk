@@ -37,6 +37,7 @@
       {% endif %}
 
       {# tags #}
+      {% if tags %}
       <ul class="c-article-section__tags">
         {%- for tag in tags|removeFromArray('post') %}
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
@@ -45,6 +46,7 @@
           </li>
         {%- endfor %}
       </ul>
+      {% endif %}
     </div>
 
     {% if not isCustomPost %}
@@ -63,7 +65,8 @@
   </div>
 
   {# content #}
-  {% if title and content | toc | safe | length %}
+  {# note: check if tags exist just to be sure that we are in an article post #}
+  {% if tags and content | toc | safe | length %}
     <aside>
       <details class="c-article-section__toc">
           <summary><span>📚</span>Table of contents</summary>
@@ -91,6 +94,7 @@
       {% endif %}
 
       {# tags #}
+      {% if tags %}
       <ul class="c-article-section__tags l-spacing-m">
         {%- for tag in tags|removeFromArray('post') %}
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
@@ -99,6 +103,7 @@
         </li>
         {%- endfor %}
       </ul>
+      {% endif %}
 
       {% set nextPost = collections.post | getNextCollectionItem(page) %}
       {% if nextPost.url %}
