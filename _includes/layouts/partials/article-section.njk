@@ -14,7 +14,11 @@
   "headline": "{{ title }}",
   "abstract": "{{ abstract }}",
   "dateModified": "{{ page.date }}",
-  "image": "{{ socialImg }}"
+  "image": "{{ socialImg }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url }}"
+  }
 }
 </script>
 
