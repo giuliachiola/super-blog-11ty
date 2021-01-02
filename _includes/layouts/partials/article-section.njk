@@ -38,7 +38,7 @@
 
       {# tags #}
       <ul class="c-article-section__tags">
-        {%- for tag in tags %}
+        {%- for tag in tags|removeFromArray('post') %}
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
           <li class="c-article-section__tag">
             <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
