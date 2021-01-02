@@ -11,4 +11,5 @@ pagination:
 renderData:
   title: 'Tagged posts<br> <span class="c-hero__title-custom">{{ tag }}</span>'
 isPageTag: true
+eleventyExcludeFromCollections: true
 ---
