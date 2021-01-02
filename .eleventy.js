@@ -4,7 +4,7 @@ const { DateTime } = require('luxon')
 const tableOfContents = require('eleventy-plugin-nesting-toc')
 const readingTime = require('eleventy-plugin-reading-time')
 const socialImages = require('@11tyrocks/eleventy-plugin-social-images')
-const CleanCSS = require('clean-css');
+const CleanCSS = require('clean-css')
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -20,22 +20,22 @@ module.exports = function(eleventyConfig) {
   * plugins
   */
 
-  eleventyConfig.addPlugin(eleventyNavigation);
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(eleventyNavigation)
+  eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(tableOfContents)
-  eleventyConfig.addPlugin(readingTime);
-  eleventyConfig.addPlugin(socialImages);
+  eleventyConfig.addPlugin(readingTime)
+  eleventyConfig.addPlugin(socialImages)
 
   /**
   * pass through copy
   */
 
-  eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("js");
-  eleventyConfig.addPassthroughCopy("google*.html"); // TODO: check this!
-  eleventyConfig.addPassthroughCopy("site-*.webmanifest");
-  eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.setDataDeepMerge(true); // used to merge 'blog.11tydata.js' tags with .md tags
+  eleventyConfig.addPassthroughCopy("img")
+  eleventyConfig.addPassthroughCopy("js")
+  eleventyConfig.addPassthroughCopy("google*.html") // TODO: check this!
+  eleventyConfig.addPassthroughCopy("site-*.webmanifest")
+  eleventyConfig.addPassthroughCopy("robots.txt")
+  eleventyConfig.setDataDeepMerge(true) // used to merge 'blog.11tydata.js' tags with .md tags
 
   /**
   * collections
@@ -63,7 +63,7 @@ module.exports = function(eleventyConfig) {
       dateFormat = 'dd LLL yyyy' // 30 Mar 2020
     }
 
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(dateFormat);
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(dateFormat)
   })
 
   // Remove dashes in strings (e.g. label tags)
@@ -101,7 +101,7 @@ module.exports = function(eleventyConfig) {
 
   const markdownIt = require("markdown-it")
   const markdownItAttrs = require('markdown-it-attrs')
-  const markdownItAnchor = require('markdown-it-anchor');
+  const markdownItAnchor = require('markdown-it-anchor')
   const options = {
     html: true,
     breaks: true,
