@@ -1,13 +1,24 @@
+{# social image #}
+{% set socialImg = '' %}
+{% if title|length %}
+  {%- set socialImg %}{{ global.siteUrl }}/social-img/{{ title | slug }}.png{% endset-%}
+{% endif %}
+
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "TechArticle",
   "proficiencyLevel": "Beginner",
   "author": "Giulia Chiola",
-  "datePublished": "{{ articleDate }}",
+  "datePublished": "{{ date }}",
   "headline": "{{ title }}",
   "abstract": "{{ abstract }}",
   "dateModified": "{{ page.date }}",
+  "image": "{{ socialImg }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url }}"
+  }
 }
 </script>
 
@@ -18,7 +29,7 @@
     <div class="c-article-section__info">
       {# date #}
       {% if not isCustomPost %}
-        <time class="c-article-section__date" datetime="{{ articleDate | htmlDateString }}">{{ articleDate | htmlDateString('human-readable') }}</time>
+        <time class="c-article-section__date" datetime="{{ date | htmlDateString }}">{{ date | htmlDateString('human-readable') }}</time>
       {% endif %}
       {# reading time #}
       {% if not isCustomPost %}
@@ -38,13 +49,21 @@
 
     {% if not isCustomPost %}
       <div class="c-article-section__share">
-        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a
+          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+          class="twitter-share-button"
+          data-show-count="false"
+          data-text="{{ title or renderData.title | striptags }} 🚀"
+          data-via="giulia_chiola">
+          Tweet
+          </a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     {% endif %}
   </div>
 
   {# content #}
-  {% if content | toc | safe | length %}
+  {% if title and content | toc | safe | length %}
     <aside>
       <details class="c-article-section__toc">
           <summary><span>📚</span>Table of contents</summary>
@@ -53,7 +72,13 @@
     </aside>
   {% endif %}
 
-  <div class="c-article-section__content">
+  {# reading progress #}
+  {% if category === 'tutorials' %}
+    <div class="c-reading-progress j-reading-progress"><span class="c-reading-progress__value j-reading-progress__value"></span></div>
+  {% endif %}
+
+  {# article content #}
+  <div class="c-article-section__content {% if category === 'tutorials' %}j-article-section__content{% endif %}">
     {{ content | safe }}
   </div>
 
@@ -61,12 +86,12 @@
   {% if not isCustomPost %}
     <div class="c-article-section__bottom">
       {# last updated date #}
-      {% if page.date !== articleDate %}
+      {% if page.date !== date %}
         <footer class="c-article-section__date">Last updated <time datetime="page.date">{{ page.date | htmlDateString('human-readable') }}</time></footer>
       {% endif %}
 
       {# tags #}
-      <ul class="c-article-section__tags">
+      <ul class="c-article-section__tags l-spacing-m">
         {%- for tag in tags %}
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
         <li class="c-article-section__tag">
@@ -75,9 +100,17 @@
         {%- endfor %}
       </ul>
 
-      {% set randomTil = collections.posts | random %}
+      {% set nextPost = collections.post | getNextCollectionItem(page) %}
+      {% if nextPost.url %}
+        {# go to the next post #}
+        {% set goToPost = nextPost %}
+      {% else %}
+        {# go to the first post #}
+        {% set goToPost = collections.post|first %}
+      {% endif %}
+
       <div class="o-distributed o-distributed--center l-spacing-l">
-        <a class="c-button" href="{{ randomTil.url | url }}">Take me to another post!</a>
+        <a class="c-button" href="{{ goToPost.url | url }}">Take me to the next post!</a>
       </div>
     </div>
   {% endif %}

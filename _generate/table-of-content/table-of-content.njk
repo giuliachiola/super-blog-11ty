@@ -1,0 +1,34 @@
+---
+title: Table of contents
+layout: layouts/base.njk
+paletteColor: 3
+---
+
+{% block content %}
+
+<main class="l-main l-spacing-l">
+  <table class="c-table">
+    <thead>
+      <tr>
+        <td><strong>ID</strong></td>
+        <td><strong>Title</strong></td>
+        <td><strong>Category</strong></td>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for entry in collections.all %}
+        {% if entry.data.id %}
+        <tr>
+          <td>{{ entry.data.id }}</td>
+          <td>{{ entry.data.title }}</td>
+          <td>{{ entry.data.category }}</td>
+        </tr>
+        {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+  *T=til, P=projects, B=tutorials/blog
+</main>
+
+{% endblock %}

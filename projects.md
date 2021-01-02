@@ -1,7 +1,7 @@
 ---
 layout: layouts/items-list.njk
 title: Projects
-subtitle: 'Side projects I built during the last years'
+subtitle: Side projects I built during the last months
 paletteColor: 4
 
 eleventyNavigation:

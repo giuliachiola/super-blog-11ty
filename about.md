@@ -12,7 +12,7 @@ eleventyNavigation:
   order: 5
 ---
 
-<img class="s-profile-picture" src="https://pbs.twimg.com/profile_images/884692782476136448/3r10FqKi_400x400.jpg" alt="Giulia Chiola profile picture">
+<img class="s-profile-picture" src="https://res.cloudinary.com/giuliachiola/image/upload/w_400,f_auto/v1609412712/super-blog/giulia-collombardo_CR_rzylax.jpg" alt="Giulia Chiola profile picture">
 
 I am Giulia,
 a **front-end developer** from Italy.

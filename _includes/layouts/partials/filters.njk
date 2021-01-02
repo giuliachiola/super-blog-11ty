@@ -5,7 +5,7 @@
 
   {# tag in collections array #}
   <ul class="c-filter__list">
-    {% for tag in collections.tagsArr %}
+    {% for tag in collections.tagsArr|removeFromArray('post') %}
       <li class="c-filter__item">
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
         <a href="{{ tagUrl | url }}" class="c-label" {% if tag == _tag %}data-state="active"{% endif %}>{{ tag | removeDashes }}</a>

@@ -11,6 +11,6 @@
     "type": "image/png"
   }],
   "start_url": "/",
-  "background_color": "#ffc233",
+  "background_color": "#0d3b95",
   "display": "standalone"
 }

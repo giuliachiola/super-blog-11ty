@@ -1,0 +1,14 @@
+---
+permalink: css/styles-bundle.css
+---
+
+{%- set cssBundle -%}
+  {% include "../../super-styleguide/src/css/style.css" %}
+  {% include "css/gist-syntax-theme.css" %}
+  {% include "css/prismjs-theme.css" %}
+
+  {# NOTE: not used right now #}
+  {% include "css/color-palette.css" %}
+{%- endset -%}
+
+{{ cssBundle | cssmin | safe }}

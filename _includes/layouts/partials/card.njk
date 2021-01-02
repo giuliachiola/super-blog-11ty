@@ -1,6 +1,7 @@
 {% set mainTag = '' %}
 {% if card.data.mainTag %}
-  {% set mainTag = 'c-card--' + card.data.mainTag %}
+  {# at the moment there is any custom CSS for main tag modifiers (ex. c-card--git) #}
+  {# {% set mainTag = 'c-card--' + card.data.mainTag %} #}
 {% endif %}
 
 {% set modifiers = '' %}
@@ -10,7 +11,13 @@
   {% endfor %}
 {% endif %}
 
-{% set articleDate = card.data.articleDate or page.articleDate %}
+{% set date = card.data.date or page.date %}
+
+{# social image #}
+{# {% set socialImg = '' %}
+{% if title|length %}
+  {%- set socialImg %}{{ global.siteUrl }}/social-img/{{ title | slug }}.png{% endset-%}
+{% endif %}
 
 <script type="application/ld+json">
 {
@@ -18,18 +25,19 @@
   "@type": "TechArticle",
   "proficiencyLevel": "Beginner",
   "author": "Giulia Chiola",
-  "datePublished": "{{ articleDate }}",
+  "datePublished": "{{ date }}",
   "headline": "{{ card.data.title }}",
   "abstract": "{{ card.data.abstract }}",
   "dateModified": "{{ card.data.date }}",
+  "image": "{{ socialImg }}"
 }
-</script>
+</script> #}
 
-<article class="c-card {{ modifiers }} {{ mainTag }}" itemscope>
+<article class="c-card {{ modifiers }} {{ mainTag }} {% if card.spacingClass %}{{ card.spacingClass }}{% endif %}" itemscope>
   {% if card.hasImg and card.data.mainTag %}
     <div class="c-card__img-wrapper">
       {# check if SVG exists, otherwise 11ty build explodes! #}
-      {% if card.data.mainTag in ['css', 'design-system', 'git', 'github', 'gitlab', 'js', 'mac-os', 'markdown', 'nodejs', 'static-site-generator', 'svg', 'template-engine', 'shell', 'vuejs'] %}
+      {% if card.data.mainTag in ['css', 'design-system', 'git', 'github', 'gitlab', 'js', 'mac-os', 'markdown', 'nodejs', 'static-site-generator', 'svg', 'template-engine', 'shell', 'vuejs', 'vsc'] %}
         {% include global.svgoPath + card.data.mainTag + '.svg' %}
       {% else %}
         {% include global.svgoPath + 'reindeer.svg' %}
@@ -64,9 +72,9 @@
 
     {# bottom info #}
     <div class="c-card__bottom">
-      <time class="c-card__date" datetime="{{ articleDate | htmlDateString }}">{{ articleDate | htmlDateString('human-readable') }}</time>
+      <time class="c-card__date" datetime="{{ date | htmlDateString }}">{{ date | htmlDateString('human-readable') }}</time>
       <div class="c-card__tags">
-        {% for tag in card.data.tags %}
+        {% for tag in card.data.tags|removeFromArray('post') %}
           {% set tagUrl %}/tags/{{ tag }}/{% endset %}
           <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
         {% endfor %}

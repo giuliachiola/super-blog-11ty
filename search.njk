@@ -1,9 +1,7 @@
 ---
 title: Search post
+subtitle: I hope you will find what you are looking for!
 layout: layouts/base.njk
-# img: 'https://source.unsplash.com/023T4jyCRqA'
-# imgAuthorProfile: 'https://unsplash.com/@mroz'
-# imgAuthorName: '@mroz'
 paletteColor: 3
 
 eleventyNavigation:
@@ -20,15 +18,15 @@ eleventyNavigation:
   </form>
 
   <ul class="s-search-list">
-    {% for entry in collections.posts %}
-      <li class="j-search__item l-spacing-m">
-        {% set card = { data: entry.data, modifiers: ['squared-image', 'horizontal'], hasImg: true } %}
+    {% for entry in collections.post | reverse %}
+      <li class="j-search__item">
+        {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['squared-image', 'horizontal'], hasImg: true } %}
         {% include '_includes/layouts/partials/card.njk' %}
       </li>
     {% endfor %}
   </ul>
 
-  <h2 class="j-search__no-results u-hidden">Oh no!<br>There are not awesome posts with this keyword 💔</h2>
+  <h2 class="j-search__no-results u-hidden">Oh no!<br>There are no awesome posts with this keyword 💔</h2>
 </main>
 
 {% endblock %}

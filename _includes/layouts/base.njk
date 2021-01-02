@@ -3,11 +3,11 @@
   <head>
     {# Palette color #}
     {% set colors = [
-      { num: 1, hex: '#ef476f', lighten: '#f37694' },
-      { num: 2, hex: '#ffc233', lighten: '#ffd166' },
-      { num: 3, hex: '#06d6a0', lighten: '#17f8be' },
-      { num: 4, hex: '#1b98e0', lighten: '#45ade9' },
-      { num: 5, hex: '#ff9f1c', lighten: '#ffb54f' }
+      { num: 1, lighten: '#f37694' },
+      { num: 2, lighten: '#d7e5ff' },
+      { num: 3, lighten: '#adffe9' },
+      { num: 4, lighten: '#ace1ff' },
+      { num: 5, lighten: '#ffe3bd' }
     ] %}
     {% set randColor = colors | random %}
     {% set color = randColor %}
@@ -22,7 +22,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or renderData.title | striptags }} | Giulia Chiola</title>
-    <meta name="description" content="{{ abstract or subtitle }}">
     {# search engine #}
     <meta name="robots" content="index,follow"><!-- All Search Engines -->
     {# archive #}
@@ -34,37 +33,40 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ color.num }}.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ color.num }}.png">
     <link rel="manifest" href="/site-color-{{ color.num }}.webmanifest">
-    {# share #}
-    {% set ogImage = global.siteUrl + '/img/og-images/default.jpg' %}
-    {% if mainTag %}
-      {% set ogImage = global.siteUrl + '/img/og-images/' + mainTag + '.jpg' %}
-    {% endif %}
-    {# share - twitter #}
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@giulia_chiola">
-    <meta name="twitter:site" content="@giulia_chiola">
-    <meta name="twitter:title" content="{{ title or renderData.title | striptags }} by @giulia_chiola #CodeNewbie #100DaysOfCode">
-    <meta name="twitter:description" content="{{ abstract or subtitle }}">
-    <meta name="twitter:image" content="{{ ogImage }}">
-    {# <meta name="twitter:image:alt" content="A description of what is in the image (not a caption)"> #}
-    {# share - og facebook #}
-    <meta property="og:url" content="{{ global.siteUrl | url }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ title or renderData.title | striptags }} by @giulia_chiola #CodeNewbie #100DaysOfCode">
-    <meta property="og:image" content="{{ ogImage }}">
-    {# <meta property="og:image:alt" content="A description of what is in the image (not a caption)"> #}
-    <meta property="og:description" content="{{ abstract or subtitle }}">
-    <meta property="og:site_name" content="Blog | Giulia Chiola">
-    <meta property="og:locale" content="en_US">
-    <meta property="article:author" content="Giulia Chiola">
+    {# og, twitter, SEO #}
+    {% include 'layouts/meta.njk' %}
 
     {# css #}
-    <link rel="stylesheet" href="/css/prismjs-theme.css">
-    <link rel="stylesheet" href="/css/gist-syntax-theme.css">
-    {# css from styleguide repo #}
-    <link rel="stylesheet" href="/super-styleguide/src/css/style.css">
-    {# colors override to test #}
-    <link rel="stylesheet" href="/css/color-palette.css">
+    <link rel="stylesheet" href="/css/styles-bundle.css">
+
+    {# critical css #}
+    {# capture the CSS content as a Nunjucks variable #}
+    {% set css %}
+      {% include "super-styleguide/src/css/critical.css" %}
+    {% endset %}
+    {# feed it through our cssmin filter to minify #}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
+
+    {# fonts #}
+    {% set fontsPath = "https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;600&display=swap" %}
+    <link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+
+    <link rel="preload"
+          as="style"
+          href={{ fontsPath }} />
+
+    <link rel="stylesheet"
+          href={{ fontsPath }}
+          media="print" onload="this.media='all'" />
+
+    <noscript>
+      <link rel="stylesheet"
+            href={{ fontsPath }} />
+    </noscript>
   </head>
 
   <body>
@@ -79,7 +81,12 @@
       {% include 'layouts/partials/footer.njk' %}
     </div>
 
-    {# script #}
-    <script src="/js/script.js"></script>
+    {# script for 11ty only #}
+    <script defer src="/js/main.js"></script>
+    {# scripts from styleguide #}
+    {% if category === 'tutorials' %}
+    <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    {% endif %}
+    <script defer src="/js/scripts.js"></script>
   </body>
 </html>

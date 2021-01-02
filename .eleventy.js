@@ -1,8 +1,10 @@
-const eleventyNavigation = require("@11ty/eleventy-navigation")
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
-const { DateTime } = require("luxon")
+const eleventyNavigation = require('@11ty/eleventy-navigation')
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const { DateTime } = require('luxon')
 const tableOfContents = require('eleventy-plugin-nesting-toc')
-const readingTime = require('eleventy-plugin-reading-time');
+const readingTime = require('eleventy-plugin-reading-time')
+const socialImages = require('@11tyrocks/eleventy-plugin-social-images')
+const CleanCSS = require('clean-css')
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -10,51 +12,47 @@ function uniqueArray(arr) {
 
 module.exports = {
   // markdownTemplateEngine: 'md',
-
-  /**
-  * default is liquid template, please be sure to wrap twig/nunjucks snippets
-
-  {% raw %}
-  ```html
-  <article class="c-card c-card--{{ tag }}"> ... </div>
-  ```
-  {% endraw %}
-
-  */
+  // see README for more informations
 }
 
 module.exports = function(eleventyConfig) {
-  // plugins
-  eleventyConfig.addPlugin(eleventyNavigation);
-  eleventyConfig.addPlugin(syntaxHighlight);
+  /**
+  * plugins
+  */
+
+  eleventyConfig.addPlugin(eleventyNavigation)
+  eleventyConfig.addPlugin(syntaxHighlight)
   eleventyConfig.addPlugin(tableOfContents)
-  eleventyConfig.addPlugin(readingTime);
+  eleventyConfig.addPlugin(readingTime)
+  eleventyConfig.addPlugin(socialImages)
 
-  // configs
-  eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("css");
-  eleventyConfig.addPassthroughCopy("js");
-  eleventyConfig.addPassthroughCopy("google*.html"); // TODO: check this!
-  eleventyConfig.addPassthroughCopy("site-*.webmanifest");
-  eleventyConfig.addPassthroughCopy("robots.txt");
-  eleventyConfig.addPassthroughCopy("super-styleguide/src/css/style.css");
-  eleventyConfig.setDataDeepMerge(true); // used to merge 'blog.11tydata.js' tags with .md tags
+  /**
+  * pass through copy
+  */
 
-  eleventyConfig.addCollection("categories", function(collection) {
-    const categ = collection.getAll().filter(entry => entry.data.category)
-    return categ // tutte le entries con categorie
-  })
+  eleventyConfig.addPassthroughCopy("img")
+  eleventyConfig.addPassthroughCopy("js")
+  eleventyConfig.addPassthroughCopy("google*.html") // TODO: check this!
+  eleventyConfig.addPassthroughCopy("site-*.webmanifest")
+  eleventyConfig.addPassthroughCopy("robots.txt")
+  eleventyConfig.setDataDeepMerge(true) // used to merge 'blog.11tydata.js' tags with .md tags
 
-  // posts = entries with category 'tutorials' or 'til'
-  eleventyConfig.addCollection("posts", function(collection) {
-    return collection.getAllSorted().filter(entry => entry.data.category).filter(el => el.data.category === 'tutorials' || el.data.category === 'til')
-  })
+  /**
+  * collections
+  */
+
+  // array of tags, used in pills
+  // important: this function returns all tags used in posts (that means thats 'projects' are exluced!)
 
   eleventyConfig.addCollection("tagsArr", function(collection) {
-    const entriesWithTags = collection.getAll().filter(entry => entry.data.tags)
+    const entriesWithTags = collection.getFilteredByTag('post').filter(entry => entry.data.tags)
     const tags = entriesWithTags.reduce((tags, entry) => [...tags, ...entry.data.tags], [])
     return uniqueArray(tags)
   })
+
+  /**
+  * filters
+  */
 
   // date manipulation
 
@@ -65,7 +63,7 @@ module.exports = function(eleventyConfig) {
       dateFormat = 'dd LLL yyyy' // 30 Mar 2020
     }
 
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(dateFormat);
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(dateFormat)
   })
 
   // Remove dashes in strings (e.g. label tags)
@@ -74,11 +72,36 @@ module.exports = function(eleventyConfig) {
     return string.replace(/-/g, ' ')
   })
 
-  // Markdown options
+  // Filter collection by tag
+
+  eleventyConfig.addFilter('filterByTag', (collection, tag) => {
+    return collection.filter(entry => entry.data.tags.includes(tag))
+  })
+
+  // Filter collection by categoy
+
+  eleventyConfig.addFilter('filterByCategory', (collection, category) => {
+    return collection.filter(entry => entry.data.category == category)
+  })
+
+  // Remove from array
+  eleventyConfig.addFilter('removeFromArray', (arr, itemToRemove) => {
+    return arr.filter(item => item !== itemToRemove)
+  })
+
+  // CSS
+
+  eleventyConfig.addFilter('cssmin', function(code) {
+    return new CleanCSS({}).minify(code).styles
+  })
+
+  /**
+  * Markdown optionsilters
+  */
 
   const markdownIt = require("markdown-it")
   const markdownItAttrs = require('markdown-it-attrs')
-  const markdownItAnchor = require('markdown-it-anchor');
+  const markdownItAnchor = require('markdown-it-anchor')
   const options = {
     html: true,
     breaks: true,

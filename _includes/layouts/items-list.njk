@@ -2,9 +2,49 @@
 layout: layouts/base.njk
 ---
 
+{# IMPORTANT!
+Please pay attention to the 'reverse' keyword 🤯
+- TIL use the 'reverse: true' parameter in pagination because I needed to reverse the array _before_ the pagination splits in pages
+- tutorials/projects/tags use the '| reverse' filter because there is not the pagination, but I still neeeded the array reversed #}
+
 {% block content %}
 
-{% set list = collections.categories %}
-{% include '_includes/layouts/partials/cards-grid.njk' %}
+{% if isPageTag %}
+  {# filter posts (= projects excluded) by tag #}
+  {% set list = collections.post|filterByTag(tag) | reverse %}
+{% else %}
+  {# filter all entries (= projects included) by category #}
+  {% if categoryFilter == 'til' %}
+    {# til #}
+    {# use paginated list #}
+    {% set arr = pagination.items %}
+  {% else %}
+    {# tutorials, projects, search #}
+    {# use complete list #}
+    {% set arr = collections.all | reverse %}
+  {% endif %}
+  {% set list = arr|filterByCategory(categoryFilter) %}
+{% endif %}
+
+<main class="l-main">
+  {# filters #}
+  <div class="l-spacing-m">
+    {%- include "_includes/layouts/partials/filters.njk" %}
+  </div>
+  {# items #}
+  {% if list|length %}
+    <div class="l-spacing-l">
+      {% include '_includes/layouts/partials/cards-grid.njk' %}
+    </div>
+    {# pagination (just for TIL page) #}
+    {% if categoryFilter == 'til' %}
+      {%- include "_includes/layouts/partials/pagination.njk" %}
+    {% endif %}
+  {% else %}
+    <h2>Oh no!<br>There are no cool posts with this tag 💔</h2>
+  {% endif %}
+
+</main>
+
 
 {% endblock %}

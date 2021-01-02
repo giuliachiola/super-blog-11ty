@@ -1,0 +1,29 @@
+{# IMPORTANT: do not add the |reverse filter here.
+Please check notes in _includes/layouts/items-list.njk #}
+
+{%- for entry in list -%}
+  {# card settings #}
+  {% if categoryFilter == 'tutorials' %}
+    {# tutorials #}
+    {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
+  {% elif isPageTag %}
+    {# tags #}
+    {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['squared-image', 'horizontal'], hasImg: true } %}
+  {% elif categoryFilter == 'projects' %}
+    {# projects #}
+    {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-left'], isExpanded: true } %}
+  {% elif categoryFilter == 'til' %}
+    {# til #}
+    {# note: to set the TIL number we have to loop through all posts, not just the 10 items passed by pagination array #}
+    {% set number = '' %}
+    {% for item in collections.post|filterByCategory('til') %}
+      {% if item.data.title === entry.data.title %}
+        {% set number = loop.index %}
+      {% endif %}
+    {% endfor %}
+    {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-top'], isExpanded: true, number: number } %}
+  {% endif %}
+
+  {# card #}
+  {% include '_includes/layouts/partials/card.njk' %}
+{%- endfor -%}

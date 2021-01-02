@@ -1,45 +1,7 @@
-<main class="l-main">
-  {# filters #}
-  <div class="l-spacing-m">
-    {%- include "_includes/layouts/partials/filters.njk" %}
+{% if categoryFilter == 'tutorials' %}
+  <div class="o-cards-grid">
+    {%- include "_includes/layouts/partials/cards.njk" %}
   </div>
-  {# items #}
-  <div class="l-spacing-l">
-    <div {% if mainLayout == 'grid' %}class="o-cards-grid"{% endif%}>
-
-      {%- for entry in list | reverse %}
-
-        {# categories #}
-        {% if entry.data.category == categoryFilter or isPageTag %}
-          {# card settings #}
-          {% if mainLayout == 'grid' %}
-            {# tutorials and tags #}
-            {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
-          {% elif categoryFilter == 'projects' %}
-            {% set card = { data: entry.data, modifiers: ['highlight-left'], isExpanded: true } %}
-          {% elif categoryFilter == 'til' %}
-            {# find til number #}
-            {# {% set tilCounter = 0 %}
-            {% for til in list | reverse %}
-              {% if entry.data.category == 'til' and entry.data.title == til.data.title %}
-                {% set tilCounter = loop.index %}
-              {% endif %}
-            {% endfor %} #}
-            {% set card = { data: entry.data, modifiers: ['highlight-top'], isExpanded: true, number: loop.index } %}
-          {% elif categoryFilter == 'usefulresources' %}
-            {% set card = { data: entry.data, modifiers: ['highlight-left'], isExpanded: true } %}
-          {% endif %}
-
-          {# card #}
-          {% if mainLayout !== 'grid' %}
-            <div class="l-spacing-m">
-          {% endif %}
-            {% include '_includes/layouts/partials/card.njk' %}
-          {% if mainLayout !== 'grid' %}
-            </div>
-          {% endif %}
-        {% endif %}
-      {%- endfor %}
-    </div>
-  </div>
-</main>
+{% else %}
+  {%- include "_includes/layouts/partials/cards.njk" %}
+{% endif %}

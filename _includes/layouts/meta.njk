@@ -1,0 +1,23 @@
+{# social image #}
+{# note that social image is copied-pasted also in card.njk and article-section.njk #}
+{% set socialImg = '' %}
+{% if title|length %}
+  {%- set socialImg %}{{ global.siteUrl }}/social-img/{{ title | slug }}.png{% endset-%}
+{% endif %}
+
+{# SEO #}
+<meta name="description" content="{{ abstract or subtitle }}">
+<meta name="author" content="Giulia Chiola">
+
+{# og #}
+<meta property="og:title" content="{{ title or renderData.title | striptags }}">
+<meta property="og:description" content="{{ abstract or subtitle }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ global.siteUrl | url }}">
+<meta property="og:image" content="{{ socialImg }}" />
+
+{# twitter #}
+<meta name="twitter:image" content="{{ socialImg }}" />
+<meta name="twitter:creator" content="@giulia_chiola">
+<meta name="twitter:site" content="@giulia_chiola">
+<meta name="twitter:card" content="summary_large_image">
