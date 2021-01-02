@@ -3,11 +3,11 @@
   <head>
     {# Palette color #}
     {% set colors = [
-      { num: 1, hex: '#ef476f', lighten: '#f37694' },
-      { num: 2, hex: '#ffc233', lighten: '#ffd166' },
-      { num: 3, hex: '#06d6a0', lighten: '#17f8be' },
-      { num: 4, hex: '#1b98e0', lighten: '#45ade9' },
-      { num: 5, hex: '#ff9f1c', lighten: '#ffb54f' }
+      { num: 1, lighten: '#f37694' },
+      { num: 2, lighten: '#d7e5ff' },
+      { num: 3, lighten: '#adffe9' },
+      { num: 4, lighten: '#ace1ff' },
+      { num: 5, lighten: '#ffe3bd' }
     ] %}
     {% set randColor = colors | random %}
     {% set color = randColor %}
