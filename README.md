@@ -194,4 +194,3 @@ Example at 720w:
 ```
 https://res.cloudinary.com/giuliachiola/image/upload/v1586637232/f_auto,w_720/super-blog/T8-issue-and-pr-templates/til-14-bug-report-01_fcauoy.jpg
 ```
-
