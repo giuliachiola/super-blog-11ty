@@ -8,8 +8,12 @@ eleventyExcludeFromCollections: true
   <url>
     <loc>{{ global.siteUrl }}{{ page.url | url }}</loc>
     <lastmod>{{ page.date | htmlDateString }}</lastmod>
-    {# TODO: add change frequency: https://www.belter.io/eleventy-sitemap/ #}
-    {# <changefreq>{{page.data.changeFreq}}</changefreq> #}
+    {# change frequency #}
+    {%- set changeFreq = 'monthly' -%}
+    {%- if page.data.changeFreq -%}
+      {%- set changeFreq = page.data.changeFreq -%}
+    {%- endif -%}
+    <changefreq>{{ changeFreq }}</changefreq>
   </url>
 {%- endfor %}
 </urlset>
