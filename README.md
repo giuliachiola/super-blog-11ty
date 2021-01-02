@@ -194,3 +194,28 @@ Example at 720w:
 ```
 https://res.cloudinary.com/giuliachiola/image/upload/v1586637232/f_auto,w_720/super-blog/T8-issue-and-pr-templates/til-14-bug-report-01_fcauoy.jpg
 ```
+
+IMPORTANT: do *not* indent HTML tag, because 11ty build breaking lines as `<br>`
+
+❌ bad
+```
+<img src="/media/cc0-images/grapefruit-slice-332-332.jpg"
+     alt="Grapefruit slice atop a pile of other slices">
+```
+
+✅ good
+```
+<img src="/media/cc0-images/grapefruit-slice-332-332.jpg" alt="Grapefruit slice atop a pile of other slices">
+```
+
+Using `width`, `height`, `lazy`
+
+```html
+<img loading="lazy" src="" alt="" width="" height="">
+```
+
+Add classes
+
+```html
+![issue template 01](https://res.cloudinary.com/giuliachiola/image/upload/v1586637232/super-blog/T8-issue-and-pr-templates/til-14-bug-report-01_fcauoy.jpg){.c-article-section__img--shadow}
+```
