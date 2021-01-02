@@ -2,7 +2,7 @@
 {# note that social image is copied-pasted also in card.njk and article-section.njk #}
 {% set socialImg = '' %}
 {% if title|length %}
-  {%- set socialImg %}{{ global.url }}/social-img/{{ title | slug }}.png{% endset-%}
+  {%- set socialImg %}{{ global.siteUrl }}/social-img/{{ title | slug }}.png{% endset-%}
 {% endif %}
 
 {# SEO #}
@@ -17,7 +17,7 @@
 <meta property="og:image" content="{{ socialImg }}" />
 
 {# twitter #}
-<meta name="twitter:image" content="{{ socialImg }}?123" />
+<meta name="twitter:image" content="{{ socialImg }}" />
 <meta name="twitter:creator" content="@giulia_chiola">
 <meta name="twitter:site" content="@giulia_chiola">
 <meta name="twitter:card" content="summary_large_image">
