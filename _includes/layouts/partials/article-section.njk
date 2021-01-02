@@ -1,7 +1,7 @@
 {# social image #}
 {% set socialImg = '' %}
 {% if title|length %}
-  {%- set socialImg %}{{ global.url }}/social-img/{{ title | slug }}.png{% endset-%}
+  {%- set socialImg %}{{ global.siteUrl }}/social-img/{{ title | slug }}.png{% endset-%}
 {% endif %}
 
 <script type="application/ld+json">
@@ -63,7 +63,7 @@
   </div>
 
   {# content #}
-  {% if content | toc | safe | length %}
+  {% if title and content | toc | safe | length %}
     <aside>
       <details class="c-article-section__toc">
           <summary><span>📚</span>Table of contents</summary>
