@@ -93,8 +93,14 @@ tags:
 ### Shadow image using markdown-it
 
 ```
-![alt text](image.jpg){.c-article-section__img--shadow}
+![alt text](image.jpg){.u-shadow}
 ```
+
+### Set image max-width
+
+- `s-img--medium-d` (max-width: 70% in desktop)
+- `s-img--small-d` (max-width: 50% in desktop)
+same as gifs.
 
 ### GitLab snippet
 
