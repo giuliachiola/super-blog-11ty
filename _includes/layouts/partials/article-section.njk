@@ -63,7 +63,7 @@
   </div>
 
   {# content #}
-  {% if content | toc | safe | length %}
+  {% if title and content | toc | safe | length %}
     <aside>
       <details class="c-article-section__toc">
           <summary><span>📚</span>Table of contents</summary>
