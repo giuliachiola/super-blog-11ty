@@ -9,27 +9,6 @@ if (checkbox) {
 }
 
 /* ----------------------------
-  Switch theme (light/dark mode)
----------------------------- */
-const toggleSwitch = document.querySelector('.j-theme-switcher input[type="checkbox"]')
-const currentTheme = localStorage.getItem('theme') || 'light'
-document.documentElement.setAttribute('data-theme', currentTheme)
-
-if (currentTheme === 'dark') {
-  toggleSwitch.checked = true
-}
-
-const switchTheme = (e) => {
-  const theme = e.target.checked ? 'dark' : 'light'
-  document.documentElement.setAttribute('data-theme', theme)
-  localStorage.setItem('theme', theme)
-}
-
-if(toggleSwitch) {
-  toggleSwitch.addEventListener('change', switchTheme, false)
-}
-
-/* ----------------------------
   Add copy button in snippets using PrismJS
   https://www.tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/
 ---------------------------- */
@@ -117,3 +96,26 @@ function updateProgress() {
 if (articleEl) {
   document.addEventListener('scroll', _.debounce(updateProgress, 400))
 }
+
+/* ----------------------------
+  Switch theme (light/dark mode)
+---------------------------- */
+const switchTheme = (e) => {
+  const theme = e.target.checked ? 'dark' : 'light'
+  document.documentElement.setAttribute('data-theme', theme)
+  localStorage.setItem('theme', theme)
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const toggleSwitch = document.querySelector('.j-theme-switcher input[type="checkbox"]')
+  const currentTheme = localStorage.getItem('theme') || 'light'
+  document.documentElement.setAttribute('data-theme', currentTheme)
+
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true
+  }
+
+  if(toggleSwitch) {
+    toggleSwitch.addEventListener('change', switchTheme, false)
+  }
+})
