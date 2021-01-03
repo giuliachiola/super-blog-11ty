@@ -100,16 +100,18 @@ module.exports = function(eleventyConfig) {
   */
 
   const markdownIt = require("markdown-it")
-  const markdownItAttrs = require('markdown-it-attrs')
-  const markdownItAnchor = require('markdown-it-anchor')
-  const options = {
+
+  const markdownLib = markdownIt({
     html: true,
     breaks: true,
     linkify: true
-  }
-  const markdownLib = markdownIt(options)
-    .use(markdownItAttrs)
-    .use(markdownItAnchor)
+  })
+    .use(require('markdown-it-attrs'))
+    .use(require('markdown-it-anchor'), {
+      permalink: true,
+      permalinkSymbol: '#',
+      permalinkClass: 'j-header-anchor'
+    })
   eleventyConfig.setLibrary("md", markdownLib)
 
   /**
