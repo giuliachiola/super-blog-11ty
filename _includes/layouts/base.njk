@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {# IMPORTANT: we have to check localStorage as soon as page loads to prevent flickering #}
+    <script>
+      const currentTheme = localStorage.getItem('theme')
+      document.documentElement.setAttribute('data-theme', currentTheme)
+    </script>
     {# Palette color #}
     {% set colors = [
       { num: 1, lighten: '#f37694' },
