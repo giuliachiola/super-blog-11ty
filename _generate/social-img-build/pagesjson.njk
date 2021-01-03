@@ -1,31 +1,18 @@
 ---
 permalink: ./pages.json
-permalinkBypassOutputDir: true
 eleventyExcludeFromCollections: true
 ---
-{% set colors = [
-  '#ef476f',
-  '#0d3b95',
-  '#06d6a0',
-  '#1b98e0',
-  '#ff9f1c'
-] %}
-
 [
 {%- for pages in collections.post %}
-  {% set randColor = colors | random %}
   {# item starts #}
   {
     "selectors": [
       {
         "selector": "#j-title",
         "content":"{% if pages.data.title %}{{ pages.data.title | addNbsp | safe }}{% else %}11ty Rocks{% endif %}"
-      },
-      {
-        "selector": "#j-color",
-        "content":"{{ randColor }}"
       }
     ],
+    "bodyClass": "t-palette--{{ pages.data.paletteColor }}",
     "imgName":"{{ pages.data.title | slug }}"
   }{% if loop.last == false %},{% endif -%}
   {# item ends #}
