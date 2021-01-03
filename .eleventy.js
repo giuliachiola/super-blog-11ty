@@ -110,6 +110,7 @@ module.exports = function(eleventyConfig) {
     .use(require('markdown-it-anchor'), {
       permalink: true,
       permalinkSymbol: '#',
+      permalinkClass: 'j-header-anchor'
     })
   eleventyConfig.setLibrary("md", markdownLib)
 
