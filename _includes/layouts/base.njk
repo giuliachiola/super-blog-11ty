@@ -3,7 +3,7 @@
   <head>
     {# IMPORTANT: we have to check localStorage as soon as page loads to prevent flickering #}
     <script>
-      const currentTheme = localStorage.getItem('theme')
+      const currentTheme = localStorage.getItem('theme') || 'light'
       document.documentElement.setAttribute('data-theme', currentTheme)
     </script>
     {# Palette color #}
