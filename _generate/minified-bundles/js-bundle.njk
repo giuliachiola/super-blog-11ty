@@ -1,0 +1,10 @@
+---
+permalink: js/js-bundle.js
+---
+
+{%- set jsBundle -%}
+  {% include "../../js/main.js" %}
+  {% include "../../js/scripts.js" %}
+{%- endset -%}
+
+{{ jsBundle | jsmin | safe }}

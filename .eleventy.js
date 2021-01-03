@@ -4,7 +4,8 @@ const { DateTime } = require('luxon')
 const tableOfContents = require('eleventy-plugin-nesting-toc')
 const readingTime = require('eleventy-plugin-reading-time')
 const socialImages = require('@11tyrocks/eleventy-plugin-social-images')
-const CleanCSS = require('clean-css')
+const CleanCSS = require('clean-css') // CSS minifier
+const { minify } = require("terser") // JS minifier
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
@@ -31,7 +32,6 @@ module.exports = function(eleventyConfig) {
   */
 
   eleventyConfig.addPassthroughCopy("img")
-  eleventyConfig.addPassthroughCopy("js")
   eleventyConfig.addPassthroughCopy("google*.html") // TODO: check this!
   eleventyConfig.addPassthroughCopy("site-*.webmanifest")
   eleventyConfig.addPassthroughCopy("robots.txt")
@@ -111,4 +111,22 @@ module.exports = function(eleventyConfig) {
     .use(markdownItAttrs)
     .use(markdownItAnchor)
   eleventyConfig.setLibrary("md", markdownLib)
+
+  /**
+  * JS minifier
+  */
+
+  eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (
+    code,
+    callback
+  ) {
+    try {
+      const minified = await minify(code)
+      callback(null, minified.code)
+    } catch (err) {
+      console.error("Terser error: ", err)
+      // Fail gracefully.
+      callback(null, code)
+    }
+  })
 }

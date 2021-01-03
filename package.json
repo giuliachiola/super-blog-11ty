@@ -22,7 +22,8 @@
     "eleventy-plugin-reading-time": "0.0.1",
     "luxon": "^1.25.0",
     "markdown-it-anchor": "^6.0.1",
-    "markdown-it-attrs": "^3.0.3"
+    "markdown-it-attrs": "^3.0.3",
+    "terser": "^5.5.1"
   },
   "dependencies": {
     "@11tyrocks/eleventy-plugin-social-images": "^0.1.2"

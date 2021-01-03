@@ -37,7 +37,7 @@
     {% include 'layouts/meta.njk' %}
 
     {# css #}
-    <link rel="stylesheet" href="/css/styles-bundle.css">
+    <link rel="stylesheet" href="/css/css-bundle.css">
 
     {# critical css #}
     {# capture the CSS content as a Nunjucks variable #}
@@ -81,12 +81,11 @@
       {% include 'layouts/partials/footer.njk' %}
     </div>
 
-    {# script for 11ty only #}
-    <script defer src="/js/main.js"></script>
     {# scripts from styleguide #}
     {% if category === 'tutorials' %}
     <script defer src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     {% endif %}
-    <script defer src="/js/scripts.js"></script>
+    <script defer src="/js/js-bundle.js"></script>
+    {# JS #}
   </body>
 </html>
