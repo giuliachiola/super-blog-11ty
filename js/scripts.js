@@ -108,8 +108,8 @@ const switchTheme = (e) => {
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const toggleSwitch = document.querySelector('.j-theme-switcher input[type="checkbox"]')
-  const currentTheme = localStorage.getItem('theme') || 'light'
-  document.documentElement.setAttribute('data-theme', currentTheme)
+  // const currentTheme = localStorage.getItem('theme') || 'light'
+  // document.documentElement.setAttribute('data-theme', currentTheme)
 
   if (currentTheme === 'dark') {
     toggleSwitch.checked = true
