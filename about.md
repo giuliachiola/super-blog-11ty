@@ -29,4 +29,4 @@ About my actual employment, I am working for [Modo](https://modo.md/), an italia
 
 <hr>
 
-All content in this blog is open-source and accessible [in this repository](https://gitlab.com/giuliach/super-blog-content), so if you find typos or incorrect explanations (I tried my best with English but I am still learning 😇), please open an issue/pull-request, or DM me at Twitter <a href="https://twitter.com/giulia_chiola">@giulia_chiola</a> **Thank you!**
+All content in this blog is open-source and accessible [in this repository](https://gitlab.com/giuliach/super-blog-content), so if you find a typo or incorrect explanations (I tried my best with English but I am still learning 😇), please open an issue/pull-request, or DM me at Twitter <a href="https://twitter.com/giulia_chiola">@giulia_chiola</a> **Thank you!**
