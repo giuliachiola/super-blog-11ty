@@ -225,3 +225,14 @@ Add classes
 ```html
 ![issue template 01](https://res.cloudinary.com/giuliachiola/image/upload/v1586637232/super-blog/T8-issue-and-pr-templates/til-14-bug-report-01_fcauoy.jpg){.c-article-section__img--shadow}
 ```
+
+## Eleventy plugin social images
+
+uses the forked version:
+
+https://github.com/giuliachiola/eleventy-plugin-social-images
+
+and please use
+```
+git push origin-https feature/add-custom-selectors
+```
