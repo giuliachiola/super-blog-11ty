@@ -6,23 +6,7 @@
       const currentTheme = localStorage.getItem('theme') || 'light'
       document.documentElement.setAttribute('data-theme', currentTheme)
     </script>
-    {# Palette color #}
-    {% set colors = [
-      { num: 1, lighten: '#f37694' },
-      { num: 2, lighten: '#d7e5ff' },
-      { num: 3, lighten: '#adffe9' },
-      { num: 4, lighten: '#ace1ff' },
-      { num: 5, lighten: '#ffe3bd' }
-    ] %}
-    {% set randColor = colors | random %}
-    {% set color = randColor %}
-    {% if paletteColor %}
-      {% for item in colors %}
-        {% if item.num === paletteColor %}
-          {% set color = item %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
+
     {# info #}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,12 +16,25 @@
     {# archive #}
     <link rel="archives" href="{{ global.siteUrl | url }} + '/search'">
     {# theme color #}
-    <meta name="theme-color" content="{{ color.lighten }}">
+    {% set lightenColors = [
+      '#f37694',
+      '#d7e5ff',
+      '#adffe9',
+      '#ace1ff',
+      '#ffe3bd'
+    ] %}
+    {% set lightenColor = '' %}
+    {% for item in lightenColors %}
+      {% if loop.index === paletteColor %}
+        {% set lightenColor = item %}
+      {% endif %}
+    {% endfor %}
+    <meta name="theme-color" content="{{ lightenColor }}">
     {# favicon #}
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-color-{{ color.num }}.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ color.num }}.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ color.num }}.png">
-    <link rel="manifest" href="/site-color-{{ color.num }}.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon-color-{{ paletteColor }}.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32-color-{{ paletteColor }}.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16-color-{{ paletteColor }}.png">
+    <link rel="manifest" href="/site-color-{{ paletteColor }}.webmanifest">
     {# og, twitter, SEO #}
     {% include 'layouts/meta.njk' %}
 
@@ -75,7 +72,7 @@
   </head>
 
   <body>
-    <div class="l-wrapper t-palette-color--{{ color.num }}">
+    <div class="l-wrapper t-palette-color--{{ paletteColor }}">
       {# header #}
       {% include 'layouts/partials/header.njk' %}
 
