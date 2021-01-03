@@ -14,6 +14,7 @@ eleventyExcludeFromCollections: true
 [
 {%- for pages in collections.post %}
   {% set randColor = colors | random %}
+  {# item starts #}
   {
     "selectors": [
       {
@@ -27,5 +28,6 @@ eleventyExcludeFromCollections: true
     ],
     "imgName":"{{ pages.data.title | slug }}"
   }{% if loop.last == false %},{% endif -%}
+  {# item ends #}
 {% endfor %}
 ]
