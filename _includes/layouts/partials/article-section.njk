@@ -64,13 +64,18 @@
     {% endif %}
   </div>
 
-  {# content #}
+  {# table of content (TOC) #}
   {# note: check if tags exist just to be sure that we are in an article post #}
   {% if tags and content | toc | safe | length %}
     <aside>
       <details class="c-article-section__toc">
           <summary><span>📚</span>Table of contents</summary>
-          {{ content | toc | safe }}
+          {# important:
+          replace(' #') (with a space before the hash!) to remove the hash added by markdown-it anchor plugin, but to not remove hash into the href link!
+          correct output: <a href="#editor">Editor</a>
+          previous wrong output: <a href="#editor">Editor #</a>
+          #}
+          {{ content | toc | safe | replace(' #', '') }}
       </details>
     </aside>
   {% endif %}

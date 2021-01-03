@@ -17,6 +17,7 @@
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
+    "@11tyrocks/eleventy-plugin-social-images": "^0.1.2",
     "clean-css": "^4.2.3",
     "eleventy-plugin-nesting-toc": "^1.2.0",
     "eleventy-plugin-reading-time": "0.0.1",
@@ -24,8 +25,5 @@
     "markdown-it-anchor": "^6.0.1",
     "markdown-it-attrs": "^3.0.3",
     "terser": "^5.5.1"
-  },
-  "dependencies": {
-    "@11tyrocks/eleventy-plugin-social-images": "^0.1.2"
   }
 }
