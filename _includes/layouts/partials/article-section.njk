@@ -26,41 +26,40 @@
   <h1>{{ title }}</h1>
 
   <div class="c-article-section__top l-spacing-m">
-    <div class="c-article-section__info">
-      {# date #}
-      {% if not isCustomPost %}
-        <time class="c-article-section__date" datetime="{{ date | htmlDateString }}">{{ date | htmlDateString('human-readable') }}</time>
-      {% endif %}
-      {# reading time #}
-      {% if not isCustomPost %}
-        <p class="c-article-section__reading-time">{{ content | readingTime }} read</p>
-      {% endif %}
-
-      {# tags #}
-      {% if tags %}
-      <ul class="c-article-section__tags">
-        {%- for tag in tags|removeFromArray('post') %}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-          <li class="c-article-section__tag">
-            <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
-          </li>
-        {%- endfor %}
-      </ul>
-      {% endif %}
-    </div>
 
     {% if not isCustomPost %}
-      <div class="c-article-section__share">
-        <a
-          href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-          class="twitter-share-button"
-          data-show-count="false"
-          data-text="{{ title or renderData.title | striptags }} 🚀"
-          data-via="giulia_chiola">
-          Tweet
-          </a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
+    {# info (date & reading time) #}
+    <p class="c-article-section__info">
+      {# date #}
+      <time class="c-article-section__date" datetime="{{ date | htmlDateString }}">{{ date | htmlDateString('human-readable') }}</time>
+      {# reading time #}
+      <span class="c-article-section__reading-time">{{ content | readingTime }} read</span>
+    </p>
+
+    {# twitter share #}
+    <div class="c-article-section__share">
+      <a
+        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+        class="twitter-share-button"
+        data-show-count="false"
+        data-text="{{ title or renderData.title | striptags }} 🚀"
+        data-via="giulia_chiola">
+        Tweet
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    {% endif %}
+
+    {# tags #}
+    {% if tags %}
+    <ul class="c-article-section__tags">
+      {%- for tag in tags|removeFromArray('post') %}
+      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <li class="c-article-section__tag">
+          <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
+        </li>
+      {%- endfor %}
+    </ul>
     {% endif %}
   </div>
 
