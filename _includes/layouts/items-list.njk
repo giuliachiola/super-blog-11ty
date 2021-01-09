@@ -14,7 +14,7 @@ Please pay attention to the 'reverse' keyword 🤯
   {% set list = collections.post|filterByTag(tag) | reverse %}
 {% else %}
   {# filter all entries (= projects included) by category #}
-  {% if categoryFilter == 'til' %}
+  {% if categoryHome == 'til' %}
     {# til #}
     {# use paginated list #}
     {% set arr = pagination.items %}
@@ -23,7 +23,7 @@ Please pay attention to the 'reverse' keyword 🤯
     {# use complete list #}
     {% set arr = collections.all | reverse %}
   {% endif %}
-  {% set list = arr|filterByCategory(categoryFilter) %}
+  {% set list = arr|filterByCategory(categoryHome) %}
 {% endif %}
 
 <main class="l-main">
@@ -37,7 +37,7 @@ Please pay attention to the 'reverse' keyword 🤯
       {% include '_includes/layouts/partials/cards-grid.njk' %}
     </div>
     {# pagination (just for TIL page) #}
-    {% if categoryFilter == 'til' %}
+    {% if categoryHome == 'til' %}
       {%- include "_includes/layouts/partials/pagination.njk" %}
     {% endif %}
   {% else %}

@@ -14,5 +14,5 @@ pagination:
   reverse: true
 permalink: "{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber }}/{% endif %}/"
 
-categoryFilter: til
+categoryHome: til
 ---

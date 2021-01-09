@@ -7,6 +7,7 @@
     <ul class="c-header__list">
       {%- for entry in navPages %}
         <li class="c-header__item">
+          {# NOTE: data-state="current-section" DOES NOT WORK! #}
           <a
             class="c-header__link"
             href="{{ entry.url | url }}"
