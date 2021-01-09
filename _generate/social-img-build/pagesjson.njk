@@ -9,10 +9,9 @@ eleventyExcludeFromCollections: true
     "selectors": [
       {
         "selector": "#j-title",
-        "content":"{% if pages.data.title %}{{ pages.data.title | addNbsp | safe }}{% else %}11ty Rocks{% endif %}"
+        "content":"{% if pages.data.title %}{{ pages.data.title | addNbsp | safe }}{% else %}AWESOME TITLE{% endif %}"
       }
     ],
-    "bodyClass": "t-palette--{{ pages.data.paletteColor }}",
     "imgName":"{{ pages.data.title | slug }}"
   }{% if loop.last == false %},{% endif -%}
   {# item ends #}
