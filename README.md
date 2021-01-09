@@ -232,6 +232,18 @@ and please use
 git push origin-https feature/add-custom-selectors
 ```
 
+### Local preview
+
+- Remove `eleventyExcludeFromCollections: true` from `pagesjson.njk` (note: remove, if you just comment the line it does not work)
+- Remove/comment in `.eleventyignore` this files:
+```
+# pages.json
+# _generate/social-img-build/preview.html
+```
+
+Preview: `http://localhost:8080/_generate/social-img-build/preview/index.html`
+JSON: `http://localhost:8080/pages.json`
+
 # Validators check
 
 - [Twitter card validartor](https://cards-dev.twitter.com/validator)
