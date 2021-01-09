@@ -23,7 +23,7 @@
 </script>
 
 <article class="c-article-section l-spacing-l {% if isCustomPost %}c-article-section--custom{% endif %}">
-  <h1>{{ title }}</h1>
+  <h1>{% if category == 'projects' %}[Project] {% endif%}{{ title }}</h1>
 
   <div class="c-article-section__top l-spacing-m">
 
@@ -122,9 +122,12 @@
         {% set goToPost = collections.post|first %}
       {% endif %}
 
+      {% if category !== 'projects' %}
       <div class="o-distributed o-distributed--center l-spacing-l">
         <a class="c-button" href="{{ goToPost.url | url }}">Take me to the next post!</a>
       </div>
+      {% endif %}
+
     </div>
   {% endif %}
 </article>
