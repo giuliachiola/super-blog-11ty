@@ -117,6 +117,13 @@ quote: If opportunity doesn’t knock, <br class="u-ty-break-t">build a door.
 > [...](...)
 > [...](...)
 
+### Bonus tip
+
+> ⚡️ Bonus tip
+>
+> [...](...)
+> [...](...)
+
 
 ### GitLab snippet
 
