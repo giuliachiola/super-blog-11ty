@@ -124,12 +124,25 @@ quote: If opportunity doesn’t knock, <br class="u-ty-break-t">build a door.
 > [...](...)
 > [...](...)
 
+### Important
+
+> 🧨 **!important**
+>
+> 
+
+### Codepen example
+
+[🖥 Codepen example](#)
 
 ### GitLab snippet
 
 ```md
-[🦊Gitlab snippet](#)
+[🦊 Gitlab snippet](#)
 ```
+
+### Internal links
+
+[📒 styleguide setup]({{ global.siteUrl }}/posts/styleguide-setup/)
 
 ### WIP posts
 
