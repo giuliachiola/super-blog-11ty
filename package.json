@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "social:images": "eleventy-social-images --imageDir social-img --templatePath _generate/social-img-build/preview.html",
+    "social:images": "eleventy-social-images --imageDir social-img --templatePath _generate/social-img-build/preview.html --dataFile _site/pages.json",
     "dev": "rm -rf _site && npx @11ty/eleventy --serve",
     "dev:debug": "DEBUG=Eleventy* npm run dev",
     "build": "rm -rf _site && npx @11ty/eleventy && npm run social:images",

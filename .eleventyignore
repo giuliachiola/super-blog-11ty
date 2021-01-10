@@ -5,4 +5,7 @@ z-resources/
 README.md
 
 # pages.json
-# _generate/social-img-build/preview.html
+
+# uncomment this will throw an error from pagesjson.njk because this page will result in collection.all
+#  Template render error: (./_generate/social-img-build/pagesjson.njk) Error: slugify: string argument expected
+_generate/social-img-build/preview.html
