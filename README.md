@@ -221,6 +221,21 @@ Add classes
 ![issue template 01](https://res.cloudinary.com/giuliachiola/image/upload/v1586637232/super-blog/T8-issue-and-pr-templates/til-14-bug-report-01_fcauoy.jpg){.c-article-section__img--shadow}
 ```
 
+## Debug 11ty
+
+Print all collections (= output in Nunjucks `{%- for pages in collections.all %}` )
+
+```js
+eleventyConfig.addCollection("debugMyContent", function(collectionApi) {
+  const cleaned = collectionApi.getAll().map(coll => ({
+    // edit here to print just some values
+    path: coll.template.inputPath,
+    title: coll.data.title,
+  }))
+  console.log('cleaned *** ', cleaned)
+  return collectionApi.getAll()
+});
+```
 
 # Validators check
 
