@@ -117,12 +117,32 @@ quote: If opportunity doesn’t knock, <br class="u-ty-break-t">build a door.
 > [...](...)
 > [...](...)
 
+### Bonus tip
+
+> ⚡️ Bonus tip
+>
+> [...](...)
+> [...](...)
+
+### Important
+
+> 🧨 **!important**
+>
+> 
+
+### Codepen example
+
+[🖥 Codepen example](#)
 
 ### GitLab snippet
 
 ```md
-[🦊Gitlab snippet](#)
+[🦊 Gitlab snippet](#)
 ```
+
+### Internal links
+
+[📒 styleguide setup]({{ global.siteUrl }}/posts/styleguide-setup/)
 
 ### WIP posts
 
@@ -243,6 +263,21 @@ git push origin-https feature/add-custom-selectors
 
 Preview: `http://localhost:8080/_generate/social-img-build/preview/index.html`
 JSON: `http://localhost:8080/pages.json`
+## Debug 11ty
+
+Print all collections (= output in Nunjucks `{%- for pages in collections.all %}` )
+
+```js
+eleventyConfig.addCollection("debugMyContent", function(collectionApi) {
+  const cleaned = collectionApi.getAll().map(coll => ({
+    // edit here to print just some values
+    path: coll.template.inputPath,
+    title: coll.data.title,
+  }))
+  console.log('cleaned *** ', cleaned)
+  return collectionApi.getAll()
+});
+```
 
 # Validators check
 

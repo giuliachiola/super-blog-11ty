@@ -3,8 +3,7 @@ permalink: ./pages.json
 eleventyExcludeFromCollections: true
 ---
 [
-{%- for pages in collections.post %}
-  {# item starts #}
+{%- for pages in collections.all -%}
   {
     "selectors": [
       {
@@ -15,5 +14,5 @@ eleventyExcludeFromCollections: true
     "imgName":"{{ pages.data.title | slug }}"
   }{% if loop.last == false %},{% endif -%}
   {# item ends #}
-{% endfor %}
+{%- endfor -%}
 ]

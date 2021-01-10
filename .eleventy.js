@@ -32,6 +32,7 @@ module.exports = function(eleventyConfig) {
   */
 
   eleventyConfig.addPassthroughCopy("img")
+  eleventyConfig.addPassthroughCopy("super-styleguide/src/css/print.css")
   eleventyConfig.addPassthroughCopy("google*.html") // TODO: check this!
   eleventyConfig.addPassthroughCopy("site-*.webmanifest")
   eleventyConfig.addPassthroughCopy("robots.txt")
