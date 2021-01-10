@@ -60,7 +60,7 @@ cd super-blog-content/ && git pull && cd .. && cd super-styleguide/ && git pull 
 - super-blog-content: `master`
 - (this project) super-blog-11ty: `master` -> production, `develop` -> staging
 
-## Post
+## Content
 
 ### Post empty fields
 
@@ -75,69 +75,12 @@ quoteAuthor: ---
 # imgAuthorProfile: 'https://unsplash.com/---'
 
 date: 2020-03-23
-readingTime: 10 mins
 mainTag: ---
 tags:
   - ---
+id: T20
 ---
 ```
-
-
-### More info
-
-> 📚 More info
->
-> [...](...)
-> [...](...)
-
-### Shadow image using markdown-it
-
-```
-![alt text](image.jpg){.u-shadow}
-```
-
-### Set image max-width
-
-- `s-img--medium-d` (max-width: 70% in desktop)
-- `s-img--small-d` (max-width: 50% in desktop)
-same as gifs.
-
-### GitLab snippet
-
-```md
-[🦊Gitlab snippet](#)
-```
-
-# Validators check
-
-- [Twitter card validartor](https://cards-dev.twitter.com/validator)
-- [Facebook card validator](https://developers.facebook.com/tools/debug/)
-- [Check broken links](https://www.drlinkcheck.com/)
-
-### WIP posts
-
-- add `eleventyExcludeFromCollections: true` flag in WIP posts
-
-### Gifs
-
-```html
-<div class="s-giphy s-giphy--medium-d">
-...
-</div>
-```
-
-Use tag `<video>` to improve performance:
-
-```html
-<div class="s-giphy s-giphy--small-d">
-  <video autoplay loop muted playsinline>
-    <source src="https://i.giphy.com/media/5gXYzsVBmjIsw/giphy.mp4" type="video/mp4">
-  </video>
-  <p><a href="https://giphy.com/gifs/cat-cool-5gXYzsVBmjIsw">via GIPHY</a></p>
-</div>
-```
-
-Remember to add a `title` to the iframe for accessibility `<iframe title="gif-party">`
 
 ### Tags
 
@@ -161,6 +104,63 @@ tags:
   - vsc
 ```
 
+#### Quotes line break
+
+```md
+quote: If opportunity doesn’t knock, <br class="u-ty-break-t">build a door.
+```
+
+### More info
+
+> 📚 More info
+>
+> [...](...)
+> [...](...)
+
+
+### GitLab snippet
+
+```md
+[🦊Gitlab snippet](#)
+```
+
+### WIP posts
+
+- add `eleventyExcludeFromCollections: true` flag in WIP posts
+
+## Images
+
+### Shadow image using markdown-it
+
+```
+![alt text](image.jpg){.u-shadow}
+```
+
+### Set image max-width
+
+- `s-img--medium-d` (max-width: 70% in desktop)
+- `s-img--small-d` (max-width: 50% in desktop)
+same as gifs.
+
+### Gifs
+
+```html
+<div class="s-giphy s-giphy--medium-d">
+...
+</div>
+```
+
+Use tag `<video>` to improve performance:
+
+```html
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/5gXYzsVBmjIsw/giphy.mp4" type="video/mp4">
+  </video>
+  <p><a href="https://giphy.com/gifs/cat-cool-5gXYzsVBmjIsw">via GIPHY</a></p>
+</div>
+```
+
 ## Markdown
 
 Default is liquid template, please be sure to wrap twig/nunjucks snippets
@@ -171,13 +171,8 @@ Default is liquid template, please be sure to wrap twig/nunjucks snippets
 ```
 {% endraw %}
 
-### Quotes line break
 
-```md
-quote: If opportunity doesn’t knock, <br class="u-ty-break-t">build a door.
-```
-
-## Table of contents 
+## Table of contents
 
 Used for Cloudinary folder match
 
@@ -225,3 +220,25 @@ Add classes
 ```html
 ![issue template 01](https://res.cloudinary.com/giuliachiola/image/upload/v1586637232/super-blog/T8-issue-and-pr-templates/til-14-bug-report-01_fcauoy.jpg){.c-article-section__img--shadow}
 ```
+
+## Debug 11ty
+
+Print all collections (= output in Nunjucks `{%- for pages in collections.all %}` )
+
+```js
+eleventyConfig.addCollection("debugMyContent", function(collectionApi) {
+  const cleaned = collectionApi.getAll().map(coll => ({
+    // edit here to print just some values
+    path: coll.template.inputPath,
+    title: coll.data.title,
+  }))
+  console.log('cleaned *** ', cleaned)
+  return collectionApi.getAll()
+});
+```
+
+# Validators check
+
+- [Twitter card validartor](https://cards-dev.twitter.com/validator)
+- [Facebook card validator](https://developers.facebook.com/tools/debug/)
+- [Check broken links](https://www.drlinkcheck.com/)

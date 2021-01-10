@@ -4,10 +4,10 @@ permalinkBypassOutputDir: true
 eleventyExcludeFromCollections: true
 ---
 [
-{%- for pages in collections.post %}
+{%- for pages in collections.all -%}
   {
     "title":"{{ pages.data.title | addNbsp | safe }}",
     "imgName":"{{ pages.data.title | slug }}"
   }{% if loop.last == false %},{% endif -%}
-{% endfor %}
+{%- endfor -%}
 ]

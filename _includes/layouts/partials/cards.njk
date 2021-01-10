@@ -3,16 +3,16 @@ Please check notes in _includes/layouts/items-list.njk #}
 
 {%- for entry in list -%}
   {# card settings #}
-  {% if categoryFilter == 'tutorials' %}
+  {% if categoryHome == 'tutorials' %}
     {# tutorials #}
     {% set card = { data: entry.data, modifiers: ['squared-image'], hasImg: true } %}
   {% elif isPageTag %}
     {# tags #}
     {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['squared-image', 'horizontal'], hasImg: true } %}
-  {% elif categoryFilter == 'projects' %}
+  {% elif categoryHome == 'projects' %}
     {# projects #}
     {% set card = { data: entry.data, spacingClass: 'l-spacing-m', modifiers: ['highlight-left'], isExpanded: true } %}
-  {% elif categoryFilter == 'til' %}
+  {% elif categoryHome == 'til' %}
     {# til #}
     {# note: to set the TIL number we have to loop through all posts, not just the 10 items passed by pagination array #}
     {% set number = '' %}

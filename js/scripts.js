@@ -85,8 +85,8 @@ const articleHeight = articleEl ? articleEl.clientHeight : undefined
 const offset = 0;
 
 function updateProgress() {
-  const scrollTop = document.documentElement.scrollTop;
-  const scrollPercent = Math.round((scrollTop - offset) / articleHeight * 100);
+  const scrollTop = document.documentElement.scrollTop
+  const scrollPercent = Math.round((scrollTop - offset) / articleHeight * 100)
 
   progressValueEl.style.width = `${scrollPercent}%`
   progressEl.classList.toggle('is-sticky-on-top', articleEl.getBoundingClientRect().top < 0)
@@ -96,6 +96,37 @@ function updateProgress() {
 if (articleEl) {
   document.addEventListener('scroll', _.debounce(updateProgress, 400))
 }
+
+/* ----------------------------
+  Scroll to top in TIL section
+---------------------------- */
+
+const backToTopLink = document.querySelector('.j-back-to-top')
+
+function addBackToLink() {
+  const scrollTop = document.documentElement.scrollTop
+  backToTopLink.classList.toggle('is-active', scrollTop > 2000)
+}
+
+if (backToTopLink) {
+  document.addEventListener('scroll', _.debounce(addBackToLink, 400))
+}
+
+/* ----------------------------
+  User is tabbing
+  (identifying keyboard navigators)
+---------------------------- */
+
+(function () {
+  function handleFirstTab(e) {
+    if (e.keyCode === 9) {
+      // the "I am a keyboard user" key
+      document.body.classList.add('user-is-tabbing')
+      window.removeEventListener('keydown', handleFirstTab)
+    }
+  }
+  window.addEventListener('keydown', handleFirstTab)
+})()
 
 /* ----------------------------
   Switch theme (light/dark mode)
