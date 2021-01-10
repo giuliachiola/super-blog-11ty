@@ -10,6 +10,7 @@
     "sizes": "512x512",
     "type": "image/png"
   }],
+  "start_url": "/",
   "background_color": "#ef476f",
   "display": "standalone"
 }
