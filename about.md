@@ -14,10 +14,10 @@ eleventyNavigation:
 
 <img class="s-profile-picture" src="https://res.cloudinary.com/giuliachiola/image/upload/w_400,f_auto/v1609412712/super-blog/giulia-collombardo_CR_rzylax.jpg" alt="Giulia Chiola profile picture">
 
-I am Giulia,
+Hey! I am Giulia,
 a **front-end developer** from Italy.
 
-I love writing documentation, read motivational quotes and cats 🐱
+I love writing documentation, read motivational quotes and go hiking 🏔 🥾
 
 For these reasons, in this site you can find
 - useful short tips about what I discover daily go to 📕[today i learned](/)
