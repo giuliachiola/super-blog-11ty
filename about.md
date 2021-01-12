@@ -19,14 +19,14 @@ a **front-end developer** from Italy.
 
 I love writing documentation, read motivational quotes and go hiking 🏔 🥾
 
-For these reasons, in this site you can find
+In this site you will find:
 - useful short tips about what I discover daily go to 📕[today i learned](/)
 - detailed articles about tools and projects setup go to 📘[tutorials](/tutorials)
 - a motivational quote for each post, to keep your spirit high ✨
 - lot of funny gifs to make you take a break and smile 🙃
 
-About my actual employment, I am working for [Modo](https://modo.md/), an italian agency where collegues teach me a lot every day... I feel lucky to have them on my side!
+About my actual employment, I am working for [Modo](https://modo.md/), an italian front-end agency where collegues teach me a lot every day... I feel lucky to have them by my side!
 
 <hr>
 
-All content in this blog is open-source and accessible [in this repository](https://gitlab.com/giuliach/super-blog-content), so if you find a typo or incorrect explanations (I tried my best with English but I am still learning 😇), please open an issue/pull-request, or DM me at Twitter <a href="https://twitter.com/giulia_chiola">@giulia_chiola</a> **Thank you!**
+All content in this blog is open-source and accessible [in this repository](https://gitlab.com/giuliach/super-blog-content), so if you find a typo or incorrect explanations (I tried my best with the English language, but I am still learning 😇), please open an issue/pull-request, or DM me at Twitter <a href="https://twitter.com/giulia_chiola">@giulia_chiola</a> **Thank you!**
