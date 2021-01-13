@@ -25,7 +25,7 @@ In this site you will find:
 - a motivational quote for each post, to keep your spirit high ✨
 - lot of funny gifs to make you take a break and smile 🙃
 
-About my actual employment, I am working for [Modo](https://modo.md/), an italian front-end agency where collegues teach me a lot every day... I feel lucky to have them by my side!
+About my actual employment, I am working for [Modo](https://modo.md/), an italian front-end agency where co-workers teach me a lot every day... I feel lucky to have them by my side!
 
 <hr>
 
