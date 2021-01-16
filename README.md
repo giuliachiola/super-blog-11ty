@@ -70,11 +70,10 @@ title: How to delete git branch
 abstract: ---
 quote: ---
 quoteAuthor: ---
-# img: 'https://source.unsplash.com/---'
-# imgAuthorName: '---'
-# imgAuthorProfile: 'https://unsplash.com/---'
 
-date: 2020-03-23
+crossPostDEV:
+crossPostHashnode:
+date: 2021-03-23
 mainTag: ---
 tags:
   - ---
