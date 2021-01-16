@@ -103,14 +103,14 @@
         <a class="u-link-remove-underline" href="https://gitlab.com/giuliach/super-blog-content/-/blob/master/{{ inputPath }}" target="_blank" rel="noopener">Edit this page on GitLab</a>
         {# comment #}
 
-        {# {% if crossPostDEV and crossPostHashnode %} #}
+        {% if crossPostDEV and crossPostHashnode %}
         <p>
           Comment on
           <a href="{{ crossPostDEV }}" target="_blank" rel="noopener">DEV</a>
           or
           <a href="{{ crossPostHashnode }}" target="_blank" rel="noopener">Hashnode</a>
         </p>
-        {# {% endif %} #}
+        {% endif %}
       </div>
 
       {# tags #}
