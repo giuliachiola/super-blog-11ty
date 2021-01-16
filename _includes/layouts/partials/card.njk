@@ -33,7 +33,7 @@
 }
 </script> #}
 
-<article class="c-card {{ modifiers }} {{ mainTag }} {% if card.spacingClass %}{{ card.spacingClass }}{% endif %}">
+<article class="c-card {{ modifiers }} {{ mainTag }} {% if card.spacingClass %}{{ card.spacingClass }}{% endif %} {% if categoryHome !== 'til' and categoryHome !== 'projects' %}j-card{% endif %}">
   {% if card.hasImg and card.data.mainTag %}
     <div class="c-card__img-wrapper">
       {# check if SVG exists, otherwise 11ty build explodes! #}
@@ -49,7 +49,7 @@
     <span class="c-card__number">#{{ card.number }}</span>
     {% endif %}
     {# title and link #}
-    <a class="c-card__title" href="{{ entry.url | url }}">
+    <a class="c-card__title {% if categoryHome !== 'til' and categoryHome !== 'projects' %}j-card__main-link{% endif %}" href="{{ entry.url | url }}">
       <h2 class="c-card__title-heading">{{ card.data.title }}</h2>
     </a>
     {% if card.data.externalUrl %}

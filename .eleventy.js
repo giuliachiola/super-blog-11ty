@@ -42,8 +42,8 @@ module.exports = function(eleventyConfig) {
   /**
   * watchers for external resources
   */
-  eleventyConfig.addWatchTarget("super-styleguide/src/css/*.css");
-  eleventyConfig.addWatchTarget("./js/*.js");
+  eleventyConfig.addWatchTarget("super-styleguide/src/css/");
+  eleventyConfig.addWatchTarget("./js/");
 
   /**
   * collections

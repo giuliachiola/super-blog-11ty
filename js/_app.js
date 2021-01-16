@@ -1,5 +1,6 @@
 console.log('JS is up and running! 🚀')
 
+import './card-clickability.js'
 import './menu.js'
 import './no-js.js'
 import './prism-js.js'
