@@ -39,6 +39,12 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true) // used to merge 'blog.11tydata.js' tags with .md tags
 
   /**
+  * watchers for external resources
+  */
+  eleventyConfig.addWatchTarget("super-styleguide/src/css/*.css");
+  eleventyConfig.addWatchTarget("./js/*.js");
+
+  /**
   * collections
   */
 
