@@ -17,7 +17,9 @@ if (checkbox) {
 }
 
 /* ----------------------------
-  Add copy button in snippets using PrismJS
+  Add in snippets using PrismJS:
+  - copy button
+  - language
   https://www.tomspencer.dev/blog/2018/09/14/adding-click-to-copy-buttons-to-a-hugo-powered-blog/
 ---------------------------- */
 (function() {
@@ -65,6 +67,13 @@ if (checkbox) {
     containerEl.appendChild(copyButton)
   }
 
+  function addLanguage(containerEl, lang) {
+    const language = document.createElement("p")
+    language.className = "c-code__lang"
+    language.textContent = lang
+    containerEl.appendChild(language)
+  }
+
   function wrap(el, wrapper) {
     el.parentNode.insertBefore(wrapper, el)
     wrapper.appendChild(el)
@@ -77,6 +86,9 @@ if (checkbox) {
     const newNode = document.createElement('div')
     newNode.className = 'c-code j-code'
     wrap(block, newNode)
+
+    const lang = block.className.replace('language-', '') // exmple: twig
+    addLanguage(block, lang)
   }
 
   Array.prototype.forEach.call(highlightBlocks, addCopyButton)
