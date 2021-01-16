@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf _site",
     "social:images": "eleventy-social-images --imageDir social-img --templatePath _generate/social-img-build/preview.html",
-    "dev": "rm -rf _site && npx @11ty/eleventy --serve",
+    "build:js": "webpack",
+    "dev": "npm run clean && npm run build:js && npx @11ty/eleventy --serve",
     "dev:debug": "DEBUG=Eleventy* npm run dev",
-    "build": "rm -rf _site && npx @11ty/eleventy && npm run social:images",
+    "build": "npm run clean && npm run build:js && npx @11ty/eleventy && npm run social:images",
     "deploy:netlify": "AWS_LAMBDA_FUNCTION_NAME=trickpuppeteer npm run build"
   },
   "keywords": [],
@@ -24,6 +26,8 @@
     "luxon": "^1.25.0",
     "markdown-it-anchor": "^6.0.1",
     "markdown-it-attrs": "^3.0.3",
-    "terser": "^5.5.1"
+    "terser": "^5.5.1",
+    "webpack": "^5.15.0",
+    "webpack-cli": "^4.3.1"
   }
 }
