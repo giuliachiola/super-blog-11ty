@@ -114,7 +114,7 @@ function updateProgress() {
 }
 
 if (articleEl) {
-  document.addEventListener('scroll', _.debounce(updateProgress, 400))
+  document.addEventListener('scroll', _.throttle(updateProgress, 400))
 }
 
 /* ----------------------------
@@ -129,7 +129,7 @@ function addBackToLink() {
 }
 
 if (backToTopLink) {
-  document.addEventListener('scroll', _.debounce(addBackToLink, 400))
+  document.addEventListener('scroll', _.throttle(addBackToLink, 400))
 }
 
 /* ----------------------------
