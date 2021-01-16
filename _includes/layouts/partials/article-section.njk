@@ -93,13 +93,25 @@
   {% if not isCustomPost %}
     <div class="c-article-section__bottom">
       {# last updated date #}
-      {% if page.date !== date %}
-        <footer class="c-article-section__date">Last updated <time datetime="page.date">{{ page.date | htmlDateString('human-readable') }}</time></footer>
+      {% if lastUpdatedDate %}
+        <footer class="c-article-section__date">Last updated <time datetime="lastUpdatedDate">{{ lastUpdatedDate | htmlDateString('human-readable') }}</time></footer>
       {% endif %}
 
-      {# edit on gitlab #}
-      {% set inputPath = inputPath|replace('./super-blog-content/', '') %}
-      <a href="https://gitlab.com/giuliach/super-blog-content/-/blob/master/{{ inputPath }}" target="_blank" rel="noopener"><small>Edit this page on GitLab</small></a>
+      <div class="c-article-section__bottom-links">
+        {# edit on gitlab #}
+        {% set inputPath = inputPath|replace('./super-blog-content/', '') %}
+        <a class="u-link-remove-underline" href="https://gitlab.com/giuliach/super-blog-content/-/blob/master/{{ inputPath }}" target="_blank" rel="noopener">Edit this page on GitLab</a>
+        {# comment #}
+
+        {% if crossPostDEV and crossPostHashnode %}
+        <p>
+          Comment on
+          <a href="{{ crossPostDEV }}" target="_blank" rel="noopener">DEV</a>
+          or
+          <a href="{{ crossPostHashnode }}" target="_blank" rel="noopener">Hashnode</a>
+        </p>
+        {% endif %}
+      </div>
 
       {# tags #}
       {% if tags %}

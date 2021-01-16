@@ -32,11 +32,18 @@ module.exports = function(eleventyConfig) {
   */
 
   eleventyConfig.addPassthroughCopy("img")
+  eleventyConfig.addPassthroughCopy("dist/js/bundle.js")
   eleventyConfig.addPassthroughCopy("super-styleguide/src/css/print.css")
   eleventyConfig.addPassthroughCopy("google*.html") // TODO: check this!
   eleventyConfig.addPassthroughCopy("site-*.webmanifest")
   eleventyConfig.addPassthroughCopy("robots.txt")
   eleventyConfig.setDataDeepMerge(true) // used to merge 'blog.11tydata.js' tags with .md tags
+
+  /**
+  * watchers for external resources
+  */
+  eleventyConfig.addWatchTarget("super-styleguide/src/css/*.css");
+  eleventyConfig.addWatchTarget("./js/*.js");
 
   /**
   * collections

@@ -33,6 +33,10 @@ Please pay attention to the 'reverse' keyword 🤯
   </div>
   {# items #}
   {% if list|length %}
+    {# pagination (just for TIL page) #}
+    {% if categoryHome == 'til' and pagination.pageNumber > 0 %}
+      {%- include "_includes/layouts/partials/pagination.njk" %}
+    {% endif %}
     <div class="l-spacing-l">
       {% include '_includes/layouts/partials/cards-grid.njk' %}
     </div>
