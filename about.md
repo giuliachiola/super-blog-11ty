@@ -20,8 +20,8 @@ a **front-end developer** from Italy.
 I love writing documentation, read motivational quotes and go hiking 🏔 🥾
 
 In this site you will find:
-- useful short tips about what I discover daily go to 📕[today i learned](/)
-- detailed articles about tools and projects setup go to 📘[tutorials](/tutorials)
+- useful short tips about what I discover daily ~ 📕[today i learned](/)
+- detailed articles about tools and projects setup ~ 📘[tutorials](/tutorials)
 - a motivational quote for each post, to keep your spirit high ✨
 - lot of funny gifs to make you take a break and smile 🙃
 
