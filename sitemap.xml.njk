@@ -5,6 +5,8 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for page in collections.all %}
+  {# exclude 404 page here, we do not want to exclude 404 from all collections array #}
+  {%- if page.data.permalink !== '404.html' %}
   <url>
     <loc>{{ global.siteUrl }}{{ page.url | url }}</loc>
     <lastmod>{{ page.date | htmlDateString }}</lastmod>
@@ -15,5 +17,6 @@ eleventyExcludeFromCollections: true
     {%- endif -%}
     <changefreq>{{ changeFreq }}</changefreq>
   </url>
+  {%- endif %}
 {%- endfor %}
 </urlset>
