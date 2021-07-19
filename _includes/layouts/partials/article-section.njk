@@ -98,11 +98,10 @@
       {% endif %}
 
       <div class="c-article-section__bottom-links">
-        {# edit on gitlab #}
+        {# edit on GitHub #}
         {% set inputPath = inputPath|replace('./super-blog-content/', '') %}
-        <a class="u-link-remove-underline" href="https://gitlab.com/giuliach/super-blog-content/-/blob/master/{{ inputPath }}" target="_blank" rel="noopener">Edit this page on GitLab</a>
+        <a class="u-link-remove-underline" href="https://github.com/giuliachiola/super-blog-content/blob/master/{{ inputPath }}" target="_blank" rel="noopener">Edit this page on GitHub</a>
         {# comment #}
-
         {% if crossPostDEV and crossPostHashnode %}
         <p>
           Comment on

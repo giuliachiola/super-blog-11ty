@@ -25,8 +25,6 @@ In this site you will find:
 - a motivational quote for each post, to keep your spirit high ✨
 - lot of funny gifs to make you take a break and smile 🙃
 
-About my actual employment, I am working for [Modo](https://modo.md/), an italian front-end agency where co-workers teach me a lot every day... I feel lucky to have them by my side!
-
 <hr>
 
-All content in this blog is open-source and accessible [in this repository](https://gitlab.com/giuliach/super-blog-content), so if you find a typo or incorrect explanations (I tried my best with the English language, but I am still learning 😇), please open an issue/pull-request, or DM me at Twitter <a href="https://twitter.com/giulia_chiola">@giulia_chiola</a> **Thank you!**
+All content in this blog is open-source and accessible [in this repository](https://github.com/giuliachiola/super-blog-content), so if you find a typo or incorrect explanations (I tried my best with the English language, but I am still learning 😇), please open an issue/pull-request, or DM me at Twitter <a href="https://twitter.com/giulia_chiola">@giulia_chiola</a> **Thank you!**
