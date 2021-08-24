@@ -40,6 +40,7 @@ npm run build
 
 - project
   - [project submodules and branches](docs/project-submodules.md)
+  - [project releases](docs/project-releases.md)
 - content
   - [content fields](docs/content-fields.md)
   - [content images and gifs](docs/content-images-gifs.md)
