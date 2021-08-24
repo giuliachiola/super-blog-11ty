@@ -13,7 +13,7 @@ It is built using 11ty as static site generator and use other two repositories a
 ## 🔥 Tech stack
 
 | Purpose               | Technology   |
-|-----------------------|--------------|
+|:-----------------------|:--------------|
 | Templating            | Nujucks      |
 | Styling               | SCSS + BEMIT |
 | Documentation         | Markdown     |
