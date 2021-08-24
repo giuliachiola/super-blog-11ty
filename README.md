@@ -1,29 +1,56 @@
 # Super blog 11ty
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/418bc946-0474-46c4-9bc3-48031743a7ef/deploy-status)](https://app.netlify.com/sites/blog-giuliachiola/deploys)
+| \       | \                                 |
+| ------------- | ------------------------------------------ |
+| Pipeline      | [![Netlify Status](https://api.netlify.com/api/v1/badges/418bc946-0474-46c4-9bc3-48031743a7ef/deploy-status)](https://app.netlify.com/sites/blog-giuliachiola/deploys) |
+| Deploy preview | https://giuliachiola.dev/ | 
+| Project typology | Personal |
 
-## Run this project
+## 🔥 Tech stack
 
-```
+| Purpose       | Technology                                 |
+| ------------- | ------------------------------------------ |
+| Templating    | Nujucks                                    |
+| Styling       | SCSS + BEMIT                               |
+| Documentation | Markdown                                   |
+| Static Site Generator   | 11ty |
+
+## 🌊 Run development mode
+
+```shell
+# install dependencies
+npm i
+
+# serve with hot reload at localhost:8080
 npm run dev
 ```
 
-## Build this project (ex. Netlify build)
+## 🧳 Build setup
 
-```
+```shell
+# build for production
 npm run build
 ```
 
-## Project submodules
+## 📚 Documentation
+
+- [project submodules and branches](....) 
+- [content fields](....) 
+- [content markup and styles](....) 
+
+
+### Project submodules
 
 This project has its content as git submodule in `super-blog-content` folder.
-To pull updated content run
+
+
+#### To pull updated content run
 
 ```shell
 git submodule update --recursive --remote
 ```
 
-### Pull **one** submodule only
+#### Pull **one** submodule only
 
 * Change to the submodule directory
 cd submodule_dir
@@ -40,13 +67,13 @@ cd ..
 * Now the submodules are in the state you want, so
 git commit -am "Pulled down update to submodule_dir"
 
-### Pull *all* submodules:
+#### Pull *all* submodules:
 
 ```shell
 git submodule foreach git pull origin master
 ```
 
-### Pull submodules *manually*
+#### Pull submodules *manually*
 
 This is useful for this project if you want to have different test branches and not `master` on every project
 
