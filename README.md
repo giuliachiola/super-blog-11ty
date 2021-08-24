@@ -56,7 +56,7 @@ npm run build
 
 | Branch name | Use        |
 |:------------|:-----------|
-| `master`    | production |
+| `main`      | production |
 | `develop`   | staging    |
 
 #### Submodules Branches
@@ -65,10 +65,10 @@ npm run build
 
 | Branch name | Use                                         |
 |:------------|:--------------------------------------------|
-| `master`    | production (also used by `super-blog-11ty`) |
+| `main`      | production (also used by `super-blog-11ty`) |
 
 **Super blog content**
 
 | Branch name | Use                                         |
 |:------------|:--------------------------------------------|
-| `master`    | production (also used by `super-blog-11ty`) |
+| `main`      | production (also used by `super-blog-11ty`) |
