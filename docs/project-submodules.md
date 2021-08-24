@@ -39,11 +39,3 @@ This is useful for this project if you want to have different test branches and 
 ```shell
 cd super-blog-content/ && git pull && cd .. && cd super-styleguide/ && git pull && cd ..
 ```
-
-# Branches
-
-- super-styleguide: `master` -> production
-- super-blog-content: `master` -> production
-- (this project) super-blog-11ty:
-  - `master` -> production
-  - `develop` -> staging

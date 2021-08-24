@@ -10,6 +10,8 @@ It is built using 11ty as static site generator and use other two repositories a
 | Deploy preview   | https://giuliachiola.dev/                                                                                                                                              |
 | Project typology | Personal                                                                                                                                                               |
 
+![project preview](docs/project-preview.png)
+
 ## 🔥 Tech stack
 
 | Purpose               | Technology   |
@@ -49,3 +51,24 @@ npm run build
   - [debug 11ty](docs/debug-11ty.md)
   - [project table of contents](docs/table-of-contents.md)
   - [validators](docs/validators.md)
+
+### 🌿 Branches
+
+| Branch name | Use        |
+|:------------|:-----------|
+| `master`    | production |
+| `develop`   | staging    |
+
+#### Submodules Branches
+
+**Super styleguide**
+
+| Branch name | Use                                         |
+|:------------|:--------------------------------------------|
+| `master`    | production (also used by `super-blog-11ty`) |
+
+**Super blog content**
+
+| Branch name | Use                                         |
+|:------------|:--------------------------------------------|
+| `master`    | production (also used by `super-blog-11ty`) |
