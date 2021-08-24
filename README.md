@@ -59,7 +59,7 @@ npm run build
 | `main`      | production |
 | `develop`   | staging    |
 
-#### Submodules Branches
+### 🌿 Submodules Branches
 
 **Super styleguide**
 
