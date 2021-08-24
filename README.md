@@ -14,12 +14,12 @@ It is built using 11ty as static site generator and use other two repositories a
 
 ## 🔥 Tech stack
 
-| Purpose               | Technology   |
-|-----------------------|--------------|
-| Templating            | Nujucks      |
-| Styling               | SCSS + BEMIT |
-| Documentation         | Markdown     |
-| Static Site Generator | 11ty         |
+| Purpose               | Technology                               |
+|-----------------------|------------------------------------------|
+| Templating            | Nujucks                                  |
+| Styling               | SCSS + BEMIT                             |
+| Documentation         | Markdown                                 |
+| Static Site Generator | [11ty](https://github.com/11ty/eleventy) |
 
 ## 🌊 Run development mode
 
