@@ -1,5 +1,8 @@
 # Super blog 11ty
 
+This project is my tech blog.
+It is built using 11ty as static site generator and use other two repositories as git submodules.
+
 | \                | \                                                                                                                                                                      |
 |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Pipeline         | [![Netlify Status](https://api.netlify.com/api/v1/badges/418bc946-0474-46c4-9bc3-48031743a7ef/deploy-status)](https://app.netlify.com/sites/blog-giuliachiola/deploys) |
