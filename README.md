@@ -1,6 +1,7 @@
 # Super blog 11ty
 
 This project is my tech blog.
+
 It is built using 11ty as static site generator and use other two repositories as git submodules.
 
 | \                | \                                                                                                                                                                      |
