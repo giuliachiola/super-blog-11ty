@@ -32,7 +32,7 @@ npm run dev
 npm run build
 ```
 
-## 📚 Documentation
+## 📚 Project documentation
 
 - project
   - [project submodules and branches](docs/project-submodules.md)
