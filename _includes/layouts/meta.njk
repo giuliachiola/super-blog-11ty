@@ -7,7 +7,7 @@
 
 {# SEO #}
 <meta name="description" content="{{ abstract or subtitle }}">
-<meta name="author" content="Giulia Chiola">
+<meta name="author" content="{{ global.authorName }}">
 <link rel="canonical" href="https://giuliachiola.dev{{ page.url | url }}" />
 
 {# og #}
@@ -19,6 +19,6 @@
 
 {# twitter #}
 <meta name="twitter:image" content="{{ socialImg }}" />
-<meta name="twitter:creator" content="@giulia_chiola">
-<meta name="twitter:site" content="@giulia_chiola">
+<meta name="twitter:creator" content="{{ global.twitterUsername }}">
+<meta name="twitter:site" content="{{ global.twitterUsername }}">
 <meta name="twitter:card" content="summary_large_image">
