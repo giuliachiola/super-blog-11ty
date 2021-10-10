@@ -15,7 +15,7 @@ git submodule update --recursive --remote
 cd submodule_dir
 
 * Checkout desired branch
-git checkout master
+git checkout main
 
 * Update
 git pull
@@ -29,24 +29,13 @@ git commit -am "Pulled down update to submodule_dir"
 ## Pull *all* submodules:
 
 ```shell
-git submodule foreach git pull origin master
+git submodule foreach git pull origin main
 ```
 
 ## Pull submodules *manually*
 
-This is useful for this project if you want to have different test branches and not `master` on every project
+This is useful for this project if you want to have different test branches and not `main` on every project
 
 ```shell
 cd super-blog-content/ && git pull && cd .. && cd super-styleguide/ && git pull && cd ..
 ```
-<<<<<<< HEAD
-=======
-
-# Branches
-
-- super-styleguide: `master` -> production
-- super-blog-content: `master` -> production
-- (this project) super-blog-11ty:
-  - `master` -> production
-  - `develop` -> staging
->>>>>>> develop
