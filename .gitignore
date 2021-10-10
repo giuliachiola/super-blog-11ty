@@ -5,3 +5,6 @@ pages.json
 
 # webpack bundle dist
 dist/
+
+# env
+.env

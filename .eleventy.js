@@ -6,6 +6,7 @@ const readingTime = require('eleventy-plugin-reading-time')
 const socialImages = require('@11tyrocks/eleventy-plugin-social-images')
 const CleanCSS = require('clean-css') // CSS minifier
 const { minify } = require("terser") // JS minifier
+require('dotenv').config()
 
 function uniqueArray(arr) {
   return [...new Set(arr)]
