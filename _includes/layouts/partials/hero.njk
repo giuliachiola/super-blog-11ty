@@ -16,15 +16,18 @@
     <div class="l-main">
       {% set heroTitle = renderData.title or title %}
       {% if quote %}
-        <h2 class="c-hero__quote">{{ quote | safe }}</h2>
+      <blockquote class="c-hero__blockquote">
+        <span class="c-hero__quote">{{ quote | safe }}</span>
+        {% if quoteAuthor %}
+        <cite class="c-hero__subtitle">{{ quoteAuthor | safe }}</cite>
+        {% endif %}
+      </blockquote>
       {% else %}
         <h1 class="c-hero__title">{{ heroTitle | safe }}</h1>
       {% endif %}
-      {% set heroSubtitle = subtitle %}
-      {% if quoteAuthor %}
-        {% set heroSubtitle = quoteAuthor %}
+      {% if subtitle %}
+      <h2 class="c-hero__subtitle">{{ subtitle | safe }}</h2>
       {% endif %}
-      <h2 class="c-hero__subtitle">{{ heroSubtitle | safe }}</h2>
     </div>
     {# {% if imgAuthorName %}
       <span class="c-hero__credits">photo by <a href="{{ imgAuthorProfile }}" target="_blank" rel="noopener">{{ imgAuthorName }}</a> on <a href="{{ img }}" target="_blank" rel="noopener">Unsplash</a></span>

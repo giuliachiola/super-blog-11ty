@@ -4,12 +4,12 @@ title: About Me
 subtitle: Hey! I am Giulia, a front-end developer from Torino, Italy. In this blog, I collect all the useful snippets and tips I learn day-to-day.
 quote: Believe in yourself, take on your challenges, dig deep within yourself to conquer fears. Never let anyone bring you down. You got to keep going.
 quoteAuthor: Chantal Sutherland
-paletteColor: 5
+paletteColor: 1
 isCustomPost: true
 
 eleventyNavigation:
   key: about
-  order: 5
+  order: 6
 ---
 
 <img class="s-profile-picture" src="https://pbs.twimg.com/profile_images/1431219666358263812/uCNLctak_400x400.jpg" alt="Giulia Chiola profile picture">

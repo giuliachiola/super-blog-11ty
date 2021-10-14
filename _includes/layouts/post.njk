@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 ---
-<main class="l-main">
+<main id="main" class="l-main">
   {# note: set inputPath as Nunjucks variable, because 'page.inputPath' is not available from the inside of article section (who knows why! 🤷🏻‍♀️) #}
   {% set inputPath = page.inputPath %}
   {% include 'layouts/partials/article-section.njk' %}
