@@ -7,7 +7,17 @@ eleventyExcludeFromCollections: true
 
 {% block content %}
 
-<main class="l-main l-spacing-l">
+<main id="main" class="l-main l-spacing-l">
+  {# legend #}
+  <h3>Legend:</h3>
+  <ul>
+    <li>T = TIL</li>
+    <li>P = Projects</li>
+    <li>B = Blog (tutorials)</li>
+  </ul>
+
+  {# table #}
+  <h3>Posts:</h3>
   <table class="c-table">
     <thead>
       <tr>
@@ -28,8 +38,6 @@ eleventyExcludeFromCollections: true
       {% endfor %}
     </tbody>
   </table>
-
-  *T=til, P=projects, B=tutorials/blog
 </main>
 
 {% endblock %}
