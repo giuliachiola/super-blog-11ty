@@ -2,4 +2,4 @@
 
 Used for Cloudinary folder match
 
-http://localhost:8080/_generate/table-of-content
+http://localhost:8080/table-of-contents
