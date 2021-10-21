@@ -59,6 +59,12 @@ module.exports = function(eleventyConfig) {
     return uniqueArray(tags)
   })
 
+  // Table of contents post - sorted by IDs
+  eleventyConfig.addCollection("postsSortedByIds", function(collection) {
+    const items = collection.getAll().filter(el => el.data.id)
+    return items.sort((a, b) => a.data.id - b.data.id ||  a.data.id.localeCompare(b.data.id))
+  })
+
   /**
   * filters
   */
