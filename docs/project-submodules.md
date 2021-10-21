@@ -2,6 +2,11 @@
 
 This project has its content as git submodule in `super-blog-content` folder.
 
+## Init submodules
+
+```shell
+git submodule update --init --recursive
+```
 
 ## To pull updated content run
 
