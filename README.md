@@ -34,6 +34,8 @@ npm i
 npm run dev
 ```
 
+Note: if `npm i` throw an error, please check this [guide](docs/dependencies-error.md)
+
 ## 🧳 Build setup
 
 ```shell
@@ -46,6 +48,7 @@ npm run build
 - project
   - [project submodules and branches](docs/project-submodules.md)
   - [project releases](docs/project-releases.md)
+  - [dependencies errors](docs/project-dependencies.md)
 - content
   - [content fields](docs/content-fields.md)
   - [content images and gifs](docs/content-images-gifs.md)
