@@ -62,7 +62,17 @@ module.exports = function(eleventyConfig) {
   // Table of contents post - sorted by IDs
   eleventyConfig.addCollection("postsSortedByIds", function(collection) {
     const items = collection.getAll().filter(el => el.data.id)
-    return items.sort((a, b) => a.data.id - b.data.id ||  a.data.id.localeCompare(b.data.id))
+    return items.sort((a, b) => {
+      const a_id = a.data.id
+      const b_id = b.data.id
+      if (typeof a_id === 'number' && typeof b_id === 'number') {
+        // posts = tutorial/blog and til -> id: [number]
+        return a_id - b_id
+      } else {
+        // projects -> id: [string]
+        return a_id.localeCompare(b_id)
+      }
+    })
   })
 
   /**
