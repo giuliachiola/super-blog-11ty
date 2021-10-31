@@ -24,9 +24,9 @@
       </blockquote>
       {% else %}
         <h1 class="c-hero__title">{{ heroTitle | safe }}</h1>
-      {% endif %}
-      {% if subtitle %}
-      <h2 class="c-hero__subtitle">{{ subtitle | safe }}</h2>
+        {% if subtitle %}
+        <h2 class="c-hero__subtitle">{{ subtitle | safe }}</h2>
+        {% endif %}
       {% endif %}
     </div>
     {# {% if imgAuthorName %}
