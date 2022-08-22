@@ -1,6 +1,6 @@
 [submodule "super-blog-content"]
 	path = super-blog-content
-	url = git@github.com:giuliachiola/super-blog-content.git
+	url = https://github.com/giuliachiola/super-blog-content
 [submodule "super-styleguide"]
 	path = super-styleguide
-	url = git@github.com:giuliachiola/super-styleguide.git
+	url =  https://github.com/giuliachiola/super-styleguide
