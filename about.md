@@ -17,7 +17,7 @@ eleventyNavigation:
 Hey! I am Giulia,
 a **front-end developer** from Italy.
 
-I love to write documentation, read motivational quotes and go hiking 🏔 🥾
+I enjoy to share what I learn, going hike through the nature relaxes me, and I am in love with plants 🪴.
 
 In this site you will find:
 - useful short tips about what I discover daily ~ 📕[today i learned](/)
@@ -27,4 +27,4 @@ In this site you will find:
 
 <hr>
 
-All content in this blog is open-source and accessible [in this repository](https://github.com/giuliachiola/super-blog-content), so if you find a typo or incorrect explanations (I am trying my best to write in a fluent English, but I am still learning 😇), please open an issue/pull-request, or DM me at Twitter <a href="https://twitter.com/giulia_chiola">{{ global.twitterUsername }}</a> **Thank you!**
+All content in this blog is open-source and accessible [in this repository](https://github.com/giuliachiola/super-blog-content), so if you find a typo or incorrect explanations (I am trying my best to write in a fluent English, but I'm still learning 😇), please open an issue/pull-request, or DM me at Twitter <a href="https://twitter.com/giulia_chiola">{{ global.twitterUsername }}</a> **Thank you!**
