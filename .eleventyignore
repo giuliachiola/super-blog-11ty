@@ -1,7 +1,7 @@
 super-styleguide/
-super-blog-content/**/**/_snippet-*
-super-blog-content/_TO_REVIEW/
-super-blog-content/README.md
+content/**/**/_snippet-*
+content/_TO_REVIEW/
+content/README.md
 docs/
 
 z-resources/
