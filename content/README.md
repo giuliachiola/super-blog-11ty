@@ -38,7 +38,7 @@ Run the alias inside this `super-blog-11ty` folder from the `main` branch:
 in `.zshrc` you should have this line:
 
 ```sh
-alias blog-update='gp && cd ~/Sites/super-blog-11ty/ && gco develop && gcam "content: update submodule" && gp'
+alias blog-update='cp -a ~/Sites/super-blog-11ty/content/. ~/Sites/super-blog-content/ && gcam "content: upate content from main blog repo" && gp'
 ```
 
 <!-- This alias will:
