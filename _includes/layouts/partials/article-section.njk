@@ -87,7 +87,7 @@
       <div class="c-article-section__bottom-links">
         {# edit on GitHub #}
         {% set inputPath = inputPath|replace('./super-blog-content/', '') %}
-        <span>View on&nbsp;<a class="u-link-remove-underline" href="https://github.com/giuliachiola/super-blog-content/blob/master/{{ inputPath }}" target="_blank" rel="noopener"><abbr title="Found a typo? Open an MR on GitHub">GitHub</abbr></a></span>
+        <span>View on&nbsp;<a class="u-link-remove-underline" href="https://github.com/giuliachiola/super-blog-content/blob/master/{{ inputPath | replace('content/', '') }}" target="_blank" rel="noopener"><abbr title="Found a typo? Open an MR on GitHub">GitHub</abbr></a></span>
         {# comment #}
         {% if crossPostDEV and crossPostHashnode %}
         <p>
