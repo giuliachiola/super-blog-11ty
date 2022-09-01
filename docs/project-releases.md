@@ -6,7 +6,7 @@ Bump version
 npm version patch|minor|major
 ```
 
-and push `master` and the new tag
+and push `main` and the new tag
 
 ```shell
 gp && gp --tags
