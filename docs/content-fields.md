@@ -4,18 +4,24 @@
 
 ```md
 ---
-title: How to delete git branch
-abstract: ---
-quote: ---
-quoteAuthor: ---
+---
+title: ...
+abstract: ...
+quote: ...
+quoteAuthor: ...
 
-crossPostDEV:
-crossPostHashnode:
-date: 2021-03-23
-mainTag: ---
+date: 2021-01-31
+
+permalink: posts/.../
+crossPostDEV: 
+crossPostHashnode: 
+
+mainTag: vuejs
 tags:
-  - ---
-id: T20
+  - vuejs
+  - styleguidist
+  - js
+id: 31
 ---
 ```
 

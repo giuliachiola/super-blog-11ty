@@ -5,8 +5,11 @@ quote: Man cannot discover new oceans unless he has the courage to lose sight of
 quoteAuthor: Andre Gide
 
 date: 2022-09-01
+
+permalink: posts/github-cli/
 crossPostDEV: 
 crossPostHashnode: 
+
 mainTag: git
 tags:
   - github
