@@ -26,3 +26,6 @@ gp && gp --tags && update super-blog-content
 
 Note: `update super-blog-content` is an alias in `~/.zshrc`
 
+```shell
+alias update super-blog-content='cp -a ~/Sites/super-blog-11ty/content/. ~/Sites/super-blog-content/ && cd ~/Sites/super-blog-content/ && gaa && gcam "content: upate content from main blog repo" && gp && cd ~/Sites/super-blog-11ty/'
+```
