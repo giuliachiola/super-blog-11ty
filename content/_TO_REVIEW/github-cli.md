@@ -79,6 +79,30 @@ Press Enter to open github.com in your browser...
 
 ## Let's run some commands!
 
+To see all CLI configurations and options, run just
+
+```shell
+gh
+```
+
+that returns a list of useful commands divided into subgroups
+
+```shell
+CORE COMMANDS
+  auth:        Authenticate gh and git with GitHub
+  browse:      Open the repository in the browser
+  codespace:   Connect to and manage codespaces
+  gist:        Manage gists
+  issue:       Manage issues
+  pr:          Manage pull requests
+  release:     Manage releases
+  repo:        Manage repositories
+```
+
+As you can see above, you can manage **lot of things** from command line 😈 Below I listed my favourite ones.
+
+### Create a new repo
+
 To create a new GitHub repository, run
 
 ```shell
@@ -91,4 +115,69 @@ gh repo create test-repository --private
 
 
 Note: you have to specify if the repo you are creating will be private or public.
+
+### GitHub repo list
+
+```shell
+gh repo list
+```
+
+This is useful when you need to check on the fly what is a repo slug, url, or if it is private or not
+
+```shell
+Showing 30 of 47 repositories in @giuliachiola
+
+giuliachiola/super-blog-11ty                       Blog built using 11ty static site generator, based on super-styleguide                public   2d
+giuliachiola/super-blog-content                    Blog markdown content where documentation rules 📚                                    public   2d
+giuliachiola/giuliachiola                                                                                                                public   9d
+giuliachiola/eleventy-styleguide                   Custom pattern library tool using 11ty static site generator.                         public   9d
+giuliachiola/super-notes                           Personal tech notes, not always well organized 😇                                     public   9d
+giuliachiola/super-styleguide                      Personal blog styleguide built using UIengine as presentation layer                   public   Mar  5, 2022
+giuliachiola/react-ts-ecommerce                    📒 Step by step from tutorial "React shopping cart with TypeScript | React Ecomme...  public   Mar  5, 2022
+giuliachiola/dotfiles                              🛠.files - for fast MacBook setup                                                     public   Mar  5, 2022
+giuliachiola/react-movies                          📒 Step by step from tutorial "React JS Course for Beginners 2021 Tutorial - free...  public   Oct  7, 2021
+giuliachiola/react-ts-quiz-app                     📒 Step by step from tutorial "React / Typescript Tutorial - Build a Quiz App - W...  public   Oct  1, 2021
+giuliachiola/react-typescript-herrington           📒 Step by step from tutorial "Typescript for React Components From Beginners to ...  public   Oct  1, 2021
+...
+```
+
+### Change repo visibility
+
+Change repo visibility is quite annoying from the browser, as you have to sift through lots of tabs and panels on the UI. Change visibility from the CLI instead, is nearly instantaneous:
+
+```shell
+gh repo edit <repo-name> --visibility <visibility-string>
+```
+
+For instance:
+
+```shell
+gh repo edit giuliachiola/super-blog-11ty --visibility private
+
+✓ Edited repository giuliachiola/super-blog-11ty
+```
+
+### Sync repo
+
+To pull everything in one go, you can also sync all your repo branches and config:
+
+```shell
+gh repo sync
+
+✓ Synced the "main" branch from giuliachiola/super-blog-11ty to local repository
+```
+
+### Create new gist
+
+[Gist](https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists) are a sort of "snippet" you can store on your GitHub account. They are quite useful to save one-shot configurations, and you can also save others gists in your favourites!
+
+```shell
+gh create gist
+```
+
+## More info
+
+> 📚 More info
+>
+> [GitHub CLI Manual](https://cli.github.com/manual/)
 
