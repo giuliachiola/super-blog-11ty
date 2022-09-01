@@ -49,6 +49,7 @@ npm run build
   - [project submodules and branches](docs/project-submodules.md)
   - [project releases](docs/project-releases.md)
   - [dependencies errors](docs/project-dependencies.md)
+  - [social images](docs/social-images.md)
 - content
   - [content fields](docs/content-fields.md)
   - [content images and gifs](docs/content-images-gifs.md)
