@@ -4,7 +4,7 @@ abstract: GitHub comes with an easy to use CLI, with awesome features in it.
 quote: Man cannot discover new oceans unless he has the courage to lose sight of the shore.
 quoteAuthor: Andre Gide
 
-date: 2022-08-28
+date: 2022-09-01
 crossPostDEV: 
 crossPostHashnode: 
 mainTag: git
@@ -62,11 +62,11 @@ In your browser will appear this screen to confirm the authorization
 
 ![authorize-github-cli](https://res.cloudinary.com/giuliachiola/image/upload/v1662011978/super-blog/031-github-cli/authorize-github-cli_wzm6r5.png)
 
-and you have to add your `one-time code: XXXX-XXXX`
+and you have to add your `one-time code: XXXX-XXXX` the prompt just gived to you
 
 ![device-activation](https://res.cloudinary.com/giuliachiola/image/upload/v1662011978/super-blog/031-github-cli/device-activation_zsdjcw.png)
 
-Ok, now you should be all set! ✨
+Just few confirmation from the shell and we are almost done:
 
 ```shell
 Press Enter to open github.com in your browser...
@@ -77,9 +77,11 @@ Press Enter to open github.com in your browser...
 
 ![congratulations](https://res.cloudinary.com/giuliachiola/image/upload/v1662011978/super-blog/031-github-cli/congratulations_a4rz5a.png)
 
+Ok, awesome! ✨
+
 ## Let's run some commands!
 
-To see all CLI configurations and options, run just
+To see all CLI configurations and options, just type
 
 ```shell
 gh
@@ -114,7 +116,7 @@ gh repo create test-repository --private
 ![test-repository-github](https://res.cloudinary.com/giuliachiola/image/upload/v1662012410/super-blog/031-github-cli/test-repository-github_hshmkm.png)
 
 
-Note: you have to specify if the repo you are creating will be private or public.
+Note: you have to specify if you want the repo private or public.
 
 ### GitHub repo list
 
@@ -122,12 +124,12 @@ Note: you have to specify if the repo you are creating will be private or public
 gh repo list
 ```
 
-This is useful when you need to check on the fly what is a repo slug, url, or if it is private or not
+This is useful when you need to check on the fly a repo slug, url, or if it is private or not
 
 ```shell
 Showing 30 of 47 repositories in @giuliachiola
 
-giuliachiola/super-blog-11ty                       Blog built using 11ty static site generator, based on super-styleguide                public   2d
+giuliachiola/super-blog-11ty                       Blog built using 11ty static site generator, based on super-styleguide               public   2d
 giuliachiola/super-blog-content                    Blog markdown content where documentation rules 📚                                    public   2d
 giuliachiola/giuliachiola                                                                                                                public   9d
 giuliachiola/eleventy-styleguide                   Custom pattern library tool using 11ty static site generator.                         public   9d
@@ -174,6 +176,13 @@ gh repo sync
 ```shell
 gh create gist
 ```
+
+<div class="s-giphy s-giphy--small-d">
+  <video autoplay loop muted playsinline>
+    <source src="https://i.giphy.com/media/ndSat6hAmqXnO/giphy-loop.mp4" type="video/mp4">
+  </video>
+  <p><a href="https://media0.giphy.com/media/ndSat6hAmqXnO/giphy-loop.mp4?cid=dda24d5093e1b63df6c1b63cb6c71ec256c24d915cb35226\u0026rid=giphy-loop.mp4\u0026ct=g">via GIPHY</a></p>
+</div>
 
 ## More info
 
