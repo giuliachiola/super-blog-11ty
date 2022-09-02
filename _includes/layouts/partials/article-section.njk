@@ -69,13 +69,13 @@
     {% include '_includes/layouts/partials/article-section-toc.njk' %}
   </aside>
 
-  {# reading progress #}
-  {% if category === 'tutorials' %}
-    <div class="c-reading-progress j-reading-progress"><span class="c-reading-progress__value j-reading-progress__value"></span></div>
+  {% set showProgressBar = not isCustomPost and content | readingTime | timeReadingToNumber >  1 %}
+  {% if showProgressBar %}
+  <div class="c-reading-progress j-reading-progress"><span class="c-reading-progress__value j-reading-progress__value"></span></div>
   {% endif %}
 
   {# article content #}
-  <div class="c-article-section__content {% if category === 'tutorials' %}j-article-section__content{% endif %}">
+  <div class="c-article-section__content {% if showProgressBar %}j-article-section__content{% endif %}">
     {{ content | safe }}
   </div>
 
