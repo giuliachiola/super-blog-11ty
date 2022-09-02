@@ -25,7 +25,7 @@
 <article class="c-article-section l-spacing-l {% if isCustomPost %}c-article-section--custom{% endif %}">
   <h1>{% if category == 'projects' %}[Project] {% endif%}{{ title }}</h1>
 
-  <div class="c-article-section__top l-spacing-m">
+  <div class="c-article-section__top l-spacing-s">
 
     {% if not isCustomPost %}
     {# info (date & reading time) #}
@@ -35,20 +35,6 @@
       {# reading time #}
       <span class="c-article-section__reading-time">{{ content | readingTime }} read</span>
     </p>
-
-    {# twitter share #}
-    <div class="c-article-section__share">
-      <a
-        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-        class="twitter-share-button"
-        data-show-count="false"
-        data-text="{{ title or renderData.title | striptags }} 🚀"
-        data-via="giulia_chiola">
-        Tweet
-        </a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-    {% endif %}
 
     {# tags #}
     {% if tags %}
@@ -63,8 +49,25 @@
     {% endif %}
   </div>
 
-  {# table of contents #}
-  {% include '_includes/layouts/partials/article-section-toc.njk' %}
+  {# toc + twitter button #}
+  <aside class="c-article-section__toc-share">
+    {# twitter share #}
+    <div class="c-article-section__share">
+      <a
+        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+        class="twitter-share-button"
+        data-show-count="false"
+        data-text="{{ title or renderData.title | striptags }} 🚀"
+        data-via="giulia_chiola">
+        Tweet
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    {% endif %}
+
+    {# table of contents #}
+    {% include '_includes/layouts/partials/article-section-toc.njk' %}
+  </aside>
 
   {# reading progress #}
   {% if category === 'tutorials' %}
@@ -87,7 +90,7 @@
       <div class="c-article-section__bottom-links">
         {# edit on GitHub #}
         {% set inputPath = inputPath|replace('./super-blog-content/', '') %}
-        <span>View on&nbsp;<a class="u-link-remove-underline" href="https://github.com/giuliachiola/super-blog-content/blob/master/{{ inputPath }}" target="_blank" rel="noopener"><abbr title="Found a typo? Open an MR on GitHub">GitHub</abbr></a></span>
+        <span>View on&nbsp;<a class="u-link-remove-underline" href="https://github.com/giuliachiola/super-blog-content/blob/master/{{ inputPath | replace('content/', '') }}" target="_blank" rel="noopener"><abbr title="Found a typo? Open an MR on GitHub">GitHub</abbr></a></span>
         {# comment #}
         {% if crossPostDEV and crossPostHashnode %}
         <p>
