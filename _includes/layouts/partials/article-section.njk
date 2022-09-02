@@ -66,7 +66,9 @@
     {% endif %}
 
     {# table of contents #}
+    {% if not isCustomPost %}
     {% include '_includes/layouts/partials/article-section-toc.njk' %}
+    {% endif %}
   </aside>
 
   {% set showProgressBar = not isCustomPost and content | readingTime | timeReadingToNumber >  1 %}
