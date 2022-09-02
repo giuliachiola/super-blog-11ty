@@ -90,6 +90,14 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat(dateFormat)
   })
 
+  // time reading
+  // string -> number
+  // 3 min read -> 3
+
+  eleventyConfig.addFilter('timeReadingToNumber', (string) => {
+    return Number(string.replace(' min', ''))
+  })
+
   // Remove dashes in strings (e.g. label tags)
 
   eleventyConfig.addFilter('removeDashes', (string) => {
