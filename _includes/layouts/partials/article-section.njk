@@ -25,7 +25,7 @@
 <article class="c-article-section l-spacing-l {% if isCustomPost %}c-article-section--custom{% endif %}">
   <h1>{% if category == 'projects' %}[Project] {% endif%}{{ title }}</h1>
 
-  <div class="c-article-section__top l-spacing-m">
+  <div class="c-article-section__top l-spacing-s">
 
     {% if not isCustomPost %}
     {# info (date & reading time) #}
@@ -35,20 +35,6 @@
       {# reading time #}
       <span class="c-article-section__reading-time">{{ content | readingTime }} read</span>
     </p>
-
-    {# twitter share #}
-    <div class="c-article-section__share">
-      <a
-        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-        class="twitter-share-button"
-        data-show-count="false"
-        data-text="{{ title or renderData.title | striptags }} 🚀"
-        data-via="giulia_chiola">
-        Tweet
-        </a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-    {% endif %}
 
     {# tags #}
     {% if tags %}
@@ -63,16 +49,35 @@
     {% endif %}
   </div>
 
-  {# table of contents #}
-  {% include '_includes/layouts/partials/article-section-toc.njk' %}
+  {# toc + twitter button #}
+  <aside class="c-article-section__toc-share">
+    {# twitter share #}
+    <div class="c-article-section__share">
+      <a
+        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+        class="twitter-share-button"
+        data-show-count="false"
+        data-text="{{ title or renderData.title | striptags }} 🚀"
+        data-via="giulia_chiola">
+        Tweet
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    {% endif %}
 
-  {# reading progress #}
-  {% if category === 'tutorials' %}
-    <div class="c-reading-progress j-reading-progress"><span class="c-reading-progress__value j-reading-progress__value"></span></div>
+    {# table of contents #}
+    {% if not isCustomPost %}
+    {% include '_includes/layouts/partials/article-section-toc.njk' %}
+    {% endif %}
+  </aside>
+
+  {% set showProgressBar = not isCustomPost and content | readingTime | timeReadingToNumber >  1 %}
+  {% if showProgressBar %}
+  <div class="c-reading-progress j-reading-progress"><span class="c-reading-progress__value j-reading-progress__value"></span></div>
   {% endif %}
 
   {# article content #}
-  <div class="c-article-section__content {% if category === 'tutorials' %}j-article-section__content{% endif %}">
+  <div class="c-article-section__content {% if showProgressBar %}j-article-section__content{% endif %}">
     {{ content | safe }}
   </div>
 
