@@ -1,14 +1,12 @@
 {# table of content (TOC) #}
 {% if content | toc | safe | length %}
-  <aside class="c-article-section__toc-container">
-    <details class="c-article-section__toc">
-        <summary><span>📚</span>Table of contents</summary>
-        {# important:
-        replace(' #') (with a space before the hash!) to remove the hash added by markdown-it anchor plugin, but to not remove hash into the href link!
-        correct output: <a href="#editor">Editor</a>
-        previous wrong output: <a href="#editor">Editor #</a>
-        #}
-        {{ content | toc | safe | replace(' #', '') }}
-    </details>
-  </aside>
+<details class="c-article-section__toc">
+    <summary>📚<span>Table of contents</span></summary>
+    {# important:
+    replace(' #') (with a space before the hash!) to remove the hash added by markdown-it anchor plugin, but to not remove hash into the href link!
+    correct output: <a href="#editor">Editor</a>
+    previous wrong output: <a href="#editor">Editor #</a>
+    #}
+    {{ content | toc | safe | replace(' #', '') }}
+</details>
 {% endif %}

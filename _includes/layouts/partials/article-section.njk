@@ -25,7 +25,7 @@
 <article class="c-article-section l-spacing-l {% if isCustomPost %}c-article-section--custom{% endif %}">
   <h1>{% if category == 'projects' %}[Project] {% endif%}{{ title }}</h1>
 
-  <div class="c-article-section__top l-spacing-m">
+  <div class="c-article-section__top l-spacing-s">
 
     {% if not isCustomPost %}
     {# info (date & reading time) #}
@@ -36,6 +36,21 @@
       <span class="c-article-section__reading-time">{{ content | readingTime }} read</span>
     </p>
 
+    {# tags #}
+    {% if tags %}
+    <ul class="c-article-section__tags">
+      {%- for tag in tags|removeFromArray('post') %}
+      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <li class="c-article-section__tag">
+          <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
+        </li>
+      {%- endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  {# toc + twitter button #}
+  <aside class="c-article-section__toc-share">
     {# twitter share #}
     <div class="c-article-section__share">
       <a
@@ -50,21 +65,9 @@
     </div>
     {% endif %}
 
-    {# tags #}
-    {% if tags %}
-    <ul class="c-article-section__tags">
-      {%- for tag in tags|removeFromArray('post') %}
-      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <li class="c-article-section__tag">
-          <a href="{{ tagUrl | url }}" class="c-label">{{ tag | removeDashes }}</a>
-        </li>
-      {%- endfor %}
-    </ul>
-    {% endif %}
-
     {# table of contents #}
     {% include '_includes/layouts/partials/article-section-toc.njk' %}
-  </div>
+  </aside>
 
   {# reading progress #}
   {% if category === 'tutorials' %}
