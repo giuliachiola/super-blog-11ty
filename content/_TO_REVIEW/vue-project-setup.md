@@ -1,37 +1,56 @@
 ---
-title: 'Vue JS: basic project setup'
-abstract: 'How to set up a Vue JS project step by step from scratch.'
+title: Vue JS: basic project setup
+abstract: How to set up a Vue JS project step by step from scratch.
 quote: Ability is what you're capable of doing. Motivation determines what you do. Attitude determines how well you do it.
 quoteAuthor: Lou Holtz
 
 date: 2020-04-04
+
+permalink: posts/vue-project-setup/
+crossPostDEV:
+crossPostHashnode:
+
 mainTag: vuejs
 tags:
   - vuejs
+  - js
+  - sass
+
+id: 32
 ---
 
-// REVIEW:
+> 🧨 **!important**
+>
+> edited on September 2022:
+> this guide used Vue 2, probably now it's obsolete and maybe you would like to use Vue 3 instad. Here it is the link to the [migration guide](https://www.vuemastery.com/blog/vue-3-migration-build/)
 
-Di recente ci siamo avvicinati al mondo di Vue JS e al suo fedele compare webpack. Ecco alcune chicche semplici semplici per iniziare un progetto al meglio.
+I recently approached the world of **Vue JS** and its trusty sidekick, Webpack. Here are some simple simple tips to get you started on a project.
 
-Divido la guida in 5 installazioni indipendenti:
+I will split the guide into 5 independent parts:
+
 1. Vue + Webpack
 2. Vuex
 3. Git Lab + Gitflow
 4. SASS
 5. Boostrap
 
-## 1. Installare Vue + Webpack
+## 1. Install Vue + Webpack
 
-Per prima cosa controlliamo di avere **vue-cli** aggiornato. Se non lo fosse, questo comando lo installa/aggiorna all'ultima versione:  
-`npm i -g vue-cli`
+First, check if you have **vue-cli** updated. If not, this command will install/update it to the latest version:
 
-Dentro alla cartella dove vogliamo il progetto (nel mio caso _sites_)  
-`vue init webpack projectname`
+```shell
+npm i -g vue-cli
+```
 
-Diamo Invio (Yes implicito) a tutti i punti, tranne quelli del Setup Unit Test, a cui personalmente ho dato No perché non mi servono in questo semplice progetto (in ogni caso se dopo vi accorgete che servono si possono sempre installare!).
+Go to the system folder you want to create the project, than run
 
-<!-- ```
+```shell
+vue init webpack projectname
+```
+
+Let's press `Enter` (implicit "Yes") for all the questions, except those for "Setup Unit Test", to which you can answer "No" if you as me don't need them in this simple project (in any case, if you realize that you need them later, they can always be installed at any time).
+
+```shell
 Project name projectname
 ? Project description A Vue.js project
 ? Author Giulia Chiola
@@ -42,40 +61,81 @@ Project name projectname
 ? Set up unit tests No
 ? Setup e2e tests with Nightwatch? No
 ? Should we run `npm install` for you after the project has been created? (recommended) npm
-``` -->
-
-![shell_01](https://res.cloudinary.com/kifo17/image/upload/v1585162768/super-blog/blog/shell_01_wn5plp.jpg)
-
-Benissimo, abbiamo appena creato lo scaffolding del progetto.  
-Se vogliamo vedere cosa abbiamo ottenuto fino adesso facciamo quello che dice la console: entriamo nella cartella e facciamo girare il server in development mode
-
 ```
+
+![shell_01](https://res.cloudinary.com/giuliachiola/image/upload/v1585317435/super-blog/032-vue-project-setup/shell_01_etsnpm.jpg)
+
+Great, we just created the scaffolding for the project.
+If we want to see what we have achieved so far, let's do what the shell says: let's go into the folder and run the server in development mode
+
+```shell
 cd projectname
 npm run dev
 ```
 
-![shell_02](https://res.cloudinary.com/kifo17/image/upload/v1585162774/super-blog/blog/shell_02_oqupox.jpg)
+![shell_02](https://res.cloudinary.com/giuliachiola/image/upload/v1585317443/super-blog/032-vue-project-setup/shell_02_cdjow6.jpg)
 
-Sul browser a http://localhost:8080 troviamo il nostro bellissimo Hello Vue!
+Open the browser at [http://localhost:8080](http://localhost:8080) and you should see an Hello Vue!
 
-![HelloVue](https://res.cloudinary.com/kifo17/image/upload/v1585162775/super-blog/blog/HelloVue_mkrgsd.jpg)
+![HelloVue](https://res.cloudinary.com/giuliachiola/image/upload/v1585317435/super-blog/032-vue-project-setup/HelloVue_yaeiqy.jpg)
 
-Vediamo un secondo cosa c'è di importante nella cartella del progetto:
+Let's analyze which important files are into the root folder:
 
-- _index.html_  
-è la pagina che viene compilata in Server Side Rendering e che stiamo guardando.
-All'interno di index.html troviamo `<div id="app"></div>` che è _where the magic happens_: in mezzo a quel div c'è tutta la nostra app.  
+- _index.html_
+this is the page that is compiled in Server Side Rendering and that we are looking at.
+Inside `index.html` there is an HTML node with an id: `<div id ="app"></div>`. That's _where the magic happens_ ✨: when VueJS is up and running that `<div>` is replaced with another identical node (see `App.js` below), but istead of being an empty node, the new node contains our whole Vue application.
 
-- _App.vue_  
-il tag `<template>` ha un unico tag all'interno `<div id="app">`, ed è proprio il suo contenuto che stiamo vedendo sul browser.  
-(Importante: non è un caso che questo componente abbia un unico tag! Ogni componente Vue deve avere **necessariamente** un unico grande tag al suo interno, che a sua volta ne può contenere quanti vogliamo)  
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Progetto piccino</title>
 
-- _main.js_  
-è il file JavaScript principale del progetto, qui vengono istanziati Vue e il router (e lo store nel caso installassimo Vuex)
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
 
-In teoria a questo punto avremmo finito, ma a noi piace essere organizzati quindi facciamo un pezzettino in più: di default Vue vuole i componenti `.vue` nella cartella `components`, ma possiamo creare delle sottocartelle per averli più ordinati. Bisogna tenere a mente che è _webpack_ a risolvere le cartelle dei _components_, quindi è a lui che dobbiamo dire cosa fare. Aggiungiamo quindi degli _alias_ a quelli già presenti, nel mio caso aggiungo _icons, elements, layout, templates_.
-
+<style type="text/css">
+</style>
 ```
+
+- _src/App.vue_
+
+it has a `<template>` tag with the app id reference inside `<div id ="app">`. That content is what we are seeing in the browser.
+(Important: it is no coincidence that `App` component has only one node inside the `<template>` wrapper tag! Each Vue component must **necessarily** have a single node at its first level, which in turn can contain as many components we want)
+
+```js
+<template>
+  <div id="app">
+    <MyComponent />
+    <AnotherMyComponent />
+  </div>
+</template>
+```
+
+- _src/main.js_
+this is the main JavaScript file of the project, where Vue and the router are instantiated (here we could also add the store manager using Vuex)
+
+```js
+import App from './App'
+
+new Vue({
+  template: `
+    <div id="app">
+    </div>
+  `
+}).$mount('#app')
+```
+
+At this point, I have a Vue application up and running, but I like to be organized so let's take it a little bit further: by default Vue wants that we save the `.vue` components inside the `components` directory, but we can also create subfolders to make them more tidy
+
+Keep in mind that it is _webpack_ that resolves paths of _components_ directories, so we have to tell him what to do with our subfolders.
+
+```shell
 ├── src
 │   ├── components
 │       └── elements
@@ -85,213 +145,45 @@ In teoria a questo punto avremmo finito, ma a noi piace essere organizzati quind
 │       └── templates
 ```
 
-```
+Let's go to webpack settins and add _alias_ to those already present. I have just added _icons, elements, layout, templates_.
+
+```js
 // webpack.base.conf.js
 
 resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@elements': resolve('src/components/elements'),
-      '@icons': resolve('src/components/icons'),
-      '@layout': resolve('src/layout'),
-      '@templates': resolve('src/components/templates'),
-      '@components': resolve('src/components'),
-      '@root': resolve('src')
+      'vue $': 'vue / dist / vue.esm.js',
+      '@elements': resolve ('src / components / elements'),
+      '@icons': resolve ('src / components / icons'),
+      '@layout': resolve ('src / layout'),
+      '@templates': resolve ('src / components / templates'),
+      '@components': resolve ('src / components'),
+      '@root': resolve ('src')
     }
 }
 ```
 
-<!-- ![webpack_resolve_01](images/webpack_resolve_01.png) -->
+Using that config above, in every component inside the `components/` folder, we can include the other ones, preceded by the alias of the folder.
 
-A questo punto da ogni componente in _components_ possiamo includerne altri preceduti dall'alias della cartella.  
-Es. HelloVue è dentro elements quindi:  
-`import HelloWorld from '@elements/HelloWorld.vue'`
+E.g. `<HelloWorld>` is inside `components/elements` folder, so:
 
-![webpack_resolve_02](https://res.cloudinary.com/kifo17/image/upload/v1585162774/super-blog/blog/webpack_resolve_02_mqwiiu.jpg)  
-^ Lascio commentata la vecchia sintassi, dove pescava il componente da 'components' e non dalla sottocartella 'elements'
+```js
+// layout/MyLayout.vue
 
-In questa prima fase di scaffolding chiamo il componente di test `HelloVue.vue` da _main.js_ e controllo che tutto funzioni, **ma** una best-practice sarebbe di _non_ includere componenti dentro main.js, se non l'istanza Vue vera e propria. I componenti li includiamo nei templates, e i templates li chiameremo dal router. Ma questa è un'altra (lunga) storia e la vediamo un'altra volta.
+import HelloWorld from '@elements/HelloWorld.vue'
+// plain syntax
+// import HelloWorld from '../elements/HelloWorld.vue'
+```
 
+![webpack_resolve_02](https://res.cloudinary.com/giuliachiola/image/upload/v1585317440/super-blog/032-vue-project-setup/webpack_resolve_02_lq9xfs.jpg)
+
+To check everything is ok this far, add `HelloVue.vue` in your `main.js` and check that everything works. Remember that a best practice would be to _not_ include components inside `main.js`, keep that file just for the Vue instance. 
+
+Best practices say you sould import _components_ in _templates_, and _templates_ should be called by the Vue Router.
 
 ## 2. Vuex
 
-Per farla breve: Vuex è uno _state management pattern_ per applicazioni Vue. Serve come archivio centralizzato per tutti i componenti di un'applicazione, con regole che garantiscono che lo stato possa essere mutato solo in modo prevedibile. [Guida dettagliata](https://vuex.vuejs.org/en/intro.html)
+Long story short: `Vuex` is a state management pattern for Vue applications. It serves as a centralized repository for all components of an application, with rules ensuring that state can only be changed in a predictable way. [Detailed Guide](https://vuex.vuejs.org/en/intro.html)
 
-Installare Vuex è decisamente facoltativo. Non tutte le applicazioni Vue lo utilizzano. Nel mio progetto in particolare so che dovrò gestire dei dati e mi serve un posto unico in cui salvarli e andarli a recuperare, quindi vediamo come installarlo. 
-
-La cosa migliore da fare è fermarsi e pensare "Mi serve un posto dove salvare dati e fare `get` e `set` da diversi componenti?", se la risposta è Sì, vi conviene installarlo subito. Se la risposta è No, rifatevi la domanda. Se è ancora No, ok va bene così.
-
-Perché farsi due volte la domanda?  
-Perché è semplicissimo cadere nella tentazione di sfruttare un altro posto (apparentemente più semplice) dove salvare i dati: la magica `$root`. Nel mio primo progetto con Vue ho ceduto - come tutti - alla tentazione di utilizzare la root per salvare i dati. Pessima scelta. Non fatelo. Esplode il computer, giuro. 
-
-//spiegazione del perché non va bene + link
-
-
-Installiamo Vuex:
-`npm install vuex`
-
-Dentro a `src` creiamo una nuova cartella `store` con al suo interno il file `store.js`. Dentro store.js andiamo a mettere i settaggi per lo store di Vuex, e in main.js importiamo lo store stesso:
-
-```
-├── src
-│   ├── assets
-│   ├── components
-│   ├── router
-│       └── index.js
-│   ├── store
-│       └── store.js
-```
-
-<!-- ![vuex_store](images/vuex_store.png) -->
-
-```
-// store.js
-
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
-
-export const store = new Vuex.Store({
-})
-```
-
-<!-- ![vuex_storejs](images/vuex_storejs.png) -->
-
-```
-// main.js
-
-import { store } from './store/store'
-
-new Vue({
-  store: store,
-})
-```
-![vuex_mainjs](https://res.cloudinary.com/kifo17/image/upload/v1585162770/super-blog/blog/vuex_mainjs_ogofdk.jpg)
-
-[Guida dettagliata](https://css-tricks.com/intro-to-vue-4-vuex/)
-
-Perfetto, Vuex pronto. Quando servirà potremo usarlo subito.
-
-## 3 Git Lab + Gitflow
-
-### 3.1 Mettiamo il progetto su un repo
-
-Andiamo su Git Lab, click su **New Project**  
-<!-- https://gitlab.com/projects/new -->
-
-![gitlab_newproject](https://res.cloudinary.com/kifo17/image/upload/v1585162773/super-blog/blog/gitlab_newproject_degurn.jpg)
-
-e poi **Create project**
-
-Leggiamo le istruzioni per creare un repo da una _cartella esistente_
-```
-cd existing_folder
-git init
-git remote add origin git@gitlab.com:giuliachiola/vueproject.git
-git add .
-git commit -m "Initial commit"
-git push -u origin master
-```
-
-Et voilà, prima commit sul repo fatta!
-
-### 3.2 Utilizziamo Gitflow
-
-Gitflow è semplicemente un'idea astratta di un flusso di lavoro Git. Con Gitflow quando si lavora in team risulta molto più chiaro se il branch è in sviluppo, è stato rilasciato, oppure se è un ramo di bugfixing al volo.  
-[Guida dettagliata](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-
-Per iniziare a lavorare con Gitflow:  
-`git flow init` e diamo Ok a tutto quello che ci chiede (trust the computer, the computer is your friend!)
-
-![gitflow_init](https://res.cloudinary.com/kifo17/image/upload/v1585162763/super-blog/blog/gitflow_init_twkyzo.jpg)
-
-_Gitflow in super-breve:_  
-Ci sono due grossi branch: `master` e `develop`.  
-_master_ è quello principale che viene rilasciato man mano al cliente, mentre _develop_ è quello in sviluppo. **Non** si sviluppa direttamente su questi due rami, ma si sviluppa su branch che partono rispettivamente da uno di questi.
-
-Situazione: siamo con un nuovo progetto, come in questo tutorial, su quale branch lavoriamo? Dopo _git flow init_ mi sono ritrovata su `develop`, coincidenze?? Io non credo.
-
-Da qui creiamo un nuovo branch, ma non con il solito modo _git checkout -b branchname_; Gitflow ha una sua (più furba) sintassi: `git flow feature start branchname`. 
-
-![gitflow_feature_start](https://res.cloudinary.com/kifo17/image/upload/v1585162755/super-blog/blog/gitflow_feature_start_ajnwvk.jpg)
-
-Viene creato un branch a partire da develop, lavoriamo su questo nuovo branch e quando la feature è conclusa diamo `git flow feature finish branchname` 
-
-![gitflow_feature_end](https://res.cloudinary.com/kifo17/image/upload/v1585162756/super-blog/blog/gitflow_feature_end_rxaj8t.jpg)
-
-e automaticamente branchname viene mergiato su develop e cancellato dal repo (Niente più branch morti in giro! Evviva!).
-
-Idem con patate per `master`. Su master non abbiamo lo sviluppo, ma i rilasci. Quindi non faremo le features, ma solo bugfixes al volo. Da master `git flow hotfix start branchname`, fixo e concludo con `git flow hotfix finish branchname`  
-
-![gitflow_hotfix_start](https://res.cloudinary.com/kifo17/image/upload/v1585162765/super-blog/blog/gitflow_hotfix_start_jhabzd.jpg)
-![gitflow_hotfix_start](https://res.cloudinary.com/kifo17/image/upload/v1585162757/super-blog/blog/gitflow_hotfix_end_01_qr5bej.jpg)
-![gitflow_hotfix_end](https://res.cloudinary.com/kifo17/image/upload/v1585162759/super-blog/blog/gitflow_hotfix_end_02_i1c9sy.jpg)
-
-Nota: tra le cose interessanti che offre Gitflow, ti impedisce (o meglio ti sconsiglia vivamente, perché si può comunque aggirare) di _non_ aprire un nuovo branch di hotfix se non hai chiuso il precedente. E ha senso in effetti, non bisognerebbe correggere più di un bug alla volta.
-
-![gitflow_hotfix_2branches](https://res.cloudinary.com/kifo17/image/upload/v1585162762/super-blog/blog/gitflow_hotfix_2branches_sdpxsf.jpg)
-
-
-## 4. SASS
-
-Nei componenti Vue la strada più comune è  quella di mettere il CSS al fondo del componente nel tag `<style>` 
-<!-- (scoped = riguarda _solo ed esclusivamente_ quel componente, non influisce su altro).  -->
-
-Se al posto di CSS puro vogliamo utilizzare il SASS, no problem:
-
-`npm install sass-loader node-sass webpack --save-dev`
-
-Nella configurazione di webpack aggiungiamo dentro a _module > rules_
-```
-// webpack.base.conf.js
-
-{
-    test: /\.scss$/,
-    use: [{
-        loader: "style-loader" // creates style nodes from JS strings
-    }, {
-        loader: "css-loader" // translates CSS into CommonJS
-    }, {
-        loader: "sass-loader" // compiles Sass to CSS
-    }]
-}
-```
-
-![webpack_sass](https://res.cloudinary.com/kifo17/image/upload/v1585162775/super-blog/blog/webpack_sass_qvwvrn.jpg)
-
-A questo punto nei componenti Vue possiamo scrivere in SASS
-```
-<style lang="scss">
-.test {
-  color: red;
-
-  &.test--main {
-    color: blue;
-  }
-}
-</style>
-```
-
-
-## 5. Bootstrap
-Piccole precisazioni: in linea di massima sono contraria a  Bootstrap, ma ci sono casi in cui è davvero comodo utilizzarlo: classi pronte per mockup veloci. L'importante IMO è non avere 1000 rige di CSS di cui 999 sono overrides... in quel caso _vade retro Bootstrap_!  
-
-Vediamo come integrarlo nel progetto.
-
-`npm install bootstrap --save`
-
-`npm install file-loader url-loader --save-dev\n`
-
-Per utilizzare Bootstrap ci serve un _require_ dei file nel main.js, e io voglio utilizzare solamente il CSS quindi importerò soltanto quello.
-
-`require('bootstrap/dist/css/bootstrap.min.css')`
-
-![bootstrap_mainjs](https://res.cloudinary.com/kifo17/image/upload/v1585162753/super-blog/blog/bootstrap_mainjs_mt5z5n.jpg)
-
-A questo punto aggiungete un componente di prova `<input type="button" class="btn btn-primary" value="I'm a Bootstrap button">` e se tutto funziona lo vedrete apparire bello come il sole:
-
-![HelloVue_bootstrap](https://res.cloudinary.com/kifo17/image/upload/v1585162774/super-blog/blog/HelloVue_bootstrap_z8ppen.jpg)
-
-
+Installing Vuex is definitely optional. Not all apps
