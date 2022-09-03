@@ -1,5 +1,4 @@
-(PRESO DAL VUE PROJECT SETUP)
-## 3 Git Lab + Gitflow
+# How to use GitFlow integrated with GitLab
 
 ### 3.1 Mettiamo il progetto su un repo
 
