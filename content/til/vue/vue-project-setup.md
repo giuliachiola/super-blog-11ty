@@ -16,6 +16,7 @@ tags:
   - js
   - sass
 
+category: tutorials
 id: 32
 ---
 
