@@ -23,3 +23,13 @@ because I am using `globalSiteUrl` as variable (should I change it? Who knows! ð
 ```html
 {%- set socialImg %}{{ global.siteUrl }}/social-img/{{ title | slug }}.png{% endset-%}
 ```
+
+## Puppeteer error on M1 chip
+
+Add in your `~/.zshrc` these lines
+
+```shell
+# Fix Puppeteer on M1 chip (super-blog-11ty error 2022-08-22)
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+```
