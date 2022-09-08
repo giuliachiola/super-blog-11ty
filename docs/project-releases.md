@@ -17,15 +17,14 @@ npm version major|minor|patch
 
 ## 3. Push (automatic deploy on Netlify) and update `super-blog-content` repo
 
-and push `main` and the new tag
-
 ```shell
-gp && gp --tags && update-super-blog-content
+blog-deploy
 ```
 
-Note: `update-super-blog-content` is an alias in `~/.zshrc`
+Note: `~/.zshrc` should have these aliases:
 
 ```shell
-alias update-super-blog-content='cp -a ~/Sites/super-blog-11ty/content/. ~/Sites/super-blog-content/ && cd ~/Sites/super-blog-content/ && gaa && gcam "content: upate content from main blog repo" && gp && cd ~/Sites/super-blog-11ty/'
+alias blog-deploy='npm version patch && gp && gp --tags && blog-update-content-repo'
+alias blog-update-content-repo='cp -a ~/Sites/super-blog-11ty/content/. ~/Sites/super-blog-content/ && cd ~/Sites/super-blog-content/ && gaa && gcam "content: upate content from main blog repo" && gp && cd ~/Sites/super-blog-11ty/'
 ```
 
