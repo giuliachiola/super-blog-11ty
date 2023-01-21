@@ -81,7 +81,7 @@ Yep, I use different browsers for different needs 😇
 ## 🖥 Desk
 
 - Main computer: [MacBook Air 13,3" chip M1 - Sideral gray](https://www.apple.com/it/shop/buy-mac/macbook-air/grigio-siderale-chip-apple-m1-con-cpu-8-core-e-gpu-7-core-256gb)
-- Auxiliary Computer: manually assembled Desktop Computer with Windows OS on it.
+- Auxiliary Computer: assembled Desktop Computer with Windows OS on it.
 - Monitor [BenQ 27" PD2700U 4k](https://www.amazon.it/gp/product/B07GLR6RQF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 - Ikea desk similar to [this one](https://www.ikea.com/it/it/p/lagkapten-mittback-scrivania-bianco-betulla-s19417193/) but mine is an older version with board made of glass instead of wood.
 - Ikea office chair similar to [this model](https://www.ikea.com/it/it/p/millberget-sedia-girevole-murum-nero-70489394/) but I have an older variant (which is nicer in my humble opinion)
@@ -91,12 +91,11 @@ Yep, I use different browsers for different needs 😇
 
 ## 📲 Mobile
 
-- Phone: [Xiaomi Mi 9T Pro](https://www.mi.com/it/mi-9-t-pro/)
-- [Authy](https://play.google.com/store/apps/details?id=com.authy.authy&hl=en&gl=US): 2FA
-- [Email](https://play.google.com/store/apps/details?id=com.easilydo.mail&hl=en&gl=US): best mobile email client
-- [InSwipe](https://play.google.com/store/apps/details?id=livehappy.instaswipe&hl=en&gl=US): split photo for IG panorama views
-- [Nature ID](https://play.google.com/store/apps/details?id=plant.identification.flower.tree.leaf.identifier.identify.cat.dog.breed.nature&hl=en&gl=US): plant identification and care planning
+- Phone: [iPhone 14 Pro](https://www.apple.com/it/shop/buy-iphone/iphone-14-pro)
 - [Notion](https://play.google.com/store/apps/details?id=notion.id&hl=en&gl=US): notes taking
+- [Authy](https://play.google.com/store/apps/details?id=com.authy.authy&hl=en&gl=US): 2FA
+- [Spark](https://apps.apple.com/it/app/spark-mail-smart-email-inbox/id997102246): best mobile email client
+- [Nature ID](https://play.google.com/store/apps/details?id=plant.identification.flower.tree.leaf.identifier.identify.cat.dog.breed.nature&hl=en&gl=US): plant identification and care planning
 - [PeakLens](https://play.google.com/store/apps/details?id=com.peaklens.ar&hl=en&gl=US): not work-related, but I love hiking and this app is really useful to recognize mountains
 - [SplitWise](https://play.google.com/store/apps/details?id=com.Splitwise.SplitwiseMobile&hl=en&gl=US): share expenses with friends
 - [Stocard](https://play.google.com/store/apps/details?id=de.stocard.stocard&hl=en&gl=US): rewards cards wallet

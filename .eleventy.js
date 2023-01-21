@@ -127,6 +127,9 @@ module.exports = function(eleventyConfig) {
     return new CleanCSS({}).minify(code).styles
   })
 
+  // Shortcodes
+  eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`)
+
   /**
   * Markdown optionsilters
   */
