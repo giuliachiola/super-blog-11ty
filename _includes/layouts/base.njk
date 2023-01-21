@@ -38,6 +38,9 @@
     {# og, twitter, SEO #}
     {% include 'layouts/meta.njk' %}
 
+    <meta name="blog-11ty-version" content="{{ global.version }}">
+    <meta name="blog-11ty-styleguide-version" content="{{ global.versionStyleguide }}">
+
     {# css #}
     <link rel="stylesheet" href="/css/css-bundle.css">
     {# print css #}
