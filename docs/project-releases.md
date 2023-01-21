@@ -30,3 +30,9 @@ alias blog-deploy='npm version patch && gp && gp --tags && blog-update-content-r
 alias blog-update-content-repo='cp -a ~/Sites/super-blog-11ty/content/. ~/Sites/super-blog-content/ && cd ~/Sites/super-blog-content/ && gaa && gcam "content: upate content from main blog repo" && gp && cd ~/Sites/super-blog-11ty/'
 ```
 
+## 4. Rebase `main` to `develop`
+
+```shell
+> develop > git rebase main
+```
+
