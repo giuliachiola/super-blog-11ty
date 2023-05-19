@@ -27,21 +27,17 @@ This page is inspired by [uses.tech](https://uses.tech/), an awesome developers'
 
 **Extensions for VS Code**
 
-- [Add jsdoc comments](https://marketplace.visualstudio.com/items?itemName=stevencl.addDocComments)
-- [Auto Comment Blocks](https://marketplace.visualstudio.com/items?itemName=kevinkyang.auto-comment-blocks)
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
-- [Beutify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
-- [Blank Line Organizer](https://marketplace.visualstudio.com/items?itemName=rintoj.blank-line-organizer)
-- [Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
-- [Duplicate Action](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-duplicate)
+- [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
+  <!-- - [Blank Line Organizer](https://marketplace.visualstudio.com/items?itemName=rintoj.blank-line-organizer) -->
+  <!-- - [Duplicate Action](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-duplicate) -->
 - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 - [ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [final-newline](https://marketplace.visualstudio.com/items?itemName=samverschueren.final-newline)
+<!-- - [final-newline](https://marketplace.visualstudio.com/items?itemName=samverschueren.final-newline) -->
 - [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 - [Highlight Bad Chars](https://marketplace.visualstudio.com/items?itemName=wengerk.highlight-bad-chars)
 - [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
-- [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 - [IntelliSense for CSS class names in HTML](https://marketplace.visualstudio.com/items?itemName=Zignd.html-css-class-completion)
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 - [Markdown Table Formatter](https://marketplace.visualstudio.com/items?itemName=fcrespo82.markdown-table-formatter)
@@ -50,7 +46,6 @@ This page is inspired by [uses.tech](https://uses.tech/), an awesome developers'
 - [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
 - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)
-- [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 - [Workspace manager](https://marketplace.visualstudio.com/items?itemName=design4pro.workspace-manager)
 
 ## 🤖 Terminal
@@ -104,7 +99,7 @@ Yep, I use different browsers for different needs 😇
 - [PeakLens](https://play.google.com/store/apps/details?id=com.peaklens.ar&hl=en&gl=US): not work-related, but I love hiking and this app is really useful to recognize mountains
 - [SplitWise](https://www.splitwise.com/): share expenses with friends
 - [Stocard](https://stocardapp.com/en/it): rewards cards wallet
-- [Todoist](https://todoist.com/)
+- [Todoist](https://todoist.com/): task manager
 
 <div class="s-giphy s-giphy--small-d">
   <video autoplay loop muted playsinline>
